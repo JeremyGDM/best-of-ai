@@ -1,0 +1,15 @@
+---
+title: 'Zotero'
+name: 'Zotero'
+subtitle: 'Free AI-assisted reference manager and research tool'
+slug: 'zotero-ai'
+description: 'Zotero is a free, open-source reference management tool that helps researchers collect, organise, cite, and share research sources. Its AI features include automatic metadata extraction from PDFs and web pages, duplicate detection, and a growing ecosystem of plugins for AI-powered literature analysis and paper discovery.'
+website: 'https://zotero.org'
+logo_url: ''
+category: 'research-tools'
+category_name: 'Research Tools'
+price: 'Free'
+featured: false
+date: '2025-09-21'
+tags: [research, academia, productivity]
+---

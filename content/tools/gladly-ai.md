@@ -1,0 +1,15 @@
+---
+title: 'Gladly'
+name: 'Gladly'
+subtitle: 'AI customer service platform for people-centred support'
+slug: 'gladly-ai'
+description: 'Gladly is a customer service platform that treats each customer as a person with a lifetime conversation history across every channel — phone, email, chat, SMS, and social media. Its AI features include Sidekick (an AI agent for self-service) and AI-suggested responses with full customer context displayed to human agents.'
+website: 'https://gladly.com'
+logo_url: ''
+category: 'customer-support'
+category_name: 'Customer Support'
+price: 'Paid'
+featured: false
+date: '2025-09-21'
+tags: [customer_support, crm, automation]
+---

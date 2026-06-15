@@ -1,0 +1,15 @@
+---
+title: 'Suki AI'
+name: 'Suki AI'
+subtitle: 'AI voice assistant for clinical documentation'
+slug: 'suki-ai'
+description: 'Suki AI is a voice-enabled AI assistant for physicians that listens to patient encounters and automatically generates structured clinical notes in the EHR. Doctors speak naturally and Suki formats the conversation into SOAP notes, reducing documentation time by over 70% and allowing physicians to focus on patients.'
+website: 'https://suki.ai'
+logo_url: ''
+category: 'healthcare'
+category_name: 'Healthcare'
+price: 'Paid'
+featured: false
+date: '2025-09-21'
+tags: [healthcare, voice, documentation]
+---
