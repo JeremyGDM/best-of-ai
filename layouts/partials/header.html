@@ -1,7 +1,32 @@
+{{ $tools   := where .Site.RegularPages "Section" "tools" }}
+{{ $profPages := where .Site.RegularPages "Section" "professionals" }}
+{{ $profs     := sort $profPages "Params.sort_order" }}
+
+{{/* Top categories sorted by tool count */}}
+{{ $catList := slice }}
+{{ range hugo.Data.categories }}
+  {{ $count := len (where $tools "Params.category" .slug) }}
+  {{ if gt $count 0 }}
+    {{ $catList = $catList | append (dict "name" .name "slug" .slug "count" $count) }}
+  {{ end }}
+{{ end }}
+{{ $catList = sort $catList "count" "desc" }}
+{{ $topCats := first 10 $catList }}
+
+{{/* Top tags sorted by count */}}
+{{ $tagList := slice }}
+{{ range $term, $pages := .Site.Taxonomies.tags }}
+  {{ $tagList = $tagList | append (dict "name" $term "count" (len $pages)) }}
+{{ end }}
+{{ $tagList = sort $tagList "count" "desc" }}
+{{ $topTags := first 10 $tagList }}
+
 <header class="site-header">
   <div class="site-header__inner">
+
+    <!-- Logo -->
     <a href="{{ "/" | relURL }}" class="site-logo">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
         <path d="M12 2L2 7l10 5 10-5-10-5z" fill="var(--accent)"/>
         <path d="M2 17l10 5 10-5" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M2 12l10 5 10-5" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
@@ -9,6 +34,81 @@
       <span>Best of <span class="logo-accent">AI</span></span>
     </a>
 
+    <!-- Nav -->
+    <nav class="site-header__nav" id="site-nav">
+
+      <!-- AI for Professionals dropdown -->
+      <div class="nav-item" id="nav-prof">
+        <button class="nav-btn" aria-haspopup="true" aria-expanded="false" data-nav="nav-prof">
+          <!-- people icon -->
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+          AI for Professionals
+          <svg class="nav-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+
+        <div class="mega-menu mega-menu--prof" role="menu">
+          <div class="mega-prof-grid">
+            {{ range $profs }}
+            <a href="{{ .RelPermalink }}" class="mega-prof-item" role="menuitem">
+              <span class="mega-prof-item__icon">{{ .Params.icon }}</span>
+              <span>{{ .Params.name }}</span>
+            </a>
+            {{ end }}
+          </div>
+          <div class="mega-menu__footer">
+            <span class="mega-menu__footer-note">{{ len $profs }} professions</span>
+            <a href="{{ "/professionals/" | relURL }}" class="mega-more-link">View all →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Categories dropdown -->
+      <div class="nav-item" id="nav-cats">
+        <button class="nav-btn" aria-haspopup="true" aria-expanded="false" data-nav="nav-cats">
+          <!-- grid icon -->
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+            <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+          </svg>
+          Categories
+          <svg class="nav-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+
+        <div class="mega-menu mega-menu--cats" role="menu">
+          <div class="mega-cats-body">
+            <!-- Left: Top categories -->
+            <div class="mega-cats-col">
+              <div class="mega-col-title">// top categories</div>
+              {{ range $topCats }}
+              <a href="{{ printf "/categories/%s/" .slug | relURL }}" class="mega-cat-item" role="menuitem">
+                <span>{{ .name }}</span>
+                <span class="mega-cat-count">{{ .count }}</span>
+              </a>
+              {{ end }}
+              <a href="{{ "/categories/" | relURL }}" class="mega-more-link" style="display:block;margin-top:0.6rem">All categories →</a>
+            </div>
+
+            <!-- Right: Top tags -->
+            <div class="mega-cats-col">
+              <div class="mega-col-title">// top tags</div>
+              <div class="mega-tag-cloud">
+                {{ range $topTags }}
+                <a href="{{ printf "/tags/%s/" .name | relURL }}" class="tag-chip mega-tag-chip" role="menuitem">#{{ .name }}</a>
+                {{ end }}
+              </div>
+              <a href="{{ "/tags/" | relURL }}" class="mega-more-link" style="display:block;margin-top:0.6rem">All tags →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </nav>
+
+    <!-- Actions -->
     <div class="site-header__actions">
       <button class="search-trigger" id="search-open" aria-label="Search">
         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-3.5-3.5"/></svg>
@@ -29,10 +129,46 @@
 </header>
 
 <script>
+(function() {
+  // Theme toggle
   document.getElementById('theme-toggle')?.addEventListener('click', function() {
     var cur  = document.documentElement.getAttribute('data-theme') || 'dark';
     var next = cur === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', next);
     localStorage.setItem('bai-theme', next);
   });
+
+  // Mega menu toggle
+  var navItems = document.querySelectorAll('.nav-item');
+
+  function closeAll(except) {
+    navItems.forEach(function(item) {
+      if (item !== except) {
+        item.classList.remove('is-open');
+        var btn = item.querySelector('.nav-btn');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  navItems.forEach(function(item) {
+    var btn = item.querySelector('.nav-btn');
+    if (!btn) return;
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var isOpen = item.classList.contains('is-open');
+      closeAll(isOpen ? null : item);
+      item.classList.toggle('is-open', !isOpen);
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+  });
+
+  document.addEventListener('click', function() { closeAll(null); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeAll(null); });
+
+  // Prevent mega menu clicks from closing
+  document.querySelectorAll('.mega-menu').forEach(function(m) {
+    m.addEventListener('click', function(e) { e.stopPropagation(); });
+  });
+})();
 </script>
