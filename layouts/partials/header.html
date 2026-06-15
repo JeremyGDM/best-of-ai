@@ -54,7 +54,6 @@
           <div class="mega-prof-grid">
             {{ range first 12 $profs }}
             <a href="{{ .RelPermalink }}" class="mega-prof-item" role="menuitem">
-              <span class="mega-prof-item__icon">{{ .Params.icon }}</span>
               <span>{{ .Params.name }}</span>
             </a>
             {{ end }}
