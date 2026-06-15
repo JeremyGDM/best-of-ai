@@ -52,7 +52,7 @@
 
         <div class="mega-menu mega-menu--prof" role="menu">
           <div class="mega-prof-grid">
-            {{ range $profs }}
+            {{ range first 12 $profs }}
             <a href="{{ .RelPermalink }}" class="mega-prof-item" role="menuitem">
               <span class="mega-prof-item__icon">{{ .Params.icon }}</span>
               <span>{{ .Params.name }}</span>
@@ -61,7 +61,7 @@
           </div>
           <div class="mega-menu__footer">
             <span class="mega-menu__footer-note">{{ len $profs }} professions</span>
-            <a href="{{ "/professionals/" | relURL }}" class="mega-more-link">View all →</a>
+            <a href="{{ "/professionals/" | relURL }}" class="mega-more-link">View all {{ len $profs }} →</a>
           </div>
         </div>
       </div>
