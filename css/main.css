@@ -468,6 +468,77 @@ main { flex: 1; }
 }
 .tool-card:hover .tool-card__ext { opacity: 1; }
 
+/* ── Tag chips ── */
+.tag-chip {
+  display: inline-block;
+  padding: 0.1rem 0.38rem;
+  border-radius: 4px;
+  font-size: 0.62rem;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  color: var(--fg-muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  white-space: nowrap;
+  text-decoration: none;
+  transition: color 0.12s, border-color 0.12s;
+}
+a.tag-chip:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  opacity: 1;
+}
+
+.tool-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  padding-top: 0.35rem;
+  width: 100%;
+  order: 10;
+}
+
+.detail-meta-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+/* ── Tags index page ── */
+.tags-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 0.6rem;
+  margin-top: 2rem;
+}
+.tags-list-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--fg-muted);
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  transition: border-color 0.15s, color 0.15s;
+}
+.tags-list-card:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  opacity: 1;
+}
+.tags-list-card__name { font-weight: 500; }
+.tags-list-card__count {
+  font-size: 0.68rem;
+  color: var(--fg-faint);
+  background: var(--bg);
+  padding: 0.08rem 0.35rem;
+  border-radius: 20px;
+}
+
 /* ── Badges ── */
 .badge {
   display: inline-block;
@@ -991,6 +1062,114 @@ body.search-open { overflow: hidden; }
   font-family: var(--font-mono);
   font-size: 0.68rem;
   color: var(--fg-faint);
+}
+
+/* ── Professionals list page (/professionals/) ── */
+.prof-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.85rem;
+  margin-bottom: 4rem;
+}
+.prof-list-card {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1rem 1.1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--fg);
+  transition: border-color 0.15s, background 0.15s;
+}
+.prof-list-card:hover {
+  border-color: var(--accent);
+  background: var(--accent-bg);
+  opacity: 1;
+}
+.prof-list-card__icon {
+  font-size: 1.6rem;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 40px;
+  text-align: center;
+}
+.prof-list-card__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.prof-list-card__name {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.prof-list-card__sub {
+  font-size: 0.72rem;
+  color: var(--fg-muted);
+}
+.prof-list-card__count {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--fg-faint);
+  background: var(--bg);
+  padding: 0.12rem 0.45rem;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+
+/* ── Professional detail page ── */
+.prof-hero__icon {
+  font-size: 2rem;
+  background: var(--accent-bg);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.prof-cat-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 2rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.prof-cat-tabs__sep {
+  color: var(--border);
+  margin: 0 0.2rem;
+}
+.prof-cat-count {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--fg-faint);
+  margin-left: 0.25rem;
+}
+.prof-cat-section {
+  margin-bottom: 2.5rem;
+}
+.prof-cat-section__title {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--fg-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.prof-cat-section__count {
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-size: 0.68rem;
+  padding: 0.05rem 0.35rem;
+  border-radius: 20px;
 }
 
 /* ── Misc ── */
