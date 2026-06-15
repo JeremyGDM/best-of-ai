@@ -11,4 +11,5 @@ category_name: 'Text to Speech'
 price: 'Paid'
 featured: false
 date: '2025-01-01'
+tags: [text_to_speech, audio, voice, api_available]
 ---

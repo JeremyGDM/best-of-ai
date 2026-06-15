@@ -11,4 +11,5 @@ category_name: 'Research Tools'
 price: 'Paid'
 featured: false
 date: '2025-01-01'
+tags: [research, analytics, academic, enterprise]
 ---

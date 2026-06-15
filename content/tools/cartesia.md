@@ -11,4 +11,5 @@ category_name: 'Text to Speech'
 price: 'Freemium'
 featured: false
 date: '2025-09-21'
+tags: [text_to_speech, audio, voice, api_available, real_time]
 ---

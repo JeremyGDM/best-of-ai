@@ -11,4 +11,5 @@ category_name: 'Meeting Assistants'
 price: 'Freemium'
 featured: false
 date: '2025-09-21'
+tags: [meeting, productivity, transcription, mobile_app]
 ---

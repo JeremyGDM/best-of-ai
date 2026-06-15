@@ -11,4 +11,5 @@ category_name: 'Productivity'
 price: 'Free'
 featured: false
 date: '2025-08-18'
+tags: [productivity, ai_assistant]
 ---

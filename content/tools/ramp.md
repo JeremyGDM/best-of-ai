@@ -11,4 +11,5 @@ category_name: 'Finance'
 price: 'Freemium'
 featured: false
 date: '2025-01-01'
+tags: [finance, business, analytics]
 ---

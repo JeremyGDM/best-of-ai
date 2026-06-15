@@ -11,4 +11,5 @@ category_name: 'Podcast'
 price: 'Paid'
 featured: false
 date: '2025-09-21'
+tags: [podcast, audio, content_creation]
 ---

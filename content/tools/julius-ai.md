@@ -11,4 +11,5 @@ category_name: 'Data'
 price: 'Freemium'
 featured: false
 date: '2025-01-01'
+tags: [data_analysis, analytics, business]
 ---

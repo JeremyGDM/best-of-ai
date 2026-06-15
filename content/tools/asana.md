@@ -11,4 +11,5 @@ category_name: 'Productivity'
 price: 'Freemium'
 featured: false
 date: '2025-09-21'
+tags: [productivity, ai_assistant]
 ---

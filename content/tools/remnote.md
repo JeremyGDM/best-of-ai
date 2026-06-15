@@ -11,4 +11,5 @@ category_name: 'Note-Taking Apps'
 price: 'Freemium'
 featured: false
 date: '2025-09-21'
+tags: [note_taking, productivity, knowledge_base]
 ---

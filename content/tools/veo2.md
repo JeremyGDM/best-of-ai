@@ -11,4 +11,5 @@ category_name: 'Video Generator'
 price: 'Paid'
 featured: false
 date: '2025-01-01'
+tags: [video_generation, creative, text_to_video, api_available, enterprise]
 ---

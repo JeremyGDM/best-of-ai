@@ -11,4 +11,5 @@ category_name: 'Gaming'
 price: 'Freemium'
 featured: false
 date: '2025-09-21'
+tags: [gaming, creative, mobile_app]
 ---

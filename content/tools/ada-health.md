@@ -11,4 +11,5 @@ category_name: 'Healthcare'
 price: 'Free'
 featured: false
 date: '2025-09-21'
+tags: [healthcare, medical]
 ---

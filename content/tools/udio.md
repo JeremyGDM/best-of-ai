@@ -11,4 +11,5 @@ category_name: 'Music Generation'
 price: 'Freemium'
 featured: false
 date: '2025-01-01'
+tags: [music_generation, audio, creative]
 ---

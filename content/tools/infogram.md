@@ -11,4 +11,5 @@ category_name: 'Infographics'
 price: 'Freemium'
 featured: false
 date: '2025-09-21'
+tags: [design, data_visualization, marketing]
 ---

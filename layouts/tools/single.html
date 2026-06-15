@@ -32,6 +32,9 @@
         <div class="detail-badges">
           {{ if $p.price }}<span class="badge badge-{{ lower $p.price }}">{{ $p.price }}</span>{{ end }}
           {{ if $p.category_name }}<span class="badge badge-cat">{{ $p.category_name }}</span>{{ end }}
+          {{ range $p.tags }}
+          <a href="{{ printf "/tags/%s/" . | relURL }}" class="tag-chip">{{ . }}</a>
+          {{ end }}
         </div>
       </div>
 
@@ -80,6 +83,16 @@
             <dt>Added</dt>
             <dd>{{ .Date.Format "Jan 2006" }}</dd>
           </div>
+          {{ if $p.tags }}
+          <div class="detail-meta-row">
+            <dt>Tags</dt>
+            <dd class="detail-meta-tags">
+              {{ range $p.tags }}
+              <a href="{{ printf "/tags/%s/" . | relURL }}" class="tag-chip">{{ . }}</a>
+              {{ end }}
+            </dd>
+          </div>
+          {{ end }}
         </dl>
       </div>
     </aside>

@@ -11,4 +11,5 @@ category_name: 'Legal Assistants'
 price: 'Paid'
 featured: false
 date: '2025-09-21'
+tags: [legal, document_ai, business]
 ---

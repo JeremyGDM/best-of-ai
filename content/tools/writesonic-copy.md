@@ -11,4 +11,5 @@ category_name: 'Copywriting'
 price: 'Freemium'
 featured: false
 date: '2025-09-21'
+tags: [writing, marketing, text_generation, real_time]
 ---

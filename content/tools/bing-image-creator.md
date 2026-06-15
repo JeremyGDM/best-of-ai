@@ -11,4 +11,5 @@ category_name: 'Image Generation'
 price: 'Free'
 featured: false
 date: '2025-01-01'
+tags: [image_generation, creative, text_to_image]
 ---

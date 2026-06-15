@@ -11,4 +11,5 @@ category_name: 'Automation'
 price: 'Freemium'
 featured: false
 date: '2025-01-01'
+tags: [automation, workflow, productivity, open_source]
 ---

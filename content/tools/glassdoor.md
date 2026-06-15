@@ -11,4 +11,5 @@ category_name: 'Job Tools'
 price: 'Free'
 featured: false
 date: '2025-09-21'
+tags: [career, hr, recruitment]
 ---

@@ -11,4 +11,5 @@ category_name: 'Image Generation'
 price: 'Freemium'
 featured: false
 date: '2025-01-01'
+tags: [image_generation, creative, text_to_image, mobile_app]
 ---

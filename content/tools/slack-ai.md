@@ -11,4 +11,5 @@ category_name: 'Productivity'
 price: 'Paid'
 featured: false
 date: '2025-01-01'
+tags: [productivity, ai_assistant, enterprise]
 ---

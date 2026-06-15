@@ -11,4 +11,5 @@ category_name: 'Ad Generator'
 price: 'Paid'
 featured: false
 date: '2025-09-21'
+tags: [advertising, marketing, creative]
 ---

@@ -11,4 +11,5 @@ category_name: 'Code Assistant'
 price: 'Paid'
 featured: false
 date: '2025-01-01'
+tags: [code_generation, developer_tools, productivity]
 ---

@@ -11,4 +11,5 @@ category_name: 'Code Assistant'
 price: 'Freemium'
 featured: false
 date: '2025-09-21'
+tags: [code_generation, developer_tools, productivity, enterprise]
 ---

@@ -11,4 +11,5 @@ category_name: 'Finance'
 price: 'Paid'
 featured: false
 date: '2025-09-21'
+tags: [finance, business, analytics]
 ---

@@ -11,4 +11,5 @@ category_name: 'Video Generator'
 price: 'Free'
 featured: false
 date: '2025-09-21'
+tags: [video_generation, creative, text_to_video, open_source]
 ---

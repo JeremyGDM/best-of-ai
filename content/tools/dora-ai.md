@@ -11,4 +11,5 @@ category_name: 'No-Code'
 price: 'Freemium'
 featured: false
 date: '2025-01-01'
+tags: [no_code, automation, app_builder]
 ---

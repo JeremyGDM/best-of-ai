@@ -11,4 +11,5 @@ category_name: 'Weather'
 price: 'Freemium'
 featured: false
 date: '2025-09-21'
+tags: [weather, data_analysis, api_available]
 ---

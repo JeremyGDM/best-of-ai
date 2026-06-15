@@ -11,4 +11,5 @@ category_name: 'Transcription'
 price: 'Paid'
 featured: false
 date: '2025-01-01'
+tags: [transcription, speech_to_text, audio, api_available, real_time]
 ---

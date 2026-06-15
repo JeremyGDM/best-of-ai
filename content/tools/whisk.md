@@ -11,4 +11,5 @@ category_name: 'Food'
 price: 'Freemium'
 featured: false
 date: '2025-09-21'
+tags: [food, lifestyle]
 ---

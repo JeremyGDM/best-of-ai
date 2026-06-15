@@ -11,4 +11,5 @@ category_name: 'Knowledge Management'
 price: 'Paid'
 featured: false
 date: '2025-09-21'
+tags: [knowledge_base, productivity, note_taking, enterprise]
 ---

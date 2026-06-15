@@ -11,4 +11,5 @@ category_name: 'HR'
 price: 'Paid'
 featured: false
 date: '2025-01-01'
+tags: [hr, business, recruitment, enterprise]
 ---

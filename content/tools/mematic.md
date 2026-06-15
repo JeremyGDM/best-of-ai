@@ -11,4 +11,5 @@ category_name: 'Meme Generator'
 price: 'Freemium'
 featured: false
 date: '2025-09-21'
+tags: [meme, creative, social_media, mobile_app]
 ---

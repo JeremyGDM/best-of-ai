@@ -11,4 +11,5 @@ category_name: 'Project Management'
 price: 'Freemium'
 featured: false
 date: '2025-09-21'
+tags: [project_management, productivity, team, collaboration]
 ---

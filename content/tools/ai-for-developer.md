@@ -11,4 +11,5 @@ category_name: 'AI Directories'
 price: 'Free'
 featured: false
 date: '2025-09-21'
+tags: [directory, reference, api_available]
 ---

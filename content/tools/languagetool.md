@@ -11,4 +11,5 @@ category_name: 'Writing Assistants'
 price: 'Freemium'
 featured: false
 date: '2025-09-21'
+tags: [writing, text_generation, productivity, open_source, browser_extension, enterprise]
 ---

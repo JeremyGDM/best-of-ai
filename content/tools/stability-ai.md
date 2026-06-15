@@ -11,4 +11,5 @@ category_name: 'Models'
 price: 'Freemium'
 featured: false
 date: '2025-09-21'
+tags: [llm, foundation_model, ai_model, open_source, api_available]
 ---

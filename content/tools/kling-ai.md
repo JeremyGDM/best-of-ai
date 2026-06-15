@@ -11,4 +11,5 @@ category_name: 'Video Generator'
 price: 'Freemium'
 featured: false
 date: '2025-01-01'
+tags: [video_generation, creative, text_to_video]
 ---

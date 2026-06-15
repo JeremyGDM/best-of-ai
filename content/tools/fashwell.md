@@ -11,4 +11,5 @@ category_name: 'Fashion'
 price: 'Paid'
 featured: false
 date: '2025-09-21'
+tags: [fashion, design, api_available]
 ---

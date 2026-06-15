@@ -11,4 +11,5 @@ category_name: 'Resume Tools'
 price: 'Freemium'
 featured: false
 date: '2025-09-21'
+tags: [resume, career, writing]
 ---

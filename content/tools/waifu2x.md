@@ -11,4 +11,5 @@ category_name: 'Video Enhancer'
 price: 'Free'
 featured: false
 date: '2025-09-21'
+tags: [video_editing, upscaling, creative, open_source]
 ---

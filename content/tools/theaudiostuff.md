@@ -11,4 +11,5 @@ category_name: 'Audio'
 price: 'Free'
 featured: false
 date: '2026-06-10'
+tags: [audio, creative]
 ---

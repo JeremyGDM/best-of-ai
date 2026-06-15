@@ -11,4 +11,5 @@ category_name: 'Social Media Tools'
 price: 'Freemium'
 featured: false
 date: '2025-01-01'
+tags: [social_media, marketing, content_creation]
 ---

@@ -11,4 +11,5 @@ category_name: 'Video Editor'
 price: 'Freemium'
 featured: false
 date: '2025-09-21'
+tags: [video_editing, creative, video]
 ---

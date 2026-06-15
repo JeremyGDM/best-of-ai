@@ -11,4 +11,5 @@ category_name: 'E-Commerce'
 price: 'Freemium'
 featured: false
 date: '2025-09-21'
+tags: [ecommerce, business, marketing, open_source]
 ---

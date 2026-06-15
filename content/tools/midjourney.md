@@ -11,4 +11,5 @@ category_name: 'Graphic Design'
 price: 'Paid'
 featured: false
 date: '2025-09-21'
+tags: [design, image_editing, creative]
 ---

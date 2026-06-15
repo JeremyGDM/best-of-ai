@@ -468,6 +468,77 @@ main { flex: 1; }
 }
 .tool-card:hover .tool-card__ext { opacity: 1; }
 
+/* ── Tag chips ── */
+.tag-chip {
+  display: inline-block;
+  padding: 0.1rem 0.38rem;
+  border-radius: 4px;
+  font-size: 0.62rem;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  color: var(--fg-muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  white-space: nowrap;
+  text-decoration: none;
+  transition: color 0.12s, border-color 0.12s;
+}
+a.tag-chip:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  opacity: 1;
+}
+
+.tool-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  padding-top: 0.35rem;
+  width: 100%;
+  order: 10;
+}
+
+.detail-meta-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+/* ── Tags index page ── */
+.tags-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 0.6rem;
+  margin-top: 2rem;
+}
+.tags-list-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--fg-muted);
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  transition: border-color 0.15s, color 0.15s;
+}
+.tags-list-card:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  opacity: 1;
+}
+.tags-list-card__name { font-weight: 500; }
+.tags-list-card__count {
+  font-size: 0.68rem;
+  color: var(--fg-faint);
+  background: var(--bg);
+  padding: 0.08rem 0.35rem;
+  border-radius: 20px;
+}
+
 /* ── Badges ── */
 .badge {
   display: inline-block;

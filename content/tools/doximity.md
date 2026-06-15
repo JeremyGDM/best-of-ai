@@ -11,4 +11,5 @@ category_name: 'Healthcare'
 price: 'Freemium'
 featured: false
 date: '2025-01-01'
+tags: [healthcare, medical]
 ---

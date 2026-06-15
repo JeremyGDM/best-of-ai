@@ -11,4 +11,5 @@ category_name: '3D'
 price: 'Freemium'
 featured: false
 date: '2025-01-01'
+tags: [3d, design, creative, mobile_app, real_time]
 ---

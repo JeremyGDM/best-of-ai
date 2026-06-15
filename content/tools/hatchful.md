@@ -11,4 +11,5 @@ category_name: 'Logo Generator'
 price: 'Free'
 featured: false
 date: '2025-09-21'
+tags: [design, image_generation, branding]
 ---

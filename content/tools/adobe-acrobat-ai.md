@@ -11,4 +11,5 @@ category_name: 'Document AI'
 price: 'Paid'
 featured: false
 date: '2025-01-01'
+tags: [document_ai, pdf, productivity]
 ---

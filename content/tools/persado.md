@@ -11,4 +11,5 @@ category_name: 'Marketing'
 price: 'Paid'
 featured: false
 date: '2025-09-21'
+tags: [marketing, business, enterprise]
 ---

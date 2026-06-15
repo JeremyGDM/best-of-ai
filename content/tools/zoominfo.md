@@ -11,4 +11,5 @@ category_name: 'Lead Generation'
 price: 'Paid'
 featured: false
 date: '2025-09-21'
+tags: [sales, marketing, business, enterprise]
 ---

@@ -11,4 +11,5 @@ category_name: 'Market Research'
 price: 'Paid'
 featured: false
 date: '2025-09-21'
+tags: [market_research, business, analytics, real_time, enterprise]
 ---

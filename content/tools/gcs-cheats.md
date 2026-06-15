@@ -11,4 +11,5 @@ category_name: 'Others'
 price: 'Paid'
 featured: false
 date: '2026-06-11'
+tags: [other]
 ---

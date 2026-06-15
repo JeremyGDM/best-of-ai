@@ -11,4 +11,5 @@ category_name: 'Supply Chain'
 price: 'Paid'
 featured: false
 date: '2025-09-21'
+tags: [supply_chain, logistics, business, collaboration, enterprise]
 ---

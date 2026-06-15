@@ -11,4 +11,5 @@ category_name: 'Learning Tools'
 price: 'Paid'
 featured: false
 date: '2025-09-21'
+tags: [education, learning]
 ---

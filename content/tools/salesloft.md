@@ -11,4 +11,5 @@ category_name: 'Sales Tools'
 price: 'Paid'
 featured: false
 date: '2025-09-21'
+tags: [sales, business, crm, enterprise]
 ---

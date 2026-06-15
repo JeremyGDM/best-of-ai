@@ -11,4 +11,5 @@ category_name: 'Marketing'
 price: 'Freemium'
 featured: false
 date: '2025-09-21'
+tags: [marketing, business, enterprise]
 ---

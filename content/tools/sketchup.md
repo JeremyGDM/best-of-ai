@@ -11,4 +11,5 @@ category_name: 'Home Design'
 price: 'Freemium'
 featured: false
 date: '2025-09-21'
+tags: [home_design, design, creative, mobile_app]
 ---

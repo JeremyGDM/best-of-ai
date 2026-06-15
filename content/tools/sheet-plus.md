@@ -11,4 +11,5 @@ category_name: 'Spreadsheets'
 price: 'Paid'
 featured: false
 date: '2025-09-21'
+tags: [spreadsheet, data_analysis, productivity, browser_extension]
 ---

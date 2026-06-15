@@ -11,4 +11,5 @@ category_name: 'Research Tools'
 price: 'Freemium'
 featured: false
 date: '2025-09-21'
+tags: [research, analytics, academic]
 ---

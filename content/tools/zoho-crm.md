@@ -11,4 +11,5 @@ category_name: 'CRM'
 price: 'Freemium'
 featured: false
 date: '2025-09-21'
+tags: [crm, sales, business]
 ---

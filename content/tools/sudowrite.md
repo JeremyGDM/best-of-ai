@@ -11,4 +11,5 @@ category_name: 'Writing Assistants'
 price: 'Paid'
 featured: false
 date: '2025-01-01'
+tags: [writing, text_generation, productivity]
 ---

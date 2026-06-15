@@ -11,4 +11,5 @@ category_name: 'Data'
 price: 'Paid'
 featured: false
 date: '2025-09-21'
+tags: [data_analysis, analytics, business]
 ---

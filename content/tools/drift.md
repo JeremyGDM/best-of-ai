@@ -11,4 +11,5 @@ category_name: 'Customer Support'
 price: 'Paid'
 featured: false
 date: '2025-01-01'
+tags: [customer_support, chatbot, business]
 ---

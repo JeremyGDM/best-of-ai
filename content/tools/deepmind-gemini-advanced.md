@@ -11,4 +11,5 @@ category_name: 'Chatbots'
 price: 'Paid'
 featured: false
 date: '2025-09-21'
+tags: [chatbot, text_generation, ai_assistant, multimodal]
 ---

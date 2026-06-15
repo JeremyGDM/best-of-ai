@@ -11,4 +11,5 @@ category_name: 'SEO'
 price: 'Paid'
 featured: false
 date: '2025-01-01'
+tags: [seo, marketing, analytics, real_time, enterprise]
 ---

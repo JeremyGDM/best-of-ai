@@ -11,4 +11,5 @@ category_name: 'Text to Speech'
 price: 'Free'
 featured: false
 date: '2025-01-01'
+tags: [text_to_speech, audio, voice, open_source, api_available]
 ---

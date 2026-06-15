@@ -11,4 +11,5 @@ category_name: 'Image Editing'
 price: 'Freemium'
 featured: false
 date: '2025-01-01'
+tags: [image_editing, design, creative, api_available]
 ---

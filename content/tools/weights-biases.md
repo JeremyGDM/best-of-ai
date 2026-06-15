@@ -11,4 +11,5 @@ category_name: 'DevTools'
 price: 'Freemium'
 featured: false
 date: '2025-01-01'
+tags: [developer_tools, code_generation]
 ---

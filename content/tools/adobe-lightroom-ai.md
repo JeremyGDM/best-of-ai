@@ -11,4 +11,5 @@ category_name: 'Image Editing'
 price: 'Paid'
 featured: false
 date: '2025-09-21'
+tags: [image_editing, design, creative]
 ---

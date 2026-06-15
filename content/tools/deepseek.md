@@ -11,4 +11,5 @@ category_name: 'Models'
 price: 'Free'
 featured: false
 date: '2025-01-01'
+tags: [llm, foundation_model, ai_model]
 ---

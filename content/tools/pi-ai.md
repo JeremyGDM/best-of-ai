@@ -11,4 +11,5 @@ category_name: 'Personal Assistants'
 price: 'Free'
 featured: false
 date: '2025-09-21'
+tags: [ai_assistant, productivity, chatbot, mobile_app]
 ---

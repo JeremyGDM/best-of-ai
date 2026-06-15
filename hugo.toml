@@ -22,6 +22,9 @@ enableRobotsTXT = true
     isPlainText = true
     notAlternative = true
 
+[taxonomies]
+  tag = "tags"
+
 [markup]
   [markup.goldmark.renderer]
     unsafe = true

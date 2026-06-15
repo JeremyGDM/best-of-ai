@@ -11,4 +11,5 @@ category_name: 'Transcription'
 price: 'Freemium'
 featured: false
 date: '2025-09-21'
+tags: [transcription, speech_to_text, audio]
 ---

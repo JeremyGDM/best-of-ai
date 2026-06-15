@@ -11,4 +11,5 @@ category_name: 'AI Agents'
 price: 'Free'
 featured: false
 date: '2025-09-21'
+tags: [ai_agent, automation, open_source]
 ---

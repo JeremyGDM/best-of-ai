@@ -11,4 +11,5 @@ category_name: 'Translator'
 price: 'Free'
 featured: false
 date: '2025-09-21'
+tags: [translation, language, multilingual, api_available, browser_extension, mobile_app, real_time]
 ---

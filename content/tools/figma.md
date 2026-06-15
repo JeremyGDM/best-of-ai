@@ -11,4 +11,5 @@ category_name: 'Graphic Design'
 price: 'Freemium'
 featured: false
 date: '2025-09-21'
+tags: [design, image_editing, creative, collaboration]
 ---

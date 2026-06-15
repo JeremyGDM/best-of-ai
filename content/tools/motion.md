@@ -11,4 +11,5 @@ category_name: 'Calendar Scheduling'
 price: 'Paid'
 featured: false
 date: '2025-09-21'
+tags: [scheduling, productivity, calendar]
 ---

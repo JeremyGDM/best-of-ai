@@ -11,4 +11,5 @@ category_name: 'Search Engines'
 price: 'Free'
 featured: false
 date: '2025-09-21'
+tags: [search, ai_assistant, mobile_app]
 ---

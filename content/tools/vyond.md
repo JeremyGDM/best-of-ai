@@ -11,4 +11,5 @@ category_name: 'Animation'
 price: 'Paid'
 featured: false
 date: '2025-09-21'
+tags: [animation, video, creative, mobile_app]
 ---

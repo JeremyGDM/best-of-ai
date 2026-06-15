@@ -11,4 +11,5 @@ category_name: 'Talking Avatar Generator'
 price: 'Paid'
 featured: false
 date: '2025-09-21'
+tags: [avatar, video_generation, creative, mobile_app, enterprise]
 ---

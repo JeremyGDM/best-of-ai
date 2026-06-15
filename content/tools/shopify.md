@@ -11,4 +11,5 @@ category_name: 'E-Commerce'
 price: 'Paid'
 featured: false
 date: '2025-09-21'
+tags: [ecommerce, business, marketing, enterprise]
 ---
