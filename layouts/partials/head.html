@@ -1,6 +1,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{{ $is404 := hasPrefix (lower .Title) "404" }}
+{{ if $is404 }}
+<meta name="robots" content="noindex, nofollow">
+{{ else }}
 <meta name="robots" content="index, follow">
+{{ end }}
 
 {{ $name := or .Params.name .Title }}
 {{ $desc := or .Params.description .Site.Params.description }}
@@ -22,6 +27,9 @@
   {{ $pageTitle = "Browse by Tag — Best of AI" }}
 {{ else if eq .Kind "term" }}
   {{ $pageTitle = printf "#%s Tools — Best of AI" .Title }}
+{{ else if $is404 }}
+  {{ $pageTitle = "404 — Page Not Found | Best of AI" }}
+  {{ $desc = "The page you're looking for doesn't exist or may have been moved." }}
 {{ else if $name }}
   {{ $pageTitle = printf "%s — Best of AI" $name }}
 {{ else }}
