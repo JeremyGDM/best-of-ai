@@ -1,0 +1,14 @@
+---
+title: 'edX'
+name: 'edX'
+subtitle: 'Online learning platform with university courses and AI certificates'
+slug: 'edx'
+description: 'edX is an online education platform offering courses, professional certificates, and degrees from top universities and companies worldwide. It features AI and machine learning courses from institutions like MIT and Harvard, as well as AI-powered learning tools to help students progress.'
+website: 'https://edx.org'
+logo_url: ''
+category: 'learning-tools'
+category_name: 'Learning Tools'
+price: 'Freemium'
+featured: false
+date: '2025-06-15'
+---

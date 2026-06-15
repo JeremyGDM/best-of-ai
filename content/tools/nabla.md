@@ -1,0 +1,14 @@
+---
+title: 'Nabla'
+name: 'Nabla'
+subtitle: 'AI ambient clinical documentation and medical scribe platform'
+slug: 'nabla'
+description: 'Nabla is an AI ambient documentation platform that listens to physician-patient conversations and automatically generates clinical notes, SOAP notes, and referral letters. It reduces documentation burden for clinicians, integrates with EHR systems, and supports multiple languages.'
+website: 'https://nabla.com'
+logo_url: ''
+category: 'healthcare'
+category_name: 'Healthcare'
+price: 'Paid'
+featured: false
+date: '2025-06-15'
+---

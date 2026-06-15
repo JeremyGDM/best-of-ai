@@ -1,0 +1,14 @@
+---
+title: 'Cleanlab'
+name: 'Cleanlab'
+subtitle: 'AI data curation and label quality platform'
+slug: 'cleanlab'
+description: 'Cleanlab is a data-centric AI platform that automatically detects and fixes label errors, outliers, and data quality issues in training datasets. It uses algorithms to identify the most impactful data problems and helps teams curate high-quality datasets for more reliable models.'
+website: 'https://cleanlab.ai'
+logo_url: ''
+category: 'data'
+category_name: 'Data'
+price: 'Freemium'
+featured: false
+date: '2025-06-15'
+---

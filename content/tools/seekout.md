@@ -1,0 +1,14 @@
+---
+title: 'SeekOut'
+name: 'SeekOut'
+subtitle: 'AI talent intelligence platform for diverse candidate sourcing'
+slug: 'seekout'
+description: 'SeekOut is an AI-powered talent search and analytics platform that helps recruiters find and engage candidates across GitHub, LinkedIn, and other sources. It specializes in diversity recruiting and hard-to-find technical talent, with AI filters for skills, experience, and diversity attributes.'
+website: 'https://seekout.io'
+logo_url: ''
+category: 'hr'
+category_name: 'HR'
+price: 'Paid'
+featured: false
+date: '2025-06-15'
+---

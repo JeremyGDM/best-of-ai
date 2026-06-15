@@ -1,0 +1,14 @@
+---
+title: 'Sapling'
+name: 'Sapling'
+subtitle: 'AI writing assistant and grammar checker for customer teams'
+slug: 'sapling'
+description: 'Sapling is an AI communication assistant that helps customer-facing teams write faster and more consistently. It provides real-time grammar and spelling suggestions, autocomplete for agent responses, and AI-generated reply drafts that integrate with helpdesk and CRM platforms.'
+website: 'https://sapling.ai'
+logo_url: ''
+category: 'customer-support'
+category_name: 'Customer Support'
+price: 'Freemium'
+featured: false
+date: '2025-06-15'
+---

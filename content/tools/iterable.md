@@ -1,0 +1,14 @@
+---
+title: 'Iterable'
+name: 'Iterable'
+subtitle: 'AI-powered cross-channel marketing automation platform'
+slug: 'iterable'
+description: 'Iterable is a growth marketing platform that enables personalized lifecycle messaging across email, SMS, push notifications, and in-app channels. Its AI features include send-time optimization, content affinity modeling, and dynamic segmentation to improve engagement rates.'
+website: 'https://iterable.com'
+logo_url: ''
+category: 'marketing'
+category_name: 'Marketing'
+price: 'Paid'
+featured: false
+date: '2025-06-15'
+---
