@@ -7,7 +7,7 @@
     </div>
     <div class="search-modal__input-wrap">
       <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--fg-muted);flex-shrink:0"><circle cx="11" cy="11" r="8"/><path d="m21 21-3.5-3.5"/></svg>
-      <input type="text" id="search-input" class="search-modal__input" placeholder="Search AI tools..." autocomplete="off" spellcheck="false">
+      <input type="text" id="search-input" class="search-modal__input" placeholder="Search tools and professions..." autocomplete="off" spellcheck="false">
     </div>
     <div id="search-results" class="search-results" role="listbox"></div>
     <div class="search-modal__footer">
@@ -70,13 +70,16 @@
     var scored = [];
     for (var i = 0; i < index.length; i++) {
       var it   = index[i];
-      var name = (it.name || '').toLowerCase();
-      var desc = (it.description || '').toLowerCase();
+      var name  = (it.name || '').toLowerCase();
+      var title = (it.title || '').toLowerCase();
+      var desc  = (it.description || '').toLowerCase();
+      var cat   = (it.category || '').toLowerCase();
       var score = 0;
-      if (name === ql)            score = 4;
-      else if (name.startsWith(ql)) score = 3;
-      else if (name.includes(ql))   score = 2;
+      if (name === ql || title === ql)              score = 4;
+      else if (name.startsWith(ql) || title.startsWith(ql)) score = 3;
+      else if (name.includes(ql) || title.includes(ql))   score = 2;
       else if (desc.includes(ql))   score = 1;
+      else if (cat.includes(ql))    score = 1;
       else continue;
       scored.push({ it: it, score: score });
     }

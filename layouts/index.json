@@ -1,5 +1,6 @@
 [
 {{ $tools := where .Site.RegularPages "Section" "tools" -}}
+{{ $profs := where .Site.RegularPages "Section" "professionals" -}}
 {{ $items := slice -}}
 {{ range $tools -}}
   {{ $p := .Params -}}
@@ -11,6 +12,18 @@
     "description" ($p.description | default "")
     "category"    ($p.category_name | default "")
     "price"       ($p.price       | default "Free")
+  -}}
+  {{ $items = $items | append $item -}}
+{{ end -}}
+{{ range $profs -}}
+  {{ $p := .Params -}}
+  {{ $item := dict
+    "name"        ($p.name | default .Title)
+    "title"       .Title
+    "slug"        ($p.slug | default .File.BaseFileName)
+    "url"         .RelPermalink
+    "description" ($p.description | default $p.subtitle | default "")
+    "category"    "Profession"
   -}}
   {{ $items = $items | append $item -}}
 {{ end -}}
