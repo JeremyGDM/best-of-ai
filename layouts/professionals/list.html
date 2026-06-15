@@ -1,0 +1,39 @@
+{{ define "main" }}
+{{ $tools := where .Site.RegularPages "Section" "tools" }}
+{{ $profs := sort .Pages "Params.sort_order" }}
+
+<div class="container">
+
+  <nav class="breadcrumb">
+    <a href="{{ "/" | relURL }}">Home</a>
+    <span class="breadcrumb__sep">/</span>
+    <span class="breadcrumb__cur">AI by Profession</span>
+  </nav>
+
+  <div class="cat-list-hero">
+    <h1 class="cat-list-hero__title">AI by Profession</h1>
+    <p class="cat-list-hero__sub">Handpicked AI tools for <strong>{{ len $profs }}</strong> professions — find what's built for your role.</p>
+  </div>
+
+  <div class="prof-list-grid">
+    {{ range $profs }}
+    {{ $p := .Params }}
+    {{ $cats := $p.categories }}
+    {{ $count := 0 }}
+    {{ range $cats }}
+      {{ $c := . }}
+      {{ $count = add $count (len (where $tools "Params.category" $c)) }}
+    {{ end }}
+    <a href="{{ .RelPermalink }}" class="prof-list-card">
+      <div class="prof-list-card__icon">{{ $p.icon }}</div>
+      <div class="prof-list-card__body">
+        <span class="prof-list-card__name">{{ $p.name }}</span>
+        <span class="prof-list-card__sub">{{ $p.subtitle }}</span>
+      </div>
+      <span class="prof-list-card__count">{{ $count }}</span>
+    </a>
+    {{ end }}
+  </div>
+
+</div>
+{{ end }}

@@ -12,6 +12,10 @@
   {{ $pageTitle = printf "%s — Best of AI" $name }}
 {{ else if and .IsPage (eq .Section "categories") }}
   {{ $pageTitle = printf "Best AI %s Tools — Best of AI" .Params.name }}
+{{ else if and .IsPage (eq .Section "professionals") }}
+  {{ $pageTitle = printf "%s — Best of AI" .Title }}
+{{ else if and .IsSection (eq .Section "professionals") }}
+  {{ $pageTitle = "AI by Profession — Best of AI" }}
 {{ else if eq .Kind "section" }}
   {{ $pageTitle = printf "%s — Best of AI" (.Title | default "Categories") }}
 {{ else if eq .Kind "taxonomy" }}
