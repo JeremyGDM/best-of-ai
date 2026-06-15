@@ -1,0 +1,15 @@
+---
+title: 'Lokalise AI'
+name: 'Lokalise AI'
+subtitle: 'AI-powered localisation and translation management'
+slug: 'lokalise-ai'
+description: 'Lokalise is a translation management platform with integrated AI translation, glossary management, and quality assurance tools. Development teams use it to localise apps, websites, and digital products into 100+ languages. Its AI translation engine combines machine translation with brand-specific terminology for consistent localisation.'
+website: 'https://lokalise.com'
+logo_url: ''
+category: 'translator'
+category_name: 'Translator'
+price: 'Paid'
+featured: false
+date: '2025-09-21'
+tags: [translation, localisation, developer_tools]
+---

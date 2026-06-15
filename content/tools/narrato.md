@@ -1,0 +1,15 @@
+---
+title: 'Narrato'
+name: 'Narrato'
+subtitle: 'AI content workspace for teams and agencies'
+slug: 'narrato'
+description: 'Narrato is an AI content creation and workflow platform for content teams. It combines an AI writer with content briefs, SEO tools, plagiarism checks, and a project management workflow. Content marketers and agencies use it to manage the entire content lifecycle from brief to published post.'
+website: 'https://narrato.io'
+logo_url: ''
+category: 'writing-assistants'
+category_name: 'Writing Assistants'
+price: 'Freemium'
+featured: false
+date: '2025-09-21'
+tags: [writing, content_creation, productivity]
+---

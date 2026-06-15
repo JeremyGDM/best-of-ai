@@ -1,0 +1,15 @@
+---
+title: 'Neural.love'
+name: 'Neural.love'
+subtitle: 'AI image enhancement and generation suite'
+slug: 'neural-love'
+description: 'Neural.love is an AI toolkit for image upscaling, restoration, enhancement, and generation. It can restore old photos, remove noise, upscale images up to 4x, and generate new artwork from text prompts. It is widely used for enhancing low-resolution photos and animating historical images.'
+website: 'https://neural.love'
+logo_url: ''
+category: 'image-editing'
+category_name: 'Image Editing'
+price: 'Freemium'
+featured: false
+date: '2025-09-21'
+tags: [image_editing, image_generation, creative]
+---

@@ -1,0 +1,15 @@
+---
+title: 'Botkeeper'
+name: 'Botkeeper'
+subtitle: 'AI-powered bookkeeping automation for accounting firms'
+slug: 'botkeeper'
+description: 'Botkeeper uses AI and machine learning to automate bookkeeping tasks for accounting firms, including transaction categorisation, bank reconciliation, and month-end close. It integrates with QuickBooks, Xero, and major banking systems, allowing accounting firms to scale their bookkeeping capacity without hiring.'
+website: 'https://botkeeper.com'
+logo_url: ''
+category: 'finance'
+category_name: 'Finance'
+price: 'Paid'
+featured: false
+date: '2025-09-21'
+tags: [finance, automation, accounting]
+---
