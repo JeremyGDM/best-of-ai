@@ -1,0 +1,15 @@
+---
+title: 'Opus Clip'
+name: 'Opus Clip'
+subtitle: 'AI that repurposes long videos into viral short clips'
+slug: 'opus-clip'
+description: 'Opus Clip uses AI to analyse long-form videos and automatically extract the most engaging segments, then reformats them into short-form clips for TikTok, Reels, and YouTube Shorts. It adds captions, highlights keywords, and scores each clip for virality potential.'
+website: 'https://opus.pro'
+logo_url: ''
+category: 'video-editor'
+category_name: 'Video Editor'
+price: 'Freemium'
+featured: false
+date: '2025-09-21'
+tags: [video_editing, social_media, content_creation]
+---
