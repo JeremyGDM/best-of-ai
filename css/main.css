@@ -957,6 +957,7 @@ a.tag-chip:hover {
 .sr-name { font-weight: 600; color: var(--fg); }
 .sr-desc { font-size: 0.78rem; color: var(--fg-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .search-empty { padding: 1.5rem; text-align: center; color: var(--fg-muted); font-size: 0.9rem; }
+.sr-group-label { padding: 0.35rem 1rem; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--fg-faint); background: var(--surface2); border-bottom: 1px solid var(--border); }
 mark { background: var(--accent-bg); color: var(--accent); border-radius: 2px; }
 .search-modal__footer {
   display: flex;
