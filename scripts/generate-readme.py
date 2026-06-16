@@ -12,7 +12,9 @@ from collections import defaultdict
 
 ROOT       = Path(__file__).parent.parent
 TOOLS_DIR  = ROOT / "content" / "tools"
+PROFS_DIR  = ROOT / "content" / "professionals"
 CATS_FILE  = ROOT / "data" / "categories.yaml"
+LB_FILE    = ROOT / "data" / "leaderboard.yaml"
 README_OUT = ROOT / "README.md"
 
 REPO_URL   = "https://github.com/best-of-ai/best-of-ai"
@@ -33,7 +35,7 @@ def parse_frontmatter(text):
         if kv:
             result[kv.group(1)] = kv.group(2).replace("''", "'")
             continue
-        kv2 = re.match(r'^(\w+):\s*(true|false|\d+)$', line)
+        kv2 = re.match(r'^(\w+):\s*(true|false|-?\d+)$', line)
         if kv2:
             v = kv2.group(2)
             result[kv2.group(1)] = True if v == 'true' else (False if v == 'false' else int(v))
@@ -62,26 +64,60 @@ def parse_categories_yaml(text):
     return cats
 
 
+def parse_leaderboard_yaml(text):
+    """Parse leaderboard.yaml into a list of {rank, slug, badge} dicts."""
+    entries = []
+    current = {}
+    for line in text.splitlines():
+        if line.startswith('- '):
+            if current:
+                entries.append(current)
+            current = {}
+            kv = re.match(r'^-\s+(\w+):\s*(.+)$', line)
+            if kv:
+                key, val = kv.group(1), kv.group(2).strip().strip('"')
+                current[key] = int(val) if val.lstrip('-').isdigit() else val
+        elif line.strip():
+            kv = re.match(r'^\s+(\w+):\s*(.+)$', line)
+            if kv:
+                key, val = kv.group(1), kv.group(2).strip().strip('"')
+                current[key] = int(val) if val.lstrip('-').isdigit() else val
+    if current:
+        entries.append(current)
+    return entries
+
+
 # ── Load data ─────────────────────────────────────────────────────────────────
 
 categories = parse_categories_yaml(CATS_FILE.read_text())
-# Sort: named categories (sort_order > 0) first by sort_order, then alphabetical
 categories.sort(key=lambda c: (0 if c.get('sort_order', 0) > 0 else 1, c.get('sort_order', 99), c.get('name', '')))
-
 cat_by_slug = {c['slug']: c for c in categories}
 
-tools_by_cat = defaultdict(list)
+tools_by_cat  = defaultdict(list)
+tools_by_slug = {}
 for f in sorted(TOOLS_DIR.glob('*.md')):
     tool = parse_frontmatter(f.read_text())
     if tool.get('category'):
         tools_by_cat[tool['category']].append(tool)
+    if tool.get('slug'):
+        tools_by_slug[tool['slug']] = tool
 
-# Sort tools within each category alphabetically
 for slug in tools_by_cat:
     tools_by_cat[slug].sort(key=lambda t: t.get('name', '').lower())
 
 total_tools = sum(len(v) for v in tools_by_cat.values())
 active_cats = [c for c in categories if tools_by_cat.get(c['slug'])]
+
+leaderboard = parse_leaderboard_yaml(LB_FILE.read_text())
+
+professions = []
+for f in sorted(PROFS_DIR.glob('*.md')):
+    if f.name == '_index.md':
+        continue
+    prof = parse_frontmatter(f.read_text())
+    if prof.get('slug'):
+        professions.append(prof)
+professions.sort(key=lambda p: (p.get('sort_order', 999) or 999, p.get('name', '')))
 
 
 # ── Price badge ───────────────────────────────────────────────────────────────
@@ -123,12 +159,45 @@ lines += [
 
 # Table of Contents
 lines += ['## Contents', '']
+lines.append('- [🏆 Leaderboard](#leaderboard)')
+lines.append('- **Categories**')
 for cat in active_cats:
-    slug    = cat['slug']
-    name    = cat['name']
-    count   = len(tools_by_cat[slug])
-    anchor  = slug.lower().replace(' ', '-')
-    lines.append(f'- [{name}](#{anchor}) ({count})')
+    slug   = cat['slug']
+    name   = cat['name']
+    count  = len(tools_by_cat[slug])
+    anchor = slug.lower()
+    lines.append(f'  - [{name}](#{anchor}) ({count})')
+lines.append('- [👔 AI for Professionals](#ai-for-professionals)')
+lines += ['', '---', '']
+
+# Leaderboard section
+lines += ['## Leaderboard', '']
+lines.append('> The top-ranked AI tools by quality, innovation, and real-world impact.')
+lines.append('')
+for entry in leaderboard:
+    rank  = entry.get('rank', '')
+    slug  = entry.get('slug', '')
+    badge = entry.get('badge', '')
+    tool  = tools_by_slug.get(slug)
+    if not tool:
+        continue
+    name        = tool.get('name', slug)
+    website     = tool.get('website', '')
+    price       = tool.get('price', '')
+    review_url  = f'{SITE_URL}/tools/{slug}/'
+
+    name_part  = f'**[{name}]({website})**' if website else f'**{name}**'
+    review     = f'[review]({review_url})'
+    badge_part = f'`{badge}`' if badge else ''
+    pbadge     = price_badge(price) if price else ''
+
+    entry_line = f'{rank}. {name_part} — {review}'
+    if badge_part:
+        entry_line += f' — {badge_part}'
+    if pbadge:
+        entry_line += f' {pbadge}'
+    lines.append(entry_line)
+
 lines += ['', '---', '']
 
 # Category sections
@@ -147,16 +216,15 @@ for cat in active_cats:
     for t in tools:
         tool_name = t.get('name', '')
         website   = t.get('website', '')
-        slug      = t.get('slug', '')
+        tslug     = t.get('slug', '')
         desc_text = t.get('subtitle', '') or t.get('description', '')
         price     = t.get('price', '')
 
-        # Truncate long descriptions
         if len(desc_text) > 120:
             desc_text = desc_text[:117].rstrip() + '...'
 
         badge      = price_badge(price) if price else ''
-        review_url = f'{SITE_URL}/tools/{slug}/'
+        review_url = f'{SITE_URL}/tools/{tslug}/'
         review     = f'[review]({review_url})'
 
         if website:
@@ -165,7 +233,6 @@ for cat in active_cats:
             entry = f'- **{tool_name}**'
 
         entry += f' — {review}'
-
         if desc_text:
             entry += f' — {desc_text}'
         if badge:
@@ -174,6 +241,28 @@ for cat in active_cats:
         lines.append(entry)
 
     lines += ['', '---', '']
+
+# AI for Professionals section
+lines += ['## AI for Professionals', '']
+lines.append('> Curated AI tool collections tailored for specific roles and industries.')
+lines.append('')
+for prof in professions:
+    name      = prof.get('name', '')
+    slug      = prof.get('slug', '')
+    icon      = prof.get('icon', '')
+    subtitle  = prof.get('subtitle', '') or prof.get('description', '')
+    prof_url  = f'{SITE_URL}/professionals/{slug}/'
+
+    if len(subtitle) > 100:
+        subtitle = subtitle[:97].rstrip() + '...'
+
+    icon_part = f'{icon} ' if icon else ''
+    entry = f'- {icon_part}**[{name}]({prof_url})**'
+    if subtitle:
+        entry += f' — {subtitle}'
+    lines.append(entry)
+
+lines += ['', '---', '']
 
 # Footer
 lines += [
@@ -194,4 +283,4 @@ lines += [
 ]
 
 README_OUT.write_text('\n'.join(lines), encoding='utf-8')
-print(f"README.md written — {total_tools} tools, {len(active_cats)} categories")
+print(f"README.md written — {total_tools} tools, {len(active_cats)} categories, {len(leaderboard)} leaderboard entries, {len(professions)} professions")
