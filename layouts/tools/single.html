@@ -48,10 +48,18 @@
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:0.3em"><path d="M12 2C8.13 2 5 5.13 5 9v11l2.5-1.5 2.5 1.5 2.5-1.5 2.5 1.5 2.5-1.5V9c0-3.87-3.13-7-7-7zm-2.5 9a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"/></svg>
           Discontinued
         </span>
-        {{ else if $p.website }}
+        {{ else }}
+        {{ if $p.website }}
         <a href="{{ $p.website }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary detail-cta">
           Visit Tool →
         </a>
+        {{ end }}
+        {{ $slug := or $p.slug .File.BaseFileName }}
+        {{ $info := dict "slug" $slug "name" $p.name "url" .RelPermalink "price" ($p.price | default "") "subtitle" ($p.subtitle | default "") "logo_url" ($p.logo_url | default "") "website" ($p.website | default "") }}
+        <button class="btn btn-secondary detail-save js-save-btn" data-slug="{{ $slug }}" data-info="{{ $info | jsonify }}" title="Save tool" aria-label="Save {{ $p.name }}" aria-pressed="false">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+          <span class="save-label">Save</span>
+        </button>
         {{ end }}
       </div>
     </div>
