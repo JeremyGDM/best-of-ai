@@ -124,9 +124,62 @@
         <svg class="icon-sun" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
         <svg class="icon-moon" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
       </button>
+
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <!-- Professions section -->
+  <div class="mobile-menu__section">
+    <button class="mobile-menu__heading" data-accordion="mob-profs">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      AI for Professionals
+      <svg class="mobile-menu__chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div class="mobile-menu__accordion" id="mob-profs">
+      <div class="mobile-menu__grid">
+        {{ range $profs }}
+        <a href="{{ .RelPermalink }}" class="mobile-menu__prof-item">
+          {{ with .Params.icon }}<span>{{ . }}</span>{{ end }}
+          {{ .Params.name }}
+        </a>
+        {{ end }}
+      </div>
+      <a href="{{ "/professionals/" | relURL }}" class="mobile-menu__all-link">View all {{ len $profs }} professions →</a>
+    </div>
+  </div>
+
+  <!-- Categories section -->
+  <div class="mobile-menu__section">
+    <button class="mobile-menu__heading" data-accordion="mob-cats">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      Categories
+      <svg class="mobile-menu__chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+    <div class="mobile-menu__accordion" id="mob-cats">
+      {{ range $topCats }}
+      <a href="{{ printf "/categories/%s/" .slug | relURL }}" class="mobile-menu__cat-item">
+        <span>{{ .name }}</span>
+        <span class="mobile-menu__count">{{ .count }}</span>
+      </a>
+      {{ end }}
+      <a href="{{ "/categories/" | relURL }}" class="mobile-menu__all-link">All categories →</a>
+    </div>
+  </div>
+
+  <!-- Submit Tool -->
+  <div class="mobile-menu__section mobile-menu__section--submit">
+    <a href="{{ .Site.Params.githubRepo }}/issues/new?template=submit-tool.md&title=Submit+Tool" target="_blank" rel="noopener" class="mobile-menu__submit">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+      Submit a Tool
+    </a>
+  </div>
+</div>
 
 <script>
 (function() {
@@ -164,11 +217,52 @@
   });
 
   document.addEventListener('click', function() { closeAll(null); });
-  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeAll(null); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { closeAll(null); closeMobileMenu(); } });
 
   // Prevent mega menu clicks from closing
   document.querySelectorAll('.mega-menu').forEach(function(m) {
     m.addEventListener('click', function(e) { e.stopPropagation(); });
   });
+
+  // Mobile menu
+  var mobileBtn  = document.getElementById('mobile-menu-btn');
+  var mobileMenu = document.getElementById('mobile-menu');
+
+  function closeMobileMenu() {
+    if (!mobileMenu) return;
+    mobileMenu.classList.remove('is-open');
+    mobileBtn && mobileBtn.classList.remove('is-open');
+    mobileBtn && mobileBtn.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('mobile-menu-open');
+  }
+
+  if (mobileBtn) {
+    mobileBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var open = mobileMenu.classList.toggle('is-open');
+      mobileBtn.classList.toggle('is-open', open);
+      mobileBtn.setAttribute('aria-expanded', String(open));
+      document.body.classList.toggle('mobile-menu-open', open);
+    });
+  }
+
+  document.addEventListener('click', function(e) {
+    if (mobileMenu && !mobileMenu.contains(e.target) && e.target !== mobileBtn) {
+      closeMobileMenu();
+    }
+  });
+
+  // Accordion inside mobile menu
+  document.querySelectorAll('.mobile-menu__heading').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var id  = btn.getAttribute('data-accordion');
+      var panel = document.getElementById(id);
+      if (!panel) return;
+      var open = panel.classList.toggle('is-open');
+      btn.classList.toggle('is-open', open);
+    });
+  });
+
 })();
 </script>

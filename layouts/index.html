@@ -1,5 +1,7 @@
 {{ define "main" }}
 {{ $tools := where .Site.RegularPages "Section" "tools" }}
+{{ $profs := where .Site.RegularPages "Section" "professionals" }}
+{{ $profs = sort $profs "Params.sort_order" }}
 
 <!-- ── Hero ── -->
 <div class="home-hero container">
@@ -111,6 +113,21 @@
       {{ end }}
     {{ end }}
   </div>
+
+  <!-- Professions sidebar -->
+  <aside class="prof-sidebar">
+    <div class="prof-sidebar__head">// professions</div>
+    <nav class="prof-sidebar__nav">
+      {{ range $profs }}
+      {{ $p := .Params }}
+      <a href="{{ .RelPermalink }}" class="prof-link">
+        {{ with $p.icon }}<span class="prof-link__icon">{{ . }}</span>{{ end }}
+        <span class="prof-link__name">{{ $p.name }}</span>
+      </a>
+      {{ end }}
+    </nav>
+  </aside>
+
 </div>
 
 <script>
