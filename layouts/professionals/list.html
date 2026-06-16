@@ -12,7 +12,7 @@
 
   <div class="cat-list-hero">
     <h1 class="cat-list-hero__title">AI by Profession</h1>
-    <p class="cat-list-hero__sub">Handpicked AI tools for <strong>{{ len $profs }}</strong> professions — find what's built for your role.</p>
+    <p class="cat-list-hero__sub">Handpicked AI tools for <strong>{{ partial "count.html" (len $profs) }}</strong> professions — find what's built for your role.</p>
   </div>
 
   <div class="prof-list-grid">
@@ -30,7 +30,7 @@
         <span class="prof-list-card__name">{{ $p.name }}</span>
         <span class="prof-list-card__sub">{{ $p.subtitle }}</span>
       </div>
-      <span class="prof-list-card__count">{{ $count }}</span>
+      <span class="prof-list-card__count">{{ partial "count.html" $count }}</span>
     </a>
     {{ end }}
   </div>

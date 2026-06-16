@@ -59,8 +59,8 @@
             {{ end }}
           </div>
           <div class="mega-menu__footer">
-            <span class="mega-menu__footer-note">{{ len $profs }} professions</span>
-            <a href="{{ "/professionals/" | relURL }}" class="mega-more-link">View all {{ len $profs }} →</a>
+            <span class="mega-menu__footer-note">{{ partial "count.html" (len $profs) }} professions</span>
+            <a href="{{ "/professionals/" | relURL }}" class="mega-more-link">View all {{ partial "count.html" (len $profs) }} →</a>
           </div>
         </div>
       </div>
@@ -150,7 +150,7 @@
         </a>
         {{ end }}
       </div>
-      <a href="{{ "/professionals/" | relURL }}" class="mobile-menu__all-link">View all {{ len $profs }} professions →</a>
+      <a href="{{ "/professionals/" | relURL }}" class="mobile-menu__all-link">View all {{ partial "count.html" (len $profs) }} professions →</a>
     </div>
   </div>
 

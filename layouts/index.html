@@ -1,57 +1,44 @@
 {{ define "main" }}
 {{ $tools := where .Site.RegularPages "Section" "tools" }}
 {{ $profs := where .Site.RegularPages "Section" "professionals" }}
-{{ $profs = sort $profs "Params.sort_order" }}
+{{ $profs  = sort $profs "Params.sort_order" }}
 
-<!-- ── Hero ── -->
-<div class="home-hero container">
-  <div class="home-hero__text">
-    <h1 class="home-hero__title">Best of <span class="hero-accent">AI</span></h1>
-    <p class="home-hero__sub">{{ .Site.Params.description }}</p>
-    <div class="home-hero__stats">
-      <span><strong>{{ len $tools }}</strong> tools</span>
-      <span class="stat-sep">·</span>
-      <span><strong>{{ len hugo.Data.categories }}</strong> categories</span>
-      <span class="stat-sep">·</span>
-      <span>handpicked &amp; updated</span>
-    </div>
-  </div>
+<div class="home-layout">
 
-</div>
-
-<!-- ── Main layout: sidebar + tool sections ── -->
-<div class="home-body container">
-
-  <!-- Category sidebar -->
-  <aside class="cat-sidebar" id="cat-sidebar">
-    <div class="cat-sidebar__head">
-      <span class="cat-sidebar__label">// categories</span>
-    </div>
-    <nav class="cat-sidebar__nav">
-      <a href="#" class="cat-link active" data-filter="all">All tools <span class="cat-count">{{ len $tools }}</span></a>
+  <!-- ── Left column: brand + categories ── -->
+  <aside class="hl-left" id="hl-left">
+    <div class="hl-section-label">// categories</div>
+    <nav class="hl-cat-nav" id="cat-sidebar">
+      <a href="#" class="cat-link active" data-filter="all">
+        All tools <span class="cat-count">{{ partial "count.html" (len $tools) }}</span>
+      </a>
       {{ range hugo.Data.categories }}
         {{ $cat := . }}
         {{ $catTools := where $tools "Params.category" $cat.slug }}
         {{ if $catTools }}
         <a href="{{ printf "/categories/%s/" $cat.slug | relURL }}" class="cat-link" data-filter="{{ $cat.slug }}">
-          {{ $cat.name }}
-          <span class="cat-count">{{ len $catTools }}</span>
+          {{ $cat.name }}<span class="cat-count">{{ partial "count.html" (len $catTools) }}</span>
         </a>
         {{ end }}
       {{ end }}
     </nav>
   </aside>
 
-  <!-- Tool sections -->
-  <div class="home-main" id="home-main">
-    <!-- Search bar -->
+  <!-- ── Center column: search + tools ── -->
+  <main class="hl-center" id="home-main">
+
+    <div class="hl-hero">
+      <h1 class="hl-hero__title">Best of <span>AI</span></h1>
+      <p class="hl-hero__desc">Handpicked AI tools — no fluff, no mediocre apps. Every tool carefully selected for quality, innovation, and real-world impact.</p>
+    </div>
+
     <div class="home-search-wrap">
       <svg class="home-search__icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-3.5-3.5"/></svg>
       <input
         id="home-search"
         class="home-search__input"
         type="text"
-        placeholder="Search {{ len $tools }}+ AI tools..."
+        placeholder="Search {{ partial "count.html" (len $tools) }} AI tools..."
         autocomplete="off"
         spellcheck="false"
         aria-label="Search tools"
@@ -59,7 +46,12 @@
       <kbd class="home-search__kbd">⌘K</kbd>
     </div>
 
-    <!-- Price filter bar -->
+    <div class="hl-stats">
+      <span class="hl-stats__count">{{ partial "count.html" (len $tools) }} tools</span>
+      <span class="hl-stats__sep">·</span>
+      <span>handpicked &amp; updated</span>
+    </div>
+
     <div class="price-bar" id="price-bar">
       <span class="price-bar__label">// price</span>
       <button class="pf active" data-price="all">all</button>
@@ -68,7 +60,6 @@
       <button class="pf" data-price="Paid">paid</button>
     </div>
 
-    <!-- No-results message (hidden by default) -->
     <div class="no-results" id="no-results" hidden>
       <p>No tools found matching your search.</p>
       <button onclick="document.getElementById('home-search').value='';window.baiFilter()">Clear search</button>
@@ -79,7 +70,7 @@
       {{ $catTools := where $tools "Params.category" $cat.slug }}
       {{ if $catTools }}
       <section class="tool-section" id="{{ $cat.slug }}" data-cat="{{ $cat.slug }}">
-        <h2 class="tool-section__title">{{ $cat.name }}<span class="tool-section__count">{{ len $catTools }}</span></h2>
+        <h2 class="tool-section__title">{{ $cat.name }}<span class="tool-section__count">{{ partial "count.html" (len $catTools) }}</span></h2>
         <div class="tools-grid">
           {{ range $catTools }}
           {{ $p := .Params }}
@@ -112,12 +103,12 @@
       </section>
       {{ end }}
     {{ end }}
-  </div>
+  </main>
 
-  <!-- Professions sidebar -->
-  <aside class="prof-sidebar">
-    <div class="prof-sidebar__head">// professions</div>
-    <nav class="prof-sidebar__nav">
+  <!-- ── Right column: professions ── -->
+  <aside class="hl-right">
+    <div class="hl-section-label">// professions</div>
+    <nav class="hl-prof-nav">
       {{ range $profs }}
       {{ $p := .Params }}
       <a href="{{ .RelPermalink }}" class="prof-link">
@@ -132,9 +123,9 @@
 
 <script>
 (function() {
-  var searchInput = document.getElementById('home-search');
-  var noResults   = document.getElementById('no-results');
-  var catLinks    = document.querySelectorAll('.cat-link');
+  var searchInput  = document.getElementById('home-search');
+  var noResults    = document.getElementById('no-results');
+  var catLinks     = document.querySelectorAll('.cat-link');
   var priceFilters = document.querySelectorAll('.pf');
 
   var activePrice = 'all';
@@ -145,14 +136,14 @@
     var totalVisible = 0;
 
     document.querySelectorAll('.tool-section').forEach(function(section) {
-      var catSlug   = section.dataset.cat;
-      var showSect  = (activeCat === 'all' || activeCat === catSlug);
+      var catSlug  = section.dataset.cat;
+      var showSect = (activeCat === 'all' || activeCat === catSlug);
       var sectVisible = 0;
 
       section.querySelectorAll('.tool-card').forEach(function(card) {
-        var matchQ  = !q || card.dataset.name.includes(q) || card.dataset.desc.includes(q);
-        var matchP  = activePrice === 'all' || card.dataset.price === activePrice;
-        var show    = showSect && matchQ && matchP;
+        var matchQ = !q || card.dataset.name.includes(q) || card.dataset.desc.includes(q);
+        var matchP = activePrice === 'all' || card.dataset.price === activePrice;
+        var show   = showSect && matchQ && matchP;
         card.style.display = show ? '' : 'none';
         if (show) sectVisible++;
       });
@@ -166,24 +157,10 @@
 
   window.baiFilter = filter;
 
-  if (searchInput) {
-    searchInput.addEventListener('input', filter);
-    searchInput.addEventListener('click', function(e) {
-      e.stopPropagation();
-    });
-    // ⌘K opens the global modal but inline search handles typing
-    document.addEventListener('keydown', function(e) {
-      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-        // handled by search modal
-      }
-    });
-  }
+  if (searchInput) searchInput.addEventListener('input', filter);
 
   catLinks.forEach(function(link) {
     link.addEventListener('click', function(e) {
-      if (link.dataset.filter !== 'all') {
-        // Let anchor navigation happen for non-all
-      }
       e.preventDefault();
       activeCat = link.dataset.filter || 'all';
       catLinks.forEach(function(l) { l.classList.remove('active'); });
@@ -208,15 +185,13 @@
     });
   });
 
-  // Scrollspy: highlight active category in sidebar
+  // Scrollspy
   var sections = document.querySelectorAll('.tool-section[id]');
   window.addEventListener('scroll', function() {
     var scrollY = window.scrollY + 120;
     var current = '';
     sections.forEach(function(s) {
-      if (s.offsetParent !== null && s.offsetTop <= scrollY) {
-        current = s.id;
-      }
+      if (s.offsetParent !== null && s.offsetTop <= scrollY) current = s.id;
     });
     catLinks.forEach(function(link) {
       link.classList.toggle('active', link.dataset.filter === current || (current === '' && link.dataset.filter === 'all'));

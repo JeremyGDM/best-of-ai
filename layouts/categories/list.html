@@ -11,7 +11,7 @@
 
   <div class="cat-list-hero">
     <h1 class="cat-list-hero__title">AI Tool Categories</h1>
-    <p class="cat-list-hero__sub">Browse {{ len hugo.Data.categories }} categories of handpicked AI tools.</p>
+    <p class="cat-list-hero__sub">Browse {{ partial "count.html" (len hugo.Data.categories) }} categories of handpicked AI tools.</p>
   </div>
 
   <div class="cat-list-grid">
@@ -25,7 +25,7 @@
           <span class="cat-list-card__name">{{ $cat.name }}</span>
           {{ with $cat.description }}<span class="cat-list-card__desc">{{ . }}</span>{{ end }}
         </div>
-        <span class="cat-list-card__count">{{ len $ct }}</span>
+        <span class="cat-list-card__count">{{ partial "count.html" (len $ct) }}</span>
       </a>
       {{ end }}
     {{ end }}

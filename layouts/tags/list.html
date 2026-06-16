@@ -14,9 +14,9 @@
       <h1 class="cat-hero__title">Browse by Tag</h1>
       <p class="cat-hero__desc">Explore AI tools grouped by topic, use-case, and capability.</p>
       <div class="cat-hero__meta">
-        <span><strong>{{ len .Data.Terms }}</strong> tags</span>
+        <span><strong>{{ partial "count.html" (len .Data.Terms) }}</strong> tags</span>
         <span class="stat-sep">·</span>
-        <span><strong>{{ len $allTools }}</strong> tools</span>
+        <span><strong>{{ partial "count.html" (len $allTools) }}</strong> tools</span>
       </div>
     </div>
   </div>
@@ -25,7 +25,7 @@
     {{ range .Data.Terms.ByCount }}
     <a href="{{ .Page.RelPermalink }}" class="tags-list-card">
       <span class="tags-list-card__name">{{ .Page.Title }}</span>
-      <span class="tags-list-card__count">{{ .Count }}</span>
+      <span class="tags-list-card__count">{{ partial "count.html" .Count }}</span>
     </a>
     {{ end }}
   </div>

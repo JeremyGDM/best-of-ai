@@ -431,7 +431,7 @@ body.mobile-menu-open { overflow: hidden; }
 [data-theme="light"] .theme-toggle .icon-sun  { display: block; }
 [data-theme="light"] .theme-toggle .icon-moon { display: none; }
 
-/* ── Hero ── */
+/* ── Hero (kept for other pages) ── */
 .home-hero {
   padding: 3rem 1.25rem 1.5rem;
 }
@@ -494,15 +494,100 @@ body.mobile-menu-open { overflow: hidden; }
 }
 @media (max-width: 560px) { .home-search__kbd { display: none; } }
 
-/* ── Home body layout ── */
-.home-body {
-  display: flex;
-  gap: 2rem;
-  padding-bottom: 4rem;
-  align-items: flex-start;
+/* ── 3-column home layout ── */
+.home-layout {
+  display: grid;
+  grid-template-columns: 230px 1fr 195px;
+  max-width: 1280px;
+  margin: 0 auto;
+  min-height: calc(100vh - 57px);
 }
 
-/* ── Category sidebar ── */
+/* Left column */
+.hl-left {
+  position: sticky;
+  top: 57px;
+  height: calc(100vh - 57px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+  border-right: 1px solid var(--border);
+  padding: 1.5rem 1rem 2rem 1.5rem;
+}
+@media (max-width: 900px) { .hl-left { display: none; } }
+
+/* Section labels */
+.hl-section-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--fg-faint);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0 0.25rem 0.5rem;
+}
+
+/* Category nav */
+.hl-cat-nav { display: flex; flex-direction: column; gap: 1px; }
+
+/* Center column */
+.hl-center {
+  padding: 1.5rem 1.5rem 4rem;
+  min-width: 0;
+}
+
+/* Hero block inside center */
+.hl-hero {
+  text-align: center;
+  padding: 2rem 0 1.5rem;
+}
+.hl-hero__title {
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 0.65rem;
+}
+.hl-hero__title span { color: var(--accent); }
+.hl-hero__desc {
+  font-size: 0.95rem;
+  color: var(--fg-muted);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Stats line under search */
+.hl-stats {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  color: var(--fg-faint);
+  font-family: var(--font-mono);
+  margin: 0.35rem 0 0.75rem 0.25rem;
+}
+.hl-stats__count { color: var(--accent); font-weight: 600; }
+.hl-stats__sep { color: var(--fg-faint); }
+
+/* Right column */
+.hl-right {
+  position: sticky;
+  top: 57px;
+  height: calc(100vh - 57px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+  border-left: 1px solid var(--border);
+  padding: 1.5rem 1rem 2rem;
+}
+@media (max-width: 1100px) { .hl-right { display: none; } }
+@media (max-width: 1100px) { .home-layout { grid-template-columns: 230px 1fr; } }
+@media (max-width: 900px)  { .home-layout { grid-template-columns: 1fr; } }
+
+/* Professions nav in right column */
+.hl-prof-nav { display: flex; flex-direction: column; gap: 1px; margin-top: 0.25rem; }
+
+/* ── Category sidebar (kept for inner pages) ── */
 .cat-sidebar {
   width: 200px;
   flex-shrink: 0;
@@ -548,7 +633,7 @@ body.mobile-menu-open { overflow: hidden; }
 }
 .cat-link.active .cat-count { color: var(--accent); opacity: 0.6; }
 
-/* ── Home main ── */
+/* ── Home main (inner pages) ── */
 .home-main { flex: 1; min-width: 0; }
 
 /* ── Professions sidebar (right) ── */

@@ -17,7 +17,7 @@
       <h1 class="cat-hero__title">{{ $tag }}</h1>
       <p class="cat-hero__desc">AI tools tagged <strong>{{ $tag }}</strong>.</p>
       <div class="cat-hero__meta">
-        <span><strong>{{ len $tools }}</strong> tools</span>
+        <span><strong>{{ partial "count.html" (len $tools) }}</strong> tools</span>
         <span class="stat-sep">·</span>
         <span>handpicked &amp; curated</span>
       </div>
