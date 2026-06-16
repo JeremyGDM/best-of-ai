@@ -7,55 +7,119 @@
 <meta name="robots" content="index, follow">
 {{ end }}
 
-{{ $name := or .Params.name .Title }}
-{{ $desc := or .Params.description .Site.Params.description }}
+{{ $name    := or .Params.name .Title }}
+{{ $siteURL := .Site.BaseURL | strings.TrimRight "/" }}
+{{ $ogImageDefault := printf "%s/img/favicon/web-app-manifest-512x512.png" $siteURL }}
 
+{{/* ── Page title ── */}}
 {{ $pageTitle := "" }}
 {{ if .IsHome }}
-  {{ $pageTitle = "Best of AI — Handpicked AI Tools" }}
+  {{ $pageTitle = "Best of AI — Handpicked AI Tools Directory" }}
 {{ else if and .IsPage (eq .Section "tools") }}
-  {{ $pageTitle = printf "%s — Best of AI" $name }}
+  {{ $cat := .Params.category_name | default "" }}
+  {{ $pageTitle = printf "%s — %s AI Tool | Best of AI" $name $cat }}
 {{ else if and .IsPage (eq .Section "categories") }}
-  {{ $pageTitle = printf "Best AI %s Tools — Best of AI" .Params.name }}
+  {{ $count := len (where .Site.RegularPages "Params.category" .Params.slug) }}
+  {{ $pageTitle = printf "Best AI %s Tools (%d) — Best of AI" .Params.name $count }}
 {{ else if and .IsPage (eq .Section "professionals") }}
-  {{ $pageTitle = printf "%s — Best of AI" .Title }}
-{{ else if and .IsSection (eq .Section "professionals") }}
-  {{ $pageTitle = "AI by Profession — Best of AI" }}
+  {{ $pageTitle = printf "Best AI Tools for %s — Best of AI" .Params.name }}
 {{ else if eq .Kind "section" }}
-  {{ $pageTitle = printf "%s — Best of AI" (.Title | default "Categories") }}
+  {{ if eq .Section "professionals" }}
+    {{ $pageTitle = "AI Tools by Profession — Best of AI" }}
+  {{ else }}
+    {{ $pageTitle = printf "%s — Best of AI" (.Title | default "Categories") }}
+  {{ end }}
 {{ else if eq .Kind "taxonomy" }}
-  {{ $pageTitle = "Browse by Tag — Best of AI" }}
+  {{ $pageTitle = "Browse AI Tools by Tag — Best of AI" }}
 {{ else if eq .Kind "term" }}
-  {{ $pageTitle = printf "#%s Tools — Best of AI" .Title }}
+  {{ $pageTitle = printf "#%s AI Tools — Best of AI" .Title }}
 {{ else if $is404 }}
   {{ $pageTitle = "404 — Page Not Found | Best of AI" }}
-  {{ $desc = "The page you're looking for doesn't exist or may have been moved." }}
 {{ else if $name }}
   {{ $pageTitle = printf "%s — Best of AI" $name }}
 {{ else }}
   {{ $pageTitle = "Best of AI" }}
 {{ end }}
 
+{{/* ── Meta description ── */}}
+{{ $desc := "" }}
+{{ if .IsHome }}
+  {{ $desc = .Site.Params.description }}
+{{ else if and .IsPage (eq .Section "tools") }}
+  {{ $price   := .Params.price | default "" }}
+  {{ $cat     := .Params.category_name | default "AI" }}
+  {{ $toolDesc := .Params.description | default "" }}
+  {{ $desc = printf "%s is a %s %s tool. %s" $name $price $cat $toolDesc }}
+{{ else if and .IsPage (eq .Section "categories") }}
+  {{ $count   := len (where .Site.RegularPages "Params.category" .Params.slug) }}
+  {{ $catDesc := .Params.description | default "" }}
+  {{ if $catDesc }}
+    {{ $desc = printf "Browse %d best AI %s tools — %s" $count .Params.name $catDesc }}
+  {{ else }}
+    {{ $desc = printf "Discover %d handpicked AI %s tools, selected for quality and real-world impact." $count .Params.name }}
+  {{ end }}
+{{ else if and .IsPage (eq .Section "professionals") }}
+  {{ $profDesc := .Params.description | default "" }}
+  {{ if $profDesc }}
+    {{ $desc = $profDesc }}
+  {{ else }}
+    {{ $desc = printf "Discover the best AI tools for %s — handpicked and curated on Best of AI." .Params.name }}
+  {{ end }}
+{{ else if eq .Kind "section" }}
+  {{ if eq .Section "professionals" }}
+    {{ $desc = printf "Find AI tools tailored to your role — %d profession guides with handpicked tools on Best of AI." (len .Pages) }}
+  {{ else }}
+    {{ $desc = printf "Browse all AI tool categories on Best of AI — %d categories of handpicked tools." (len hugo.Data.categories) }}
+  {{ end }}
+{{ else if eq .Kind "taxonomy" }}
+  {{ $desc = printf "Browse %d AI tool tags — explore tools by topic, use-case, and capability on Best of AI." (len .Data.Terms) }}
+{{ else if eq .Kind "term" }}
+  {{ $desc = printf "Discover the best AI tools tagged #%s — handpicked for quality and real-world impact on Best of AI." .Title }}
+{{ else if $is404 }}
+  {{ $desc = "The page you're looking for doesn't exist or may have been moved." }}
+{{ else }}
+  {{ $desc = .Site.Params.description }}
+{{ end }}
+
 <title>{{ $pageTitle }}</title>
-<meta name="description" content="{{ $desc }}">
+<meta name="description" content="{{ $desc | truncate 160 }}">
 <link rel="canonical" href="{{ .Permalink }}">
 
-<!-- Open Graph -->
-<meta property="og:title"       content="{{ $pageTitle }}">
-<meta property="og:description" content="{{ $desc }}">
-<meta property="og:url"         content="{{ .Permalink }}">
-<meta property="og:type"        content="{{ if .IsHome }}website{{ else }}article{{ end }}">
-<meta property="og:site_name"   content="Best of AI">
+{{/* ── Keywords (tool pages) ── */}}
+{{ if and .IsPage (eq .Section "tools") }}
+{{ $kws := slice $name (.Params.category_name | default "") "AI" "artificial intelligence" }}
+{{ range .Params.tags }}{{ $kws = $kws | append . }}{{ end }}
+<meta name="keywords" content="{{ delimit $kws ", " }}">
+{{ end }}
 
-<!-- Twitter -->
+{{/* ── Open Graph ── */}}
+{{ $ogImage := $ogImageDefault }}
+{{ if and .IsPage (eq .Section "tools") .Params.logo_url }}
+  {{ $ogImage = .Params.logo_url }}
+{{ end }}
+<meta property="og:title"        content="{{ $pageTitle }}">
+<meta property="og:description"  content="{{ $desc | truncate 160 }}">
+<meta property="og:url"          content="{{ .Permalink }}">
+<meta property="og:type"         content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+<meta property="og:site_name"    content="Best of AI">
+<meta property="og:image"        content="{{ $ogImage }}">
+<meta property="og:image:width"  content="512">
+<meta property="og:image:height" content="512">
+<meta property="og:locale"       content="en_US">
+
+{{/* ── Twitter Card ── */}}
 <meta name="twitter:card"        content="summary">
 <meta name="twitter:title"       content="{{ $pageTitle }}">
-<meta name="twitter:description" content="{{ $desc }}">
+<meta name="twitter:description" content="{{ $desc | truncate 160 }}">
+<meta name="twitter:image"       content="{{ $ogImage }}">
 
-<!-- RSS -->
+{{/* ── RSS ── */}}
 {{ with .OutputFormats.Get "RSS" }}
 <link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ .Permalink }}">
 {{ end }}
+
+{{/* ── Structured data ── */}}
+{{ partial "seo-jsonld.html" . }}
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">

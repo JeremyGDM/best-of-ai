@@ -1,0 +1,64 @@
+{{ $siteURL := .Site.BaseURL | strings.TrimRight "/" }}
+
+{{/* ── WebSite (home only) ── */}}
+{{ if .IsHome }}
+{{ $schema := dict "@context" "https://schema.org" "@type" "WebSite" "name" "Best of AI" "url" .Site.BaseURL "description" .Site.Params.description }}
+<script type="application/ld+json">{{ $schema | jsonify | safeJS }}</script>
+
+{{/* ── SoftwareApplication (tool pages) ── */}}
+{{ else if and .IsPage (eq .Section "tools") }}
+{{ $p := .Params }}
+{{ $offerPrice := "" }}
+{{ if or (eq $p.price "Free") (eq $p.price "Freemium") }}{{ $offerPrice = "0" }}{{ end }}
+{{ $offers := dict "@type" "Offer" "priceCurrency" "USD" "price" $offerPrice }}
+{{ $schema := dict "@context" "https://schema.org" "@type" "SoftwareApplication" "@id" .Permalink "name" ($p.name | default "") "description" ($p.description | default "") "url" ($p.website | default "") "image" ($p.logo_url | default "") "applicationCategory" "AIApplication" "applicationSubCategory" ($p.category_name | default "") "operatingSystem" "Web Browser" "offers" $offers }}
+<script type="application/ld+json">{{ $schema | jsonify | safeJS }}</script>
+{{ end }}
+
+{{/* ── BreadcrumbList (all non-home) ── */}}
+{{ if not .IsHome }}
+{{ $home := dict "@type" "ListItem" "position" 1 "name" "Home" "item" (printf "%s/" $siteURL) }}
+{{ $items := slice $home }}
+
+{{ if and .IsPage (eq .Section "tools") }}
+  {{ if .Params.category_name }}
+    {{ $items = $items | append (dict "@type" "ListItem" "position" 2 "name" .Params.category_name "item" (printf "%s/categories/%s/" $siteURL .Params.category)) }}
+  {{ end }}
+  {{ $items = $items | append (dict "@type" "ListItem" "position" (len $items | add 1) "name" .Params.name "item" .Permalink) }}
+{{ else if and .IsPage (eq .Section "categories") }}
+  {{ $items = $items | append (dict "@type" "ListItem" "position" 2 "name" "Categories" "item" (printf "%s/categories/" $siteURL)) }}
+  {{ $items = $items | append (dict "@type" "ListItem" "position" 3 "name" .Params.name "item" .Permalink) }}
+{{ else if and .IsPage (eq .Section "professionals") }}
+  {{ $items = $items | append (dict "@type" "ListItem" "position" 2 "name" "AI by Profession" "item" (printf "%s/professionals/" $siteURL)) }}
+  {{ $items = $items | append (dict "@type" "ListItem" "position" 3 "name" .Params.name "item" .Permalink) }}
+{{ else if eq .Kind "section" }}
+  {{ $items = $items | append (dict "@type" "ListItem" "position" 2 "name" (.Title | default "Categories") "item" .Permalink) }}
+{{ else if eq .Kind "taxonomy" }}
+  {{ $items = $items | append (dict "@type" "ListItem" "position" 2 "name" "Tags" "item" .Permalink) }}
+{{ else if eq .Kind "term" }}
+  {{ $items = $items | append (dict "@type" "ListItem" "position" 2 "name" "Tags" "item" (printf "%s/tags/" $siteURL)) }}
+  {{ $items = $items | append (dict "@type" "ListItem" "position" 3 "name" .Title "item" .Permalink) }}
+{{ end }}
+
+{{ $bc := dict "@context" "https://schema.org" "@type" "BreadcrumbList" "itemListElement" $items }}
+<script type="application/ld+json">{{ $bc | jsonify | safeJS }}</script>
+
+{{/* ── ItemList (category + tag term pages) ── */}}
+{{ if and .IsPage (eq .Section "categories") }}
+  {{ $catTools := where .Site.RegularPages "Params.category" .Params.slug | first 20 }}
+  {{ $listItems := slice }}
+  {{ range $i, $t := $catTools }}
+    {{ $listItems = $listItems | append (dict "@type" "ListItem" "position" (add $i 1) "name" $t.Params.name "url" $t.Permalink) }}
+  {{ end }}
+  {{ $listSchema := dict "@context" "https://schema.org" "@type" "ItemList" "name" (printf "Best AI %s Tools" .Params.name) "itemListElement" $listItems }}
+  <script type="application/ld+json">{{ $listSchema | jsonify | safeJS }}</script>
+{{ else if eq .Kind "term" }}
+  {{ $listItems := slice }}
+  {{ range $i, $t := (.Pages | first 20) }}
+    {{ $listItems = $listItems | append (dict "@type" "ListItem" "position" (add $i 1) "name" $t.Params.name "url" $t.Permalink) }}
+  {{ end }}
+  {{ $listSchema := dict "@context" "https://schema.org" "@type" "ItemList" "name" (printf "AI Tools tagged %s" .Title) "itemListElement" $listItems }}
+  <script type="application/ld+json">{{ $listSchema | jsonify | safeJS }}</script>
+{{ end }}
+
+{{ end }}
