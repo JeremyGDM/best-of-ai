@@ -1388,6 +1388,20 @@ body.search-open { overflow: hidden; }
   .lb-desc { display: none; }
 }
 
+/* ── Home: Top 100 (gold tint on section title) ── */
+.home-top100 .tool-section__title-link { color: #c9a227; }
+.home-top100 .tool-section__title-link:hover { color: #e8b923; }
+.home-top100 .tool-section__count { color: #c9a227; opacity: 0.6; }
+.home-top100 .tool-section__more-link {
+  color: #c9a227;
+  border-color: rgba(201,162,39,0.35);
+}
+.home-top100 .tool-section__more-link:hover {
+  color: #e8b923;
+  border-color: rgba(232,185,35,0.6);
+}
+.home-top100 .tool-card:hover { border-color: rgba(232,185,35,0.25); }
+
 /* ── Footer ── */
 .site-footer {
   border-top: 1px solid var(--border);

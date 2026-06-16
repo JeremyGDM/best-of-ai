@@ -49,6 +49,52 @@
       <button onclick="document.getElementById('home-search').value='';window.baiFilter()">Clear search</button>
     </div>
 
+    <!-- ── Top 100 AI Tools ── -->
+    {{ $top6 := first 6 hugo.Data.leaderboard }}
+    <section class="tool-section home-top100" id="top-100" data-cat="top-100">
+      <h2 class="tool-section__title">
+        <a href="{{ "/leaderboard/" | relURL }}" class="tool-section__title-link">🏆 Top 100 AI Tools</a>
+        <span class="tool-section__count">100</span>
+        <a href="{{ "/leaderboard/" | relURL }}" class="tool-section__more-link">
+          View all 100
+          <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </h2>
+      <div class="tools-grid">
+        {{ range $top6 }}
+          {{ $entry := . }}
+          {{ $page  := index (where $tools "Params.slug" $entry.slug) 0 }}
+          {{ if $page }}
+          {{ $p := $page.Params }}
+          <a
+            href="{{ $page.RelPermalink }}"
+            class="tool-card"
+            data-name="{{ lower $p.name }}"
+            data-desc="{{ lower $p.description }}"
+            data-cat="top-100"
+            data-price="{{ $p.price }}"
+          >
+            <div class="tool-card__logo">
+              {{ if $p.logo_url }}
+                <img src="{{ $p.logo_url }}" alt="{{ $p.name }}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <span class="tool-logo-fallback" style="display:none">{{ substr $p.name 0 1 }}</span>
+              {{ else }}
+                <img src="https://www.google.com/s2/favicons?domain={{ $p.website }}&sz=32" alt="{{ $p.name }}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <span class="tool-logo-fallback" style="display:none">{{ substr $p.name 0 1 }}</span>
+              {{ end }}
+            </div>
+            <div class="tool-card__body">
+              <span class="tool-card__name">{{ $p.name }}</span>
+              <span class="tool-card__desc">{{ with $entry.badge }}{{ . }}{{ else }}{{ or $p.subtitle ($p.description | truncate 80) }}{{ end }}</span>
+            </div>
+            {{ partial "price-icon.html" $p.price }}
+            <svg class="tool-card__ext" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+          {{ end }}
+        {{ end }}
+      </div>
+    </section>
+
     {{/* Build sortable slice: [{cat, count}] sorted by count desc */}}
     {{ $catList := slice }}
     {{ range hugo.Data.categories }}
