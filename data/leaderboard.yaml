@@ -1,0 +1,119 @@
+- rank: 1
+  slug: chatgpt
+  badge: "Most Used"
+
+- rank: 2
+  slug: claude
+  badge: "Most Trusted"
+
+- rank: 3
+  slug: midjourney
+  badge: "Best Image AI"
+
+- rank: 4
+  slug: github-copilot
+  badge: "Best for Devs"
+
+- rank: 5
+  slug: cursor
+  badge: "Best Code Editor"
+
+- rank: 6
+  slug: gemini
+  badge: "Best by Google"
+
+- rank: 7
+  slug: perplexity-search
+  badge: "Best AI Search"
+
+- rank: 8
+  slug: elevenlabs
+  badge: "Best Voice AI"
+
+- rank: 9
+  slug: stable-diffusion
+  badge: "Best Open Source"
+
+- rank: 10
+  slug: suno
+  badge: "Best Music AI"
+
+- rank: 11
+  slug: notion-ai
+  badge: "Best Productivity"
+
+- rank: 12
+  slug: runway
+  badge: "Best Video Editor"
+
+- rank: 13
+  slug: grammarly
+  badge: "Best Writing AI"
+
+- rank: 14
+  slug: dall-e-3
+  badge: "Best Image Gen"
+
+- rank: 15
+  slug: heygen
+  badge: "Best Avatar AI"
+
+- rank: 16
+  slug: bolt-new
+  badge: "Best App Builder"
+
+- rank: 17
+  slug: lovable
+  badge: "Best for Startups"
+
+- rank: 18
+  slug: v0
+  badge: "Best UI Gen"
+
+- rank: 19
+  slug: windsurf
+  badge: "Rising Star"
+
+- rank: 20
+  slug: notebooklm
+  badge: "Best Research AI"
+
+- rank: 21
+  slug: deepl
+  badge: "Best Translator"
+
+- rank: 22
+  slug: canva
+  badge: "Best Design AI"
+
+- rank: 23
+  slug: kling-ai
+  badge: "Best Video Gen"
+
+- rank: 24
+  slug: gamma
+  badge: "Best Slides AI"
+
+- rank: 25
+  slug: perplexity
+  badge: "Best AI Chat"
+
+- rank: 26
+  slug: descript
+  badge: "Best Podcast AI"
+
+- rank: 27
+  slug: otter-ai
+  badge: "Best Meetings AI"
+
+- rank: 28
+  slug: zapier
+  badge: "Best Automation"
+
+- rank: 29
+  slug: adobe-firefly
+  badge: "Best Creative AI"
+
+- rank: 30
+  slug: luma-dream-machine
+  badge: "Best Video Quality"
