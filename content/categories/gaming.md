@@ -2,6 +2,6 @@
 title: 'Best AI Gaming Tools'
 name: 'Gaming'
 slug: 'gaming'
-description: 'The best AI tools for gaming.'
+description: 'AI tools for game development, NPC behavior design, and personalized gaming experiences.'
 sort_order: 10
 ---

@@ -2,6 +2,6 @@
 title: 'Best AI Productivity Tools'
 name: 'Productivity'
 slug: 'productivity'
-description: 'AI-powered productivity tools'
+description: 'AI productivity tools to help you focus, manage tasks, and get more done every day.'
 sort_order: 1
 ---

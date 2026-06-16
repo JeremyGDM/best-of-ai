@@ -2,6 +2,6 @@
 title: 'Best AI Academia Tools'
 name: 'Academia'
 slug: 'academia'
-description: 'The best AI tools for academia.'
+description: 'AI tools for academic research, citation management, literature review, and scholarly writing.'
 sort_order: 10
 ---
