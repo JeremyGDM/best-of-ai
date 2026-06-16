@@ -73,29 +73,7 @@
           </h2>
           <div class="tools-grid">
             {{ range $catTools }}
-            {{ $tp := .Params }}
-            <a
-              href="{{ .RelPermalink }}"
-              class="tool-card"
-              data-cat="{{ $c }}"
-              data-price="{{ $tp.price }}"
-            >
-              <div class="tool-card__logo">
-                {{ if $tp.logo_url }}
-                  <img src="{{ $tp.logo_url }}" alt="{{ $tp.name }}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                  <span class="tool-logo-fallback" style="display:none">{{ substr $tp.name 0 1 }}</span>
-                {{ else }}
-                  <img src="https://www.google.com/s2/favicons?domain={{ $tp.website }}&sz=32" alt="{{ $tp.name }}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                  <span class="tool-logo-fallback" style="display:none">{{ substr $tp.name 0 1 }}</span>
-                {{ end }}
-              </div>
-              <div class="tool-card__body">
-                <span class="tool-card__name">{{ $tp.name }}</span>
-                <span class="tool-card__desc">{{ or $tp.subtitle ($tp.description | truncate 80) }}</span>
-              </div>
-              {{ partial "price-icon.html" $tp.price }}
-              <svg class="tool-card__ext" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </a>
+            {{ partial "tool-card.html" (dict "page" . "p" .Params "cat" $c) }}
             {{ end }}
           </div>
         </section>

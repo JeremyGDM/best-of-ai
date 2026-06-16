@@ -1,13 +1,13 @@
 -
   id: 39
   name: '3D'
-  description: ''
+  description: 'AI tools for 3D modeling, rendering, texturing, and design automation.'
   slug: '3d'
   sort_order: 0
 -
   id: 38
   name: 'AI Agents'
-  description: ''
+  description: 'Autonomous AI agents that plan, reason, and complete multi-step tasks with minimal human input.'
   slug: 'ai-agents'
   sort_order: 0
 -
@@ -19,19 +19,19 @@
 -
   id: 43
   name: 'Ad Generator'
-  description: ''
+  description: 'AI tools for creating and optimizing digital ads across Google, Meta, and social media platforms.'
   slug: 'ad-generator'
   sort_order: 0
 -
   id: 47
   name: 'Animation'
-  description: ''
+  description: 'AI-powered animation tools for creating motion graphics, animated videos, and character animations.'
   slug: 'animation'
   sort_order: 0
 -
   id: 31
   name: 'App Builders'
-  description: ''
+  description: 'AI-powered platforms for building mobile and web apps without traditional coding skills.'
   slug: 'app-builders'
   sort_order: 0
 -
@@ -43,25 +43,25 @@
 -
   id: 35
   name: 'Business Tools'
-  description: ''
+  description: 'AI tools to streamline business operations, strategy, and data-driven decision-making.'
   slug: 'business-tools'
   sort_order: 0
 -
   id: 53
   name: 'CRM'
-  description: ''
+  description: 'AI-enhanced customer relationship management tools for sales, contact management, and pipeline tracking.'
   slug: 'crm'
   sort_order: 0
 -
   id: 57
   name: 'Calendar Scheduling'
-  description: ''
+  description: 'AI scheduling assistants that automate meeting booking, calendar management, and time optimization.'
   slug: 'calendar-scheduling'
   sort_order: 0
 -
   id: 68
   name: 'Climate'
-  description: ''
+  description: 'AI tools for climate modeling, carbon tracking, and environmental impact analysis.'
   slug: 'climate'
   sort_order: 0
 -
@@ -73,13 +73,13 @@
 -
   id: 30
   name: 'Copywriting'
-  description: ''
+  description: 'AI copywriting tools for writing persuasive marketing copy, ads, landing pages, and product descriptions.'
   slug: 'copywriting'
   sort_order: 0
 -
   id: 70
   name: 'DevTools'
-  description: ''
+  description: 'AI-powered developer tools for code review, CI/CD, infrastructure management, and engineering workflows.'
   slug: 'devtools'
   sort_order: 0
 -
@@ -91,49 +91,49 @@
 -
   id: 60
   name: 'E-Commerce'
-  description: ''
+  description: 'AI tools for product listing optimization, personalization, and online store management.'
   slug: 'e-commerce'
   sort_order: 0
 -
   id: 44
   name: 'Email Assistants'
-  description: ''
+  description: 'AI email tools for composing, summarizing, and managing email communications faster.'
   slug: 'email-assistants'
   sort_order: 0
 -
   id: 65
   name: 'Farming'
-  description: ''
+  description: 'AI tools for precision agriculture, crop monitoring, yield prediction, and farm management.'
   slug: 'farming'
   sort_order: 0
 -
   id: 41
   name: 'Fashion'
-  description: ''
+  description: 'AI tools for fashion design, trend forecasting, and virtual try-on experiences.'
   slug: 'fashion'
   sort_order: 0
 -
   id: 33
   name: 'Finance'
-  description: ''
+  description: 'AI tools for personal finance, investment analysis, budgeting, and financial planning.'
   slug: 'finance'
   sort_order: 0
 -
   id: 67
   name: 'Government'
-  description: ''
+  description: 'AI tools for public sector agencies to improve citizen services, data analysis, and policy insights.'
   slug: 'government'
   sort_order: 0
 -
   id: 64
   name: 'HR'
-  description: ''
+  description: 'AI tools for human resources including onboarding, employee engagement, and workforce analytics.'
   slug: 'hr'
   sort_order: 0
 -
   id: 69
   name: 'Home Design'
-  description: ''
+  description: 'AI tools for interior design, room planning, and home renovation visualization.'
   slug: 'home-design'
   sort_order: 0
 -
@@ -151,13 +151,13 @@
 -
   id: 45
   name: 'Infographics'
-  description: ''
+  description: 'AI tools for creating data visualizations, infographics, and shareable visual reports.'
   slug: 'infographics'
   sort_order: 0
 -
   id: 56
   name: 'Job Tools'
-  description: ''
+  description: 'AI tools for job searching, application tracking, and career development.'
   slug: 'job-tools'
   sort_order: 0
 -
@@ -169,37 +169,37 @@
 -
   id: 61
   name: 'Language Learning'
-  description: ''
+  description: 'AI language tutors and apps for learning new languages through interactive conversation practice.'
   slug: 'language-learning'
   sort_order: 0
 -
   id: 59
   name: 'Lead Generation'
-  description: ''
+  description: 'AI tools for identifying, qualifying, and converting potential customers into leads.'
   slug: 'lead-generation'
   sort_order: 0
 -
   id: 62
   name: 'Learning Tools'
-  description: ''
+  description: 'AI-powered educational tools for personalized learning, tutoring, and skill development.'
   slug: 'learning-tools'
   sort_order: 0
 -
   id: 40
   name: 'Logo Generator'
-  description: ''
+  description: 'AI logo makers for designing professional brand logos and visual identities in minutes.'
   slug: 'logo-generator'
   sort_order: 0
 -
   id: 58
   name: 'Market Research'
-  description: ''
+  description: 'AI tools for consumer insights, competitor analysis, and market trend research.'
   slug: 'market-research'
   sort_order: 0
 -
   id: 46
   name: 'Meme Generator'
-  description: ''
+  description: 'AI tools for creating and editing memes for social media and content marketing.'
   slug: 'meme-generator'
   sort_order: 0
 -
@@ -211,67 +211,67 @@
 -
   id: 42
   name: 'No-Code'
-  description: ''
+  description: 'AI no-code platforms for building apps, automations, and workflows without writing code.'
   slug: 'no-code'
   sort_order: 0
 -
   id: 52
   name: 'Note-Taking Apps'
-  description: ''
+  description: 'AI-powered note-taking apps that capture, organize, and surface information automatically.'
   slug: 'note-taking-apps'
   sort_order: 0
 -
   id: 50
   name: 'Podcast'
-  description: ''
+  description: 'AI tools for podcast production, transcription, editing, and episode content generation.'
   slug: 'podcast'
   sort_order: 0
 -
   id: 26
   name: 'Presentation'
-  description: ''
+  description: 'AI presentation tools for creating slides, decks, and compelling visual presentations quickly.'
   slug: 'presentation'
   sort_order: 0
 -
   id: 34
   name: 'Project Management'
-  description: ''
+  description: 'AI project management tools for planning, tracking, and collaborating on team work.'
   slug: 'project-management'
   sort_order: 0
 -
   id: 63
   name: 'Real Estate'
-  description: ''
+  description: 'AI tools for property valuation, listing optimization, and real estate market analysis.'
   slug: 'real-estate'
   sort_order: 0
 -
   id: 55
   name: 'Resume Tools'
-  description: ''
+  description: 'AI resume builders and optimization tools for job seekers to create standout CVs and applications.'
   slug: 'resume-tools'
   sort_order: 0
 -
   id: 54
   name: 'Sales Tools'
-  description: ''
+  description: 'AI sales tools for outreach automation, deal intelligence, and revenue forecasting.'
   slug: 'sales-tools'
   sort_order: 0
 -
   id: 36
   name: 'Social Media Tools'
-  description: ''
+  description: 'AI tools for social media content creation, scheduling, and performance analytics.'
   slug: 'social-media-tools'
   sort_order: 0
 -
   id: 66
   name: 'Supply Chain'
-  description: ''
+  description: 'AI tools for supply chain optimization, demand forecasting, and logistics management.'
   slug: 'supply-chain'
   sort_order: 0
 -
   id: 48
   name: 'Talking Avatar Generator'
-  description: ''
+  description: 'AI tools for creating realistic talking avatars and digital human video presenters.'
   slug: 'talking-avatar-generator'
   sort_order: 0
 -
@@ -289,193 +289,193 @@
 -
   id: 25
   name: 'Translator'
-  description: ''
+  description: 'AI translation tools for accurate, real-time text and document translation across languages.'
   slug: 'translator'
   sort_order: 0
 -
   id: 27
   name: 'Video Editor'
-  description: ''
+  description: 'AI video editing tools for cutting, trimming, and producing polished videos with ease.'
   slug: 'video-editor'
   sort_order: 0
 -
   id: 29
   name: 'Video Enhancer'
-  description: ''
+  description: 'AI tools for upscaling, denoising, and improving the quality of existing videos.'
   slug: 'video-enhancer'
   sort_order: 0
 -
   id: 28
   name: 'Video Generator'
-  description: ''
+  description: 'AI tools for generating original videos from text prompts and scripts.'
   slug: 'video-generator'
   sort_order: 0
 -
   id: 49
   name: 'Video Subtitling'
-  description: ''
+  description: 'AI tools for adding automatic subtitles, captions, and closed captions to videos.'
   slug: 'video-subtitling'
   sort_order: 0
 -
   id: 51
   name: 'Voice Cloning'
-  description: ''
+  description: 'AI voice cloning tools for replicating and synthesizing custom voice profiles.'
   slug: 'voice-cloning'
   sort_order: 0
 -
   id: 32
   name: 'Website Builders'
-  description: ''
+  description: 'AI website builders for designing and launching professional websites without writing code.'
   slug: 'website-builders'
   sort_order: 0
 -
   id: 37
   name: 'Workflow Automation'
-  description: ''
+  description: 'AI workflow automation platforms for connecting apps and automating repetitive business processes.'
   slug: 'workflow-automation'
   sort_order: 0
 -
   id: 1
   name: 'Productivity'
-  description: 'AI-powered productivity tools'
+  description: 'AI productivity tools to help you focus, manage tasks, and get more done every day.'
   slug: 'productivity'
   sort_order: 1
 -
   id: 3
   name: 'Chatbots'
-  description: ''
+  description: 'AI chatbots for automating conversations, answering questions, and improving customer engagement.'
   slug: 'chatbots'
   sort_order: 5
 -
   id: 8
   name: 'Academia'
-  description: ''
+  description: 'AI tools for academic research, citation management, literature review, and scholarly writing.'
   slug: 'academia'
   sort_order: 10
 -
   id: 12
   name: 'Audio'
-  description: ''
+  description: 'AI audio tools for editing, enhancing, cleaning, and generating sound and music.'
   slug: 'audio'
   sort_order: 10
 -
   id: 15
   name: 'Automation'
-  description: ''
+  description: 'AI automation tools for streamlining repetitive tasks and optimizing business workflows.'
   slug: 'automation'
   sort_order: 10
 -
   id: 9
   name: 'Customer Support'
-  description: ''
+  description: 'AI tools for automating customer support with chatbots, ticket routing, and help desk automation.'
   slug: 'customer-support'
   sort_order: 10
 -
   id: 16
   name: 'Data'
-  description: ''
+  description: 'AI data tools for analysis, visualization, and extracting insights from large datasets.'
   slug: 'data'
   sort_order: 10
 -
   id: 18
   name: 'Food'
-  description: ''
+  description: 'AI tools for recipe generation, food discovery, nutrition planning, and restaurant management.'
   slug: 'food'
   sort_order: 10
 -
   id: 21
   name: 'Gaming'
-  description: ''
+  description: 'AI tools for game development, NPC behavior design, and personalized gaming experiences.'
   slug: 'gaming'
   sort_order: 10
 -
   id: 10
   name: 'Graphic Design'
-  description: ''
+  description: 'AI graphic design tools for creating logos, illustrations, banners, and visual assets.'
   slug: 'graphic-design'
   sort_order: 10
 -
   id: 20
   name: 'Healthcare'
-  description: ''
+  description: 'AI tools for clinical decision support, patient engagement, and health data analysis.'
   slug: 'healthcare'
   sort_order: 10
 -
   id: 17
   name: 'Legal Assistants'
-  description: ''
+  description: 'AI legal tools for contract analysis, legal research, and document drafting.'
   slug: 'legal-assistants'
   sort_order: 10
 -
   id: 5
   name: 'Local Search Engines'
-  description: ''
+  description: 'AI-powered local search engines for discovering nearby businesses and services.'
   slug: 'local-search-engines'
   sort_order: 10
 -
   id: 13
   name: 'Marketing'
-  description: ''
+  description: 'AI marketing tools for campaign automation, analytics, and personalized customer outreach.'
   slug: 'marketing'
   sort_order: 10
 -
   id: 7
   name: 'Meeting Assistants'
-  description: ''
+  description: 'AI meeting tools for transcription, note-taking, action item tracking, and automated follow-ups.'
   slug: 'meeting-assistants'
   sort_order: 10
 -
   id: 22
   name: 'Personal Assistants'
-  description: ''
+  description: 'AI personal assistants for scheduling, reminders, and managing your daily life hands-free.'
   slug: 'personal-assistants'
   sort_order: 10
 -
   id: 24
   name: 'Research Tools'
-  description: ''
+  description: 'AI research tools for accelerating literature review, synthesis, and knowledge discovery.'
   slug: 'research-tools'
   sort_order: 10
 -
   id: 14
   name: 'SEO'
-  description: ''
+  description: 'AI SEO tools for keyword research, content optimization, and improving search engine rankings.'
   slug: 'seo'
   sort_order: 10
 -
   id: 4
   name: 'Search Engines'
-  description: ''
+  description: 'AI-powered search engines delivering smarter, more contextual web search results.'
   slug: 'search-engines'
   sort_order: 10
 -
   id: 23
   name: 'Spreadsheets'
-  description: ''
+  description: 'AI tools that bring natural language querying and automation to spreadsheets and data tables.'
   slug: 'spreadsheets'
   sort_order: 10
 -
   id: 11
   name: 'Video'
-  description: ''
+  description: 'AI video tools for creation, editing, enhancement, and distribution of video content.'
   slug: 'video'
   sort_order: 10
 -
   id: 19
   name: 'Weather'
-  description: ''
+  description: 'AI weather tools for forecasting, climate data analysis, and environmental monitoring.'
   slug: 'weather'
   sort_order: 10
 -
   id: 6
   name: 'Writing Assistants'
-  description: ''
+  description: 'AI writing assistants for drafting, editing, and improving written content across any format.'
   slug: 'writing-assistants'
   sort_order: 10
 -
   id: 2
   name: 'Models'
-  description: ''
+  description: 'Foundation AI models and large language models powering the next generation of AI applications.'
   slug: 'models'
   sort_order: 21
 -

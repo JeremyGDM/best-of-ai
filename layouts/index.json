@@ -48,8 +48,11 @@
     "url"         .RelPermalink
     "website"     ($p.website      | default "")
     "description" ($p.description | default "")
+    "subtitle"    ($p.subtitle    | default "")
+    "logo_url"    ($p.logo_url    | default "")
     "category"    ($p.category_name | default "")
     "price"       ($p.price       | default "Free")
+    "dead"        ($p.dead        | default false)
   -}}
   {{ $items = $items | append $item -}}
 {{ end -}}

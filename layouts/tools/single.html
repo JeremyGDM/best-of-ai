@@ -43,7 +43,12 @@
           </div>
         </div>
 
-        {{ if $p.website }}
+        {{ if $p.dead }}
+        <span class="btn btn-dead detail-cta" title="This tool is no longer active">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:0.3em"><path d="M12 2C8.13 2 5 5.13 5 9v11l2.5-1.5 2.5 1.5 2.5-1.5 2.5 1.5 2.5-1.5V9c0-3.87-3.13-7-7-7zm-2.5 9a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3z"/></svg>
+          Discontinued
+        </span>
+        {{ else if $p.website }}
         <a href="{{ $p.website }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary detail-cta">
           Visit Tool →
         </a>
@@ -109,24 +114,7 @@
       <h2 class="related-title">// related tools in {{ $p.category_name }}</h2>
       <div class="tools-grid tools-grid--related">
         {{ range $related }}
-        {{ $rp := .Params }}
-        <a href="{{ .RelPermalink }}" class="tool-card">
-          <div class="tool-card__logo">
-            {{ if $rp.logo_url }}
-              <img src="{{ $rp.logo_url }}" alt="{{ $rp.name }}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <span class="tool-logo-fallback" style="display:none">{{ substr $rp.name 0 1 }}</span>
-            {{ else }}
-              <img src="https://www.google.com/s2/favicons?domain={{ $rp.website }}&sz=32" alt="{{ $rp.name }}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-              <span class="tool-logo-fallback" style="display:none">{{ substr $rp.name 0 1 }}</span>
-            {{ end }}
-          </div>
-          <div class="tool-card__body">
-            <span class="tool-card__name">{{ $rp.name }}</span>
-            <span class="tool-card__desc">{{ or $rp.subtitle ($rp.description | truncate 80) }}</span>
-          </div>
-          {{ partial "price-icon.html" $rp.price }}
-          <svg class="tool-card__ext" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        </a>
+        {{ partial "tool-card.html" (dict "page" . "p" .Params) }}
         {{ end }}
       </div>
     </section>

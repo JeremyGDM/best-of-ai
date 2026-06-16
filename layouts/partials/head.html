@@ -82,14 +82,18 @@
 {{ end }}
 
 <title>{{ $pageTitle }}</title>
-<meta name="description" content="{{ $desc | truncate 160 }}">
+<meta name="description" content="{{ $desc | truncate 155 }}">
 <link rel="canonical" href="{{ .Permalink }}">
 
-{{/* ── Keywords (tool pages) ── */}}
+{{/* ── Keywords ── */}}
 {{ if and .IsPage (eq .Section "tools") }}
 {{ $kws := slice $name (.Params.category_name | default "") "AI" "artificial intelligence" }}
 {{ range .Params.tags }}{{ $kws = $kws | append . }}{{ end }}
 <meta name="keywords" content="{{ delimit $kws ", " }}">
+{{ else if and .IsPage (eq .Section "categories") }}
+<meta name="keywords" content="{{ .Params.name }}, AI {{ .Params.name }}, best AI {{ .Params.name }} tools, artificial intelligence {{ lower .Params.name }}">
+{{ else if and .IsPage (eq .Section "professionals") }}
+<meta name="keywords" content="AI for {{ .Params.name }}, best AI tools for {{ .Params.name }}, artificial intelligence {{ lower .Params.name }}">
 {{ end }}
 
 {{/* ── Open Graph ── */}}
@@ -98,11 +102,12 @@
   {{ $ogImage = .Params.logo_url }}
 {{ end }}
 <meta property="og:title"        content="{{ $pageTitle }}">
-<meta property="og:description"  content="{{ $desc | truncate 160 }}">
+<meta property="og:description"  content="{{ $desc | truncate 155 }}">
 <meta property="og:url"          content="{{ .Permalink }}">
-<meta property="og:type"         content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+<meta property="og:type"         content="{{ if and .IsPage (eq .Section "tools") }}article{{ else }}website{{ end }}">
 <meta property="og:site_name"    content="Best of AI">
 <meta property="og:image"        content="{{ $ogImage }}">
+<meta property="og:image:alt"    content="{{ $pageTitle }}">
 <meta property="og:image:width"  content="512">
 <meta property="og:image:height" content="512">
 <meta property="og:locale"       content="en_US">
@@ -110,8 +115,9 @@
 {{/* ── Twitter Card ── */}}
 <meta name="twitter:card"        content="summary">
 <meta name="twitter:title"       content="{{ $pageTitle }}">
-<meta name="twitter:description" content="{{ $desc | truncate 160 }}">
+<meta name="twitter:description" content="{{ $desc | truncate 155 }}">
 <meta name="twitter:image"       content="{{ $ogImage }}">
+<meta name="twitter:image:alt"   content="{{ $pageTitle }}">
 
 {{/* ── RSS ── */}}
 {{ with .OutputFormats.Get "RSS" }}

@@ -1,17 +1,23 @@
 {{ $siteURL := .Site.BaseURL | strings.TrimRight "/" }}
 
-{{/* ── WebSite (home only) ── */}}
+{{/* ── WebSite + Organization (home only) ── */}}
 {{ if .IsHome }}
-{{ $schema := dict "@context" "https://schema.org" "@type" "WebSite" "name" "Best of AI" "url" .Site.BaseURL "description" .Site.Params.description }}
+{{ $orgSchema := dict "@context" "https://schema.org" "@type" "Organization" "name" "Best of AI" "url" .Site.BaseURL "logo" (printf "%s/img/favicon/web-app-manifest-512x512.png" $siteURL) "description" .Site.Params.description }}
+<script type="application/ld+json">{{ $orgSchema | jsonify | safeJS }}</script>
+{{ $schema := dict "@context" "https://schema.org" "@type" "WebSite" "name" "Best of AI" "url" .Site.BaseURL "description" .Site.Params.description "publisher" (dict "@type" "Organization" "name" "Best of AI") }}
 <script type="application/ld+json">{{ $schema | jsonify | safeJS }}</script>
 
 {{/* ── SoftwareApplication (tool pages) ── */}}
 {{ else if and .IsPage (eq .Section "tools") }}
 {{ $p := .Params }}
-{{ $offerPrice := "" }}
-{{ if or (eq $p.price "Free") (eq $p.price "Freemium") }}{{ $offerPrice = "0" }}{{ end }}
-{{ $offers := dict "@type" "Offer" "priceCurrency" "USD" "price" $offerPrice }}
-{{ $schema := dict "@context" "https://schema.org" "@type" "SoftwareApplication" "@id" .Permalink "name" ($p.name | default "") "description" ($p.description | default "") "url" ($p.website | default "") "image" ($p.logo_url | default "") "applicationCategory" "AIApplication" "applicationSubCategory" ($p.category_name | default "") "operatingSystem" "Web Browser" "offers" $offers }}
+{{ $offers := dict "@type" "Offer" "priceCurrency" "USD" }}
+{{ if or (eq $p.price "Free") (eq $p.price "Freemium") }}
+  {{ $offers = merge $offers (dict "price" "0") }}
+{{ end }}
+{{ $schema := dict "@context" "https://schema.org" "@type" "SoftwareApplication" "@id" .Permalink "name" ($p.name | default "") "description" ($p.description | default "") "url" ($p.website | default "") "applicationCategory" "AIApplication" "applicationSubCategory" ($p.category_name | default "") "operatingSystem" "Web Browser" "offers" $offers }}
+{{ if $p.logo_url }}{{ $schema = merge $schema (dict "image" $p.logo_url) }}{{ end }}
+{{ if not .Date.IsZero }}{{ $schema = merge $schema (dict "datePublished" (.Date.Format "2006-01-02")) }}{{ end }}
+{{ if not .Lastmod.IsZero }}{{ $schema = merge $schema (dict "dateModified" (.Lastmod.Format "2006-01-02")) }}{{ end }}
 <script type="application/ld+json">{{ $schema | jsonify | safeJS }}</script>
 {{ end }}
 
@@ -43,8 +49,26 @@
 {{ $bc := dict "@context" "https://schema.org" "@type" "BreadcrumbList" "itemListElement" $items }}
 <script type="application/ld+json">{{ $bc | jsonify | safeJS }}</script>
 
-{{/* ── ItemList (category + tag term pages) ── */}}
-{{ if and .IsPage (eq .Section "categories") }}
+{{/* ── ItemList (category, profession + tag term pages) ── */}}
+{{ if and .IsPage (eq .Section "professionals") }}
+  {{ $profCats := .Params.categories }}
+  {{ $allTools := where .Site.RegularPages "Section" "tools" }}
+  {{ $profTools := slice }}
+  {{ range $profCats }}
+    {{ $c := . }}
+    {{ range where $allTools "Params.category" $c | first 5 }}
+      {{ $profTools = $profTools | append . }}
+    {{ end }}
+  {{ end }}
+  {{ if $profTools }}
+  {{ $listItems := slice }}
+  {{ range $i, $t := $profTools | first 20 }}
+    {{ $listItems = $listItems | append (dict "@type" "ListItem" "position" (add $i 1) "name" $t.Params.name "url" $t.Permalink) }}
+  {{ end }}
+  {{ $listSchema := dict "@context" "https://schema.org" "@type" "ItemList" "name" (printf "Best AI Tools for %s" $.Params.name) "itemListElement" $listItems }}
+  <script type="application/ld+json">{{ $listSchema | jsonify | safeJS }}</script>
+  {{ end }}
+{{ else if and .IsPage (eq .Section "categories") }}
   {{ $catTools := where .Site.RegularPages "Params.category" .Params.slug | first 20 }}
   {{ $listItems := slice }}
   {{ range $i, $t := $catTools }}
