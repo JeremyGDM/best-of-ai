@@ -6,23 +6,7 @@
 <div class="home-layout">
 
   <!-- ── Left column: brand + categories ── -->
-  <aside class="hl-left" id="hl-left">
-    <div class="hl-section-label">// categories</div>
-    <nav class="hl-cat-nav" id="cat-sidebar">
-      <a href="#" class="cat-link active" data-filter="all">
-        All tools <span class="cat-count">{{ partial "count.html" (len $tools) }}</span>
-      </a>
-      {{ range hugo.Data.categories }}
-        {{ $cat := . }}
-        {{ $catTools := where $tools "Params.category" $cat.slug }}
-        {{ if $catTools }}
-        <a href="{{ printf "/categories/%s/" $cat.slug | relURL }}" class="cat-link" data-filter="{{ $cat.slug }}">
-          {{ $cat.name }}<span class="cat-count">{{ partial "count.html" (len $catTools) }}</span>
-        </a>
-        {{ end }}
-      {{ end }}
-    </nav>
-  </aside>
+  {{ partial "left-sidebar.html" . }}
 
   <!-- ── Center column: search + tools ── -->
   <main class="hl-center" id="home-main">
@@ -106,18 +90,7 @@
   </main>
 
   <!-- ── Right column: professions ── -->
-  <aside class="hl-right">
-    <div class="hl-section-label">// professions</div>
-    <nav class="hl-prof-nav">
-      {{ range $profs }}
-      {{ $p := .Params }}
-      <a href="{{ .RelPermalink }}" class="prof-link">
-        {{ with $p.icon }}<span class="prof-link__icon">{{ . }}</span>{{ end }}
-        <span class="prof-link__name">{{ $p.name }}</span>
-      </a>
-      {{ end }}
-    </nav>
-  </aside>
+  {{ partial "right-sidebar.html" . }}
 
 </div>
 
@@ -199,4 +172,5 @@
   }, { passive: true });
 })();
 </script>
+{{ partial "sidebar-search-js.html" . }}
 {{ end }}

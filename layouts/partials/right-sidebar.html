@@ -1,0 +1,18 @@
+{{ $profs := where .Site.RegularPages "Section" "professionals" }}
+{{ $profs  = sort $profs "Params.sort_order" }}
+{{ $activeProf := "" }}
+{{ if eq .Section "professionals" }}{{ $activeProf = .Params.slug }}{{ end }}
+
+<aside class="hl-right">
+  <div class="hl-section-label">// professions</div>
+  <input class="sidebar-search" id="prof-search" type="text" placeholder="Filter..." autocomplete="off" spellcheck="false" aria-label="Filter professions">
+  <nav class="hl-prof-nav" id="prof-sidebar">
+    {{ range $profs }}
+    {{ $p := .Params }}
+    <a href="{{ .RelPermalink }}" class="prof-link{{ if eq $activeProf $p.slug }} active{{ end }}">
+      {{ with $p.icon }}<span class="prof-link__icon">{{ . }}</span>{{ end }}
+      <span class="prof-link__name">{{ $p.name }}</span>
+    </a>
+    {{ end }}
+  </nav>
+</aside>

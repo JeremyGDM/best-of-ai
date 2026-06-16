@@ -3,120 +3,127 @@
 {{ $cats  := $p.categories }}
 {{ $tools := where .Site.RegularPages "Section" "tools" }}
 
-{{/* Count total tools across all categories for this profession */}}
 {{ $totalCount := 0 }}
 {{ range $cats }}
   {{ $totalCount = add $totalCount (len (where $tools "Params.category" .)) }}
 {{ end }}
 
-<div class="container">
+<div class="home-layout">
 
-  <!-- Breadcrumb -->
-  <nav class="breadcrumb">
-    <a href="{{ "/" | relURL }}">Home</a>
-    <span class="breadcrumb__sep">/</span>
-    <a href="{{ "/professionals/" | relURL }}">AI by Profession</a>
-    <span class="breadcrumb__sep">/</span>
-    <span class="breadcrumb__cur">{{ $p.name }}</span>
-  </nav>
+  {{ partial "left-sidebar.html" . }}
 
-  <!-- Hero -->
-  <div class="cat-hero">
-    <div class="cat-hero__icon prof-hero__icon">{{ $p.icon }}</div>
-    <div>
-      <h1 class="cat-hero__title">{{ .Title }}</h1>
-      <p class="cat-hero__desc">{{ $p.description }}</p>
-      <div class="cat-hero__meta">
-        <span><strong>{{ partial "count.html" $totalCount }}</strong> tools</span>
-        <span class="stat-sep">·</span>
-        <span><strong>{{ partial "count.html" (len $cats) }}</strong> categories</span>
-        <span class="stat-sep">·</span>
-        <span>handpicked &amp; curated</span>
+  <main class="hl-center">
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+      <a href="{{ "/" | relURL }}">Home</a>
+      <span class="breadcrumb__sep">/</span>
+      <a href="{{ "/professionals/" | relURL }}">AI by Profession</a>
+      <span class="breadcrumb__sep">/</span>
+      <span class="breadcrumb__cur">{{ $p.name }}</span>
+    </nav>
+
+    <!-- Hero -->
+    <div class="cat-hero">
+      <div class="cat-hero__icon prof-hero__icon">{{ $p.icon }}</div>
+      <div>
+        <h1 class="cat-hero__title">{{ .Title }}</h1>
+        <p class="cat-hero__desc">{{ $p.description }}</p>
+        <div class="cat-hero__meta">
+          <span><strong>{{ partial "count.html" $totalCount }}</strong> tools</span>
+          <span class="stat-sep">·</span>
+          <span><strong>{{ partial "count.html" (len $cats) }}</strong> categories</span>
+          <span class="stat-sep">·</span>
+          <span>handpicked &amp; curated</span>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- Filter bar -->
-  <div class="prof-cat-tabs" id="prof-cat-tabs">
-    <button class="pf active" data-cat="all">all <span class="prof-cat-count">{{ partial "count.html" $totalCount }}</span></button>
-    {{ range $cats }}
-      {{ $c        := . }}
-      {{ $catTools := where $tools "Params.category" $c }}
-      {{ if $catTools }}
-      <button class="pf" data-cat="{{ $c }}">
-        {{ $c | humanize | lower }}
-        <span class="prof-cat-count">{{ partial "count.html" (len $catTools) }}</span>
-      </button>
+    <!-- Filter bar -->
+    <div class="prof-cat-tabs" id="prof-cat-tabs">
+      <button class="pf active" data-cat="all">all <span class="prof-cat-count">{{ partial "count.html" $totalCount }}</span></button>
+      {{ range $cats }}
+        {{ $c        := . }}
+        {{ $catTools := where $tools "Params.category" $c }}
+        {{ if $catTools }}
+        <button class="pf" data-cat="{{ $c }}">
+          {{ $c | humanize | lower }}
+          <span class="prof-cat-count">{{ partial "count.html" (len $catTools) }}</span>
+        </button>
+        {{ end }}
       {{ end }}
-    {{ end }}
-    <span class="prof-cat-tabs__sep">·</span>
-    <button class="pf" data-price="Free">free</button>
-    <button class="pf" data-price="Freemium">freemium</button>
-    <button class="pf" data-price="Paid">paid</button>
-  </div>
+      <span class="prof-cat-tabs__sep">·</span>
+      <button class="pf" data-price="Free">free</button>
+      <button class="pf" data-price="Freemium">freemium</button>
+      <button class="pf" data-price="Paid">paid</button>
+    </div>
 
-  <!-- Tools grid grouped by category -->
-  {{ if gt $totalCount 0 }}
-  <div id="prof-tools-grid">
-    {{ range $cats }}
-      {{ $c        := . }}
-      {{ $catTools := where $tools "Params.category" $c }}
-      {{ $catTools  = sort $catTools "Params.name" }}
-      {{ if $catTools }}
-      <section class="prof-cat-section" data-cat="{{ $c }}">
-        <h2 class="prof-cat-section__title">
-          {{ $c | humanize }}
-          <span class="prof-cat-section__count">{{ partial "count.html" (len $catTools) }}</span>
-        </h2>
-        <div class="tools-grid">
-          {{ range $catTools }}
-          {{ $tp := .Params }}
-          <a
-            href="{{ .RelPermalink }}"
-            class="tool-card"
-            data-cat="{{ $c }}"
-            data-price="{{ $tp.price }}"
-          >
-            <div class="tool-card__logo">
-              {{ if $tp.logo_url }}
-                <img src="{{ $tp.logo_url }}" alt="{{ $tp.name }}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                <span class="tool-logo-fallback" style="display:none">{{ substr $tp.name 0 1 }}</span>
-              {{ else }}
-                <img src="https://www.google.com/s2/favicons?domain={{ $tp.website }}&sz=32" alt="{{ $tp.name }}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                <span class="tool-logo-fallback" style="display:none">{{ substr $tp.name 0 1 }}</span>
-              {{ end }}
-            </div>
-            <div class="tool-card__body">
-              <span class="tool-card__name">{{ $tp.name }}</span>
-              <span class="tool-card__desc">{{ or $tp.subtitle ($tp.description | truncate 80) }}</span>
-            </div>
-            {{ partial "price-icon.html" $tp.price }}
-            <svg class="tool-card__ext" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
-          {{ end }}
-        </div>
-      </section>
-      {{ end }}
-    {{ end }}
-  </div>
-  {{ else }}
-  <p style="color:var(--fg-muted);padding:2rem 0">No tools found for this profession yet.</p>
-  {{ end }}
-
-  <!-- Other professions -->
-  <section class="other-cats-section">
-    <h2 class="other-cats__title">// other professions</h2>
-    <div class="other-cats-grid">
-      {{ range sort $.Site.RegularPages "Params.sort_order" }}
-        {{ if and (eq .Section "professionals") (ne .Params.slug $p.slug) }}
-        <a href="{{ .RelPermalink }}" class="other-cat-card">
-          <span style="margin-right:0.35rem">{{ .Params.icon }}</span>
-          <span class="other-cat-card__name">{{ .Params.name }}</span>
-        </a>
+    <!-- Tools grid grouped by category -->
+    {{ if gt $totalCount 0 }}
+    <div id="prof-tools-grid">
+      {{ range $cats }}
+        {{ $c        := . }}
+        {{ $catTools := where $tools "Params.category" $c }}
+        {{ $catTools  = sort $catTools "Params.name" }}
+        {{ if $catTools }}
+        <section class="prof-cat-section" data-cat="{{ $c }}">
+          <h2 class="prof-cat-section__title">
+            {{ $c | humanize }}
+            <span class="prof-cat-section__count">{{ partial "count.html" (len $catTools) }}</span>
+          </h2>
+          <div class="tools-grid">
+            {{ range $catTools }}
+            {{ $tp := .Params }}
+            <a
+              href="{{ .RelPermalink }}"
+              class="tool-card"
+              data-cat="{{ $c }}"
+              data-price="{{ $tp.price }}"
+            >
+              <div class="tool-card__logo">
+                {{ if $tp.logo_url }}
+                  <img src="{{ $tp.logo_url }}" alt="{{ $tp.name }}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                  <span class="tool-logo-fallback" style="display:none">{{ substr $tp.name 0 1 }}</span>
+                {{ else }}
+                  <img src="https://www.google.com/s2/favicons?domain={{ $tp.website }}&sz=32" alt="{{ $tp.name }}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                  <span class="tool-logo-fallback" style="display:none">{{ substr $tp.name 0 1 }}</span>
+                {{ end }}
+              </div>
+              <div class="tool-card__body">
+                <span class="tool-card__name">{{ $tp.name }}</span>
+                <span class="tool-card__desc">{{ or $tp.subtitle ($tp.description | truncate 80) }}</span>
+              </div>
+              {{ partial "price-icon.html" $tp.price }}
+              <svg class="tool-card__ext" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+            {{ end }}
+          </div>
+        </section>
         {{ end }}
       {{ end }}
     </div>
-  </section>
+    {{ else }}
+    <p style="color:var(--fg-muted);padding:2rem 0">No tools found for this profession yet.</p>
+    {{ end }}
+
+    <!-- Other professions -->
+    <section class="other-cats-section">
+      <h2 class="other-cats__title">// other professions</h2>
+      <div class="other-cats-grid">
+        {{ range sort $.Site.RegularPages "Params.sort_order" }}
+          {{ if and (eq .Section "professionals") (ne .Params.slug $p.slug) }}
+          <a href="{{ .RelPermalink }}" class="other-cat-card">
+            <span style="margin-right:0.35rem">{{ .Params.icon }}</span>
+            <span class="other-cat-card__name">{{ .Params.name }}</span>
+          </a>
+          {{ end }}
+        {{ end }}
+      </div>
+    </section>
+
+  </main>
+
+  {{ partial "right-sidebar.html" . }}
 
 </div>
 
@@ -163,4 +170,5 @@
   });
 })();
 </script>
+{{ partial "sidebar-search-js.html" . }}
 {{ end }}

@@ -527,6 +527,24 @@ body.mobile-menu-open { overflow: hidden; }
   padding: 0 0.25rem 0.5rem;
 }
 
+/* Sidebar underline search */
+.sidebar-search {
+  display: block;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  outline: none;
+  color: var(--fg);
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  padding: 0.2rem 0.1rem 0.3rem;
+  margin-bottom: 0.6rem;
+  transition: border-color 0.15s;
+}
+.sidebar-search::placeholder { color: var(--fg-faint); }
+.sidebar-search:focus { border-bottom-color: var(--accent); }
+
 /* Category nav */
 .hl-cat-nav { display: flex; flex-direction: column; gap: 1px; }
 
@@ -676,6 +694,7 @@ body.mobile-menu-open { overflow: hidden; }
   text-overflow: ellipsis;
 }
 .prof-link:hover { color: var(--fg); background: var(--surface); opacity: 1; }
+.prof-link.active { color: var(--accent); background: var(--accent-bg); }
 .prof-link__icon { font-size: 0.85rem; flex-shrink: 0; }
 .prof-link__name { overflow: hidden; text-overflow: ellipsis; }
 

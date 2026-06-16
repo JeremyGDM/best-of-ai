@@ -5,21 +5,7 @@
 <div class="home-layout">
 
   <!-- ── Left: categories ── -->
-  <aside class="hl-left">
-    <div class="hl-section-label">// categories</div>
-    <nav class="hl-cat-nav">
-      <a href="{{ "/" | relURL }}" class="cat-link">All tools <span class="cat-count">{{ partial "count.html" (len $allTools) }}</span></a>
-      {{ range hugo.Data.categories }}
-        {{ $cat := . }}
-        {{ $ct  := where $allTools "Params.category" $cat.slug }}
-        {{ if $ct }}
-        <a href="{{ printf "/categories/%s/" $cat.slug | relURL }}" class="cat-link">
-          {{ $cat.name }}<span class="cat-count">{{ partial "count.html" (len $ct) }}</span>
-        </a>
-        {{ end }}
-      {{ end }}
-    </nav>
-  </aside>
+  {{ partial "left-sidebar.html" . }}
 
   <!-- ── Center: leaderboard ── -->
   <main class="hl-center">
@@ -75,18 +61,8 @@
   </main>
 
   <!-- ── Right: professions ── -->
-  <aside class="hl-right">
-    <div class="hl-section-label">// professions</div>
-    <nav class="hl-prof-nav">
-      {{ range $profs }}
-      {{ $p := .Params }}
-      <a href="{{ .RelPermalink }}" class="prof-link">
-        {{ with $p.icon }}<span class="prof-link__icon">{{ . }}</span>{{ end }}
-        <span class="prof-link__name">{{ $p.name }}</span>
-      </a>
-      {{ end }}
-    </nav>
-  </aside>
+  {{ partial "right-sidebar.html" . }}
 
 </div>
+{{ partial "sidebar-search-js.html" . }}
 {{ end }}

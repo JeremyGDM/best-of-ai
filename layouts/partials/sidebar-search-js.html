@@ -1,0 +1,22 @@
+<script>
+(function() {
+  var catSearch  = document.getElementById('cat-search');
+  var profSearch = document.getElementById('prof-search');
+  if (catSearch) {
+    catSearch.addEventListener('input', function() {
+      var q = catSearch.value.trim().toLowerCase();
+      document.querySelectorAll('#cat-sidebar .cat-link').forEach(function(link) {
+        link.style.display = (!q || link.textContent.toLowerCase().includes(q)) ? '' : 'none';
+      });
+    });
+  }
+  if (profSearch) {
+    profSearch.addEventListener('input', function() {
+      var q = profSearch.value.trim().toLowerCase();
+      document.querySelectorAll('#prof-sidebar .prof-link').forEach(function(link) {
+        link.style.display = (!q || link.textContent.toLowerCase().includes(q)) ? '' : 'none';
+      });
+    });
+  }
+})();
+</script>
