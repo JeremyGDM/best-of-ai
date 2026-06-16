@@ -904,6 +904,78 @@ body.mobile-menu-open { overflow: hidden; }
 }
 .tool-card:hover .tool-card__ext { opacity: 1; }
 
+/* ── Save button on cards ── */
+.tool-card__save {
+  position: absolute;
+  bottom: 0.4rem;
+  right: 0.4rem;
+  padding: 0.2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--fg-faint);
+  opacity: 0;
+  transition: opacity 0.15s, color 0.15s;
+  line-height: 1;
+  border-radius: 3px;
+}
+.tool-card:hover .tool-card__save { opacity: 1; }
+.tool-card__save.is-saved {
+  opacity: 1;
+  color: var(--accent);
+}
+.tool-card__save.is-saved svg {
+  fill: var(--accent);
+}
+.tool-card__save:hover {
+  color: var(--accent);
+}
+
+/* ── Save button on detail page ── */
+.detail-save {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1rem;
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--fg-muted);
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+.detail-save:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.detail-save.is-saved {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.detail-save.is-saved svg {
+  fill: var(--accent);
+}
+
+/* ── Saved nav link ── */
+.nav-btn--saved { position: relative; }
+.saved-count {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  min-width: 15px;
+  height: 15px;
+  padding: 0 3px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #000;
+  font-size: 0.58rem;
+  font-weight: 700;
+  line-height: 15px;
+  text-align: center;
+}
+
 /* ── Dead / discontinued tool cards ── */
 .tool-card--dead {
   opacity: 0.45;
