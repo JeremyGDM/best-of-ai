@@ -10,14 +10,19 @@
     <a href="{{ "/" | relURL }}" class="cat-link{{ if not $activeCat }} active{{ end }}" data-filter="all">
       All tools <span class="cat-count">{{ partial "count.html" (len $tools) }}</span>
     </a>
+    {{ $catList := slice }}
     {{ range hugo.Data.categories }}
       {{ $cat := . }}
       {{ $catTools := where $tools "Params.category" $cat.slug }}
       {{ if $catTools }}
-      <a href="{{ printf "/categories/%s/" $cat.slug | relURL }}" class="cat-link{{ if eq $activeCat $cat.slug }} active{{ end }}" data-filter="{{ $cat.slug }}">
-        {{ $cat.name }}<span class="cat-count">{{ partial "count.html" (len $catTools) }}</span>
-      </a>
+        {{ $catList = $catList | append (dict "count" (len $catTools) "cat" $cat) }}
       {{ end }}
+    {{ end }}
+    {{ range sort $catList "count" "desc" }}
+      {{ $cat := .cat }}
+      <a href="{{ printf "/categories/%s/" $cat.slug | relURL }}" class="cat-link{{ if eq $activeCat $cat.slug }} active{{ end }}" data-filter="{{ $cat.slug }}">
+        {{ $cat.name }}<span class="cat-count">{{ partial "count.html" .count }}</span>
+      </a>
     {{ end }}
   </nav>
 </aside>
