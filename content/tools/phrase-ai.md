@@ -10,6 +10,7 @@ category: 'translator'
 category_name: 'Translator'
 price: 'Paid'
 featured: false
+rank: 5
 date: '2025-09-21'
-tags: [translation, localisation, enterprise]
+tags: [translation, language, multilingual, communication, localization, globalization, language_ai, interpretation, text, enterprise, integrations, voice_enabled]
 ---

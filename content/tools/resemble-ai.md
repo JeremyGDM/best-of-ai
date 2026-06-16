@@ -10,6 +10,7 @@ category: 'voice-cloning'
 category_name: 'Voice Cloning'
 price: 'Paid'
 featured: false
+rank: 8
 date: '2025-09-21'
-tags: [voice_cloning, audio, creative, api_available, mobile_app, real_time]
+tags: [voice_cloning, audio, creative, voice, synthesis, tts, custom_voice, realistic, voice_ai, api_available, mobile_app, real_time]
 ---

@@ -9,6 +9,7 @@ category: 'document-ai'
 category_name: 'Document AI'
 price: 'Freemium'
 featured: false
+rank: 5
 date: '2026-06-15'
-tags: []
+tags: [document_ai, pdf, productivity, extraction, documents, ocr, summarization, document_processing, parsing]
 ---

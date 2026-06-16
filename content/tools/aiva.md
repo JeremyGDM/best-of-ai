@@ -10,6 +10,7 @@ category: 'music-generation'
 category_name: 'Music Generation'
 price: 'Freemium'
 featured: false
+rank: 8
 date: '2025-09-21'
-tags: [music_generation, creative, audio]
+tags: [music_generation, audio, creative, music, composition, ai_music, beats, melody, soundtrack, free_tier, voice_enabled, training]
 ---

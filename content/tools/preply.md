@@ -10,5 +10,7 @@ category: 'language-learning'
 category_name: 'Language Learning'
 price: 'Paid'
 featured: false
+rank: 5
 date: '2025-06-15'
+tags: [language_learning, education, languages, learning, multilingual, vocabulary, grammar, speaking, immersion, customizable]
 ---

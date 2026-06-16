@@ -10,6 +10,7 @@ category: 'meme-generator'
 category_name: 'Meme Generator'
 price: 'Free'
 featured: false
+rank: 5
 date: '2025-09-21'
-tags: [meme, creative, social_media]
+tags: [meme, creative, social_media, humor, content, viral, fun, images, captions, templates, easy_to_use]
 ---

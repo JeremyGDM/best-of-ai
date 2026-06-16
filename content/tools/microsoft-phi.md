@@ -10,6 +10,7 @@ category: 'models'
 category_name: 'Models'
 price: 'Free'
 featured: false
+rank: 9
 date: '2025-09-21'
-tags: [llm, foundation_model, ai_model]
+tags: [llm, foundation_model, ai_model, machine_learning, neural, inference, fine_tuning, api, open_source, nlp, model_based]
 ---

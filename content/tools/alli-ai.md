@@ -9,6 +9,7 @@ category: 'seo'
 category_name: 'SEO'
 price: 'Paid'
 featured: false
+rank: 7
 date: '2026-06-15'
-tags: []
+tags: [seo, marketing, analytics, ranking, optimization, keywords, content_seo, backlinks, serp]
 ---

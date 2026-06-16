@@ -6,9 +6,11 @@ slug: 'lever'
 description: 'Lever is a talent acquisition suite that combines an ATS and CRM in one platform to manage the full recruiting workflow. Its AI features include interview scheduling automation, sourcing recommendations, and candidate scoring to help hiring teams work more efficiently.'
 website: 'https://lever.co'
 logo_url: ''
-category: 'hr'
-category_name: 'HR'
+category: 'recruiting'
+category_name: 'Recruiting'
 price: 'Paid'
 featured: false
+rank: 9
 date: '2025-06-15'
+tags: [collaboration, fast, ai_powered, intelligent, platform, tool, service, solution]
 ---

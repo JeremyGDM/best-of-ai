@@ -10,6 +10,7 @@ category: 'academia'
 category_name: 'Academia'
 price: 'Freemium'
 featured: false
+rank: 8
 date: '2025-09-21'
-tags: [research, education, academic]
+tags: [research, education, academic, papers, scholars, literature, citations, peer_review, university, integrations]
 ---

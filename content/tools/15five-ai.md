@@ -10,6 +10,7 @@ category: 'hr'
 category_name: 'HR'
 price: 'Paid'
 featured: false
+rank: 7
 date: '2025-09-21'
-tags: [hr, performance, management]
+tags: [hr, business, recruitment, employees, human_resources, onboarding, performance, payroll, talent, real_time]
 ---

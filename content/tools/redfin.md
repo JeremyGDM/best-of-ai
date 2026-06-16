@@ -10,6 +10,7 @@ category: 'real-estate'
 category_name: 'Real Estate'
 price: 'Free'
 featured: false
+rank: 7
 date: '2025-09-21'
-tags: [real_estate, business, real_time]
+tags: [real_estate, business, property, housing, investment, listings, mortgage, valuation, market_data, real_time, customizable]
 ---

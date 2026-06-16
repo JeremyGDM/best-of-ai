@@ -10,5 +10,7 @@ category: '3d'
 category_name: '3D'
 price: 'Freemium'
 featured: false
+rank: 8
 date: '2025-06-15'
+tags: [3d, design, creative, modeling, rendering, visualization, 3d_art, digital_art, sculpting, image_based, model_based]
 ---

@@ -10,6 +10,7 @@ category: 'workflow-automation'
 category_name: 'Workflow Automation'
 price: 'Freemium'
 featured: false
+rank: 5
 date: '2025-09-21'
-tags: [automation, workflow, productivity]
+tags: [automation, workflow, productivity, efficiency, process, integration, triggers, bots, orchestration, model_based, easy_to_use]
 ---

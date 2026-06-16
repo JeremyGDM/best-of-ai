@@ -10,6 +10,7 @@ category: 'writing-assistants'
 category_name: 'Writing Assistants'
 price: 'Freemium'
 featured: false
+rank: 5
 date: '2025-09-21'
-tags: [writing, academia, research]
+tags: [writing, text_generation, productivity, content, editing, grammar, paraphrasing, ai_writing, drafting, machine_learning]
 ---

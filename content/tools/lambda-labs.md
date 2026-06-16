@@ -10,6 +10,7 @@ category: 'models'
 category_name: 'Models'
 price: 'Paid'
 featured: false
+rank: 7
 date: '2025-09-21'
-tags: [gpu_cloud, ai_infrastructure, research]
+tags: [llm, foundation_model, ai_model, machine_learning, neural, inference, fine_tuning, api, open_source, collaboration, cloud_based, training]
 ---

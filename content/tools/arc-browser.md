@@ -10,6 +10,7 @@ category: 'search-engines'
 category_name: 'Search Engines'
 price: 'Free'
 featured: false
+rank: 8
 date: '2025-09-21'
-tags: [search, ai_assistant, mobile_app]
+tags: [search, ai_assistant, discovery, information, query, web_search, answers, knowledge, retrieval, mobile_app]
 ---

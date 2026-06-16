@@ -10,6 +10,7 @@ category: 'resume-tools'
 category_name: 'Resume Tools'
 price: 'Freemium'
 featured: false
+rank: 8
 date: '2025-09-21'
-tags: [resume, career, writing, real_time]
+tags: [resume, career, writing, job_search, cv, cover_letter, ats, interview, professional, real_time]
 ---

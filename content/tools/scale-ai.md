@@ -10,6 +10,7 @@ category: 'data'
 category_name: 'Data'
 price: 'Paid'
 featured: false
+rank: 9
 date: '2025-09-21'
-tags: [data_analysis, analytics, business, enterprise]
+tags: [data_analysis, analytics, business, insights, visualization, data_science, reporting, dashboards, sql, enterprise, customizable, nlp]
 ---

@@ -10,5 +10,7 @@ category: 'healthcare'
 category_name: 'Healthcare'
 price: 'Paid'
 featured: false
+rank: 5
 date: '2025-06-15'
+tags: [healthcare, medical, health, wellness, clinical, diagnosis, patient, ehr, telemedicine, analytics]
 ---

@@ -9,6 +9,7 @@ category: 'crm'
 category_name: 'CRM'
 price: 'Paid'
 featured: false
+rank: 5
 date: '2026-06-15'
-tags: []
+tags: [crm, sales, business, customers, relationships, pipeline, contacts, deals, customer_data, customizable]
 ---

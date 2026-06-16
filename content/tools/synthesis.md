@@ -10,6 +10,7 @@ category: 'learning-tools'
 category_name: 'Learning Tools'
 price: 'Paid'
 featured: false
+rank: 8
 date: '2025-01-01'
-tags: [education, learning, collaboration]
+tags: [education, learning, teaching, courses, training, tutoring, study, assessment, e_learning, collaboration]
 ---

@@ -10,6 +10,7 @@ category: 'finance'
 category_name: 'Finance'
 price: 'Paid'
 featured: false
+rank: 8
 date: '2025-09-21'
-tags: [finance, business, analytics]
+tags: [finance, business, analytics, accounting, investment, financial_planning, budgeting, fintech, reporting, collaboration, powerful]
 ---

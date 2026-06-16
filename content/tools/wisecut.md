@@ -10,5 +10,7 @@ category: 'video-editor'
 category_name: 'Video Editor'
 price: 'Freemium'
 featured: false
+rank: 5
 date: '2025-06-15'
+tags: [video_editing, creative, video, production, media, cutting, transitions, effects, export]
 ---

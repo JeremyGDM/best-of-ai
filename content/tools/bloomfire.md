@@ -9,6 +9,7 @@ category: 'knowledge-management'
 category_name: 'Knowledge Management'
 price: 'Paid'
 featured: false
+rank: 5
 date: '2026-06-15'
-tags: []
+tags: [knowledge_base, productivity, note_taking, organization, information, second_brain, wiki, search, retrieval]
 ---

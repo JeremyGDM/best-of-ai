@@ -10,6 +10,7 @@ category: 'ai-directories'
 category_name: 'AI Directories'
 price: 'Free'
 featured: false
+rank: 7
 date: '2025-09-21'
-tags: [directory, reference]
+tags: [directory, reference, tools, discovery, listing, ai_tools, catalog, collection, curation, fast, powerful]
 ---

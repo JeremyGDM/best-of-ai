@@ -10,6 +10,7 @@ category: 'graphic-design'
 category_name: 'Graphic Design'
 price: 'Freemium'
 featured: false
+rank: 7
 date: '2025-09-21'
-tags: [design, wireframing, ux]
+tags: [design, image_editing, creative, visual, branding, typography, layouts, ui_design, illustration, collaboration, templates]
 ---

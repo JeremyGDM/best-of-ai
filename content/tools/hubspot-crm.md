@@ -10,6 +10,7 @@ category: 'crm'
 category_name: 'CRM'
 price: 'Freemium'
 featured: false
+rank: 10
 date: '2025-09-21'
-tags: [crm, sales, business]
+tags: [crm, sales, business, customers, relationships, pipeline, contacts, deals, customer_data, free_tier, customizable, machine_learning]
 ---

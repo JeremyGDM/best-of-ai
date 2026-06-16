@@ -10,6 +10,7 @@ category: 'search-engines'
 category_name: 'Search Engines'
 price: 'Paid'
 featured: false
+rank: 8
 date: '2025-09-21'
-tags: [search, ai_assistant]
+tags: [search, ai_assistant, discovery, information, query, web_search, answers, knowledge, retrieval, free_tier, secure, model_based]
 ---

@@ -10,6 +10,7 @@ category: 'graphic-design'
 category_name: 'Graphic Design'
 price: 'Paid'
 featured: false
+rank: 5
 date: '2025-09-21'
-tags: [design, ui_ux, prototyping]
+tags: [design, image_editing, creative, visual, branding, typography, layouts, ui_design, illustration, powerful]
 ---

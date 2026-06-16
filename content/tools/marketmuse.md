@@ -10,6 +10,7 @@ category: 'marketing'
 category_name: 'Marketing'
 price: 'Paid'
 featured: false
+rank: 7
 date: '2025-09-21'
-tags: [marketing, business, enterprise]
+tags: [marketing, business, campaigns, growth, promotion, demand_generation, brand, digital_marketing, roi, enterprise]
 ---

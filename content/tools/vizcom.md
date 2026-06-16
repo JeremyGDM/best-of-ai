@@ -9,6 +9,7 @@ category: 'graphic-design'
 category_name: 'Graphic Design'
 price: 'Freemium'
 featured: false
+rank: 5
 date: '2026-06-15'
-tags: []
+tags: [design, image_editing, creative, visual, branding, typography, layouts, ui_design, illustration]
 ---

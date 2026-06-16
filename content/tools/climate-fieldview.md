@@ -10,6 +10,7 @@ category: 'farming'
 category_name: 'Farming'
 price: 'Freemium'
 featured: false
+rank: 7
 date: '2025-09-21'
-tags: [farming, agriculture]
+tags: [farming, agriculture, agritech, crops, sustainability, precision_agriculture, soil, yield, irrigation, integrations, image_based, analytics]
 ---

@@ -10,6 +10,7 @@ category: 'learning-tools'
 category_name: 'Learning Tools'
 price: 'Free'
 featured: false
+rank: 5
 date: '2025-09-21'
-tags: [education, ai_tutor, learning]
+tags: [education, learning, teaching, courses, training, tutoring, study, assessment, e_learning, image_based]
 ---

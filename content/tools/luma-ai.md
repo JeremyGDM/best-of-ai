@@ -10,6 +10,7 @@ category: '3d'
 category_name: '3D'
 price: 'Freemium'
 featured: false
+rank: 8
 date: '2025-09-21'
-tags: [3d, design, creative, mobile_app]
+tags: [3d, design, creative, modeling, rendering, visualization, 3d_art, digital_art, sculpting, mobile_app, machine_learning, affordable]
 ---

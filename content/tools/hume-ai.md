@@ -10,6 +10,7 @@ category: 'text-to-speech'
 category_name: 'Text to Speech'
 price: 'Freemium'
 featured: false
+rank: 8
 date: '2025-09-21'
-tags: [text_to_speech, audio, voice]
+tags: [text_to_speech, audio, voice, narration, accessibility, tts, speech_synthesis, voiceover, reading, voice_enabled]
 ---

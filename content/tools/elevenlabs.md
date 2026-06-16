@@ -10,6 +10,7 @@ category: 'audio'
 category_name: 'Audio'
 price: 'Freemium'
 featured: false
+rank: 10
 date: '2025-09-21'
-tags: [audio, creative, mobile_app]
+tags: [audio, creative, sound, music, recording, audio_editing, sound_design, mixing, production, mobile_app, voice_enabled]
 ---

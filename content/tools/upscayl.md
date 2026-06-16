@@ -10,6 +10,7 @@ category: 'image-editing'
 category_name: 'Image Editing'
 price: 'Free'
 featured: false
+rank: 8
 date: '2025-09-21'
-tags: [image_editing, open_source, free]
+tags: [image_editing, design, creative, photo, visual, retouching, filters, enhancement, manipulation, open_source, free_tier, secure]
 ---

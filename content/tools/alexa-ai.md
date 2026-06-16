@@ -10,5 +10,7 @@ category: 'personal-assistants'
 category_name: 'Personal Assistants'
 price: 'Freemium'
 featured: false
+rank: 7
 date: '2025-06-15'
+tags: [ai_assistant, productivity, chatbot, support, helpful, personal, tasks, reminders, smart, voice_enabled]
 ---

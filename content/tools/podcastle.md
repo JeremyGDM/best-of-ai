@@ -10,5 +10,7 @@ category: 'podcast'
 category_name: 'Podcast'
 price: 'Freemium'
 featured: false
+rank: 5
 date: '2025-06-15'
+tags: [podcast, audio, content_creation, media, broadcasting, episodes, hosting, editing, distribution, voice_enabled, powerful]
 ---

@@ -748,6 +748,27 @@ body.mobile-menu-open { overflow: hidden; }
 
 /* ── Tool section ── */
 .tool-section { margin-bottom: 2.5rem; }
+.tool-section__more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-left: auto;
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  color: var(--fg-muted);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.18rem 0.55rem;
+  transition: color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+.tool-section__more-link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  opacity: 1;
+}
 .tool-section__title {
   font-size: 1rem;
   font-weight: 600;
@@ -758,6 +779,11 @@ body.mobile-menu-open { overflow: hidden; }
   gap: 0.5rem;
   font-family: var(--font-mono);
 }
+.tool-section__title-link {
+  color: inherit;
+  text-decoration: none;
+}
+.tool-section__title-link:hover { color: var(--accent); }
 .tool-section__count {
   font-size: 0.7rem;
   color: var(--fg-faint);

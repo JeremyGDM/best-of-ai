@@ -10,6 +10,7 @@ category: 'data'
 category_name: 'Data'
 price: 'Freemium'
 featured: false
+rank: 7
 date: '2025-09-21'
-tags: [data, developer_tools, analytics]
+tags: [data_analysis, analytics, business, insights, visualization, data_science, reporting, dashboards, sql, cloud_based, model_based]
 ---

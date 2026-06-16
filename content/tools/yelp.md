@@ -10,6 +10,7 @@ category: 'local-search-engines'
 category_name: 'Local Search Engines'
 price: 'Free'
 featured: false
+rank: 8
 date: '2025-09-21'
-tags: [search, local]
+tags: [search, local, location, maps, discovery, places, reviews, navigation, geo, customizable]
 ---

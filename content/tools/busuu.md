@@ -10,6 +10,7 @@ category: 'language-learning'
 category_name: 'Language Learning'
 price: 'Freemium'
 featured: false
+rank: 8
 date: '2025-09-21'
-tags: [language_learning, education]
+tags: [language_learning, education, languages, learning, multilingual, vocabulary, grammar, speaking, immersion]
 ---

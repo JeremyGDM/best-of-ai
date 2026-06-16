@@ -10,6 +10,7 @@ category: 'seo'
 category_name: 'SEO'
 price: 'Paid'
 featured: false
+rank: 7
 date: '2025-09-21'
-tags: [seo, writing, marketing]
+tags: [seo, marketing, analytics, ranking, optimization, keywords, content_seo, backlinks, serp, browser_extension, extensible]
 ---

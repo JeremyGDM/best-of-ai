@@ -10,6 +10,7 @@ category: 'audio'
 category_name: 'Audio'
 price: 'Free'
 featured: false
+rank: 7
 date: '2026-06-10'
-tags: [audio, creative]
+tags: [audio, creative, sound, music, recording, audio_editing, sound_design, mixing, production, free_tier, voice_enabled]
 ---

@@ -10,6 +10,7 @@ category: 'graphic-design'
 category_name: 'Graphic Design'
 price: 'Paid'
 featured: false
+rank: 9
 date: '2025-09-21'
-tags: [design, image_editing, creative]
+tags: [design, image_editing, creative, visual, branding, typography, layouts, ui_design, illustration, machine_learning, powerful]
 ---

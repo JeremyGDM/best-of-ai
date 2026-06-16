@@ -10,6 +10,7 @@ category: 'ai-companion'
 category_name: 'AI Companion'
 price: 'Freemium'
 featured: false
+rank: 7
 date: '2025-01-01'
-tags: [ai_companion, chatbot]
+tags: [ai_companion, chatbot, conversation, ai_assistant, chat, companionship, emotional_support, roleplay, personal, customizable, image_based, voice_enabled]
 ---

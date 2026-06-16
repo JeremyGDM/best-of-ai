@@ -10,6 +10,7 @@ category: 'automation'
 category_name: 'Automation'
 price: 'Freemium'
 featured: false
+rank: 9
 date: '2025-09-21'
-tags: [automation, workflow, productivity, open_source]
+tags: [automation, workflow, productivity, repetitive_tasks, efficiency, process_automation, triggers, scheduling, bots, open_source, collaboration, integrations]
 ---

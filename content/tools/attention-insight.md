@@ -10,6 +10,7 @@ category: 'market-research'
 category_name: 'Market Research'
 price: 'Freemium'
 featured: false
+rank: 8
 date: '2025-09-21'
-tags: [design, ux, analytics]
+tags: [market_research, business, analytics, consumer, insights, surveys, competitive_analysis, trends, intelligence, training, model_based]
 ---

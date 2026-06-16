@@ -10,6 +10,7 @@ category: 'graphic-design'
 category_name: 'Graphic Design'
 price: 'Free'
 featured: false
+rank: 7
 date: '2025-01-01'
-tags: [design, image_editing, creative]
+tags: [design, image_editing, creative, visual, branding, typography, layouts, ui_design, illustration, free_tier]
 ---

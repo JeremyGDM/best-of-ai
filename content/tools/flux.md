@@ -10,6 +10,7 @@ category: 'image-generation'
 category_name: 'Image Generation'
 price: 'Freemium'
 featured: false
+rank: 9
 date: '2025-01-01'
-tags: [image_generation, creative, text_to_image, open_source, api_available]
+tags: [image_generation, creative, text_to_image, visual, graphics, generative_ai, art, diffusion, prompting, open_source, api_available, image_based]
 ---

@@ -10,6 +10,7 @@ category: 'spreadsheets'
 category_name: 'Spreadsheets'
 price: 'Freemium'
 featured: false
+rank: 7
 date: '2025-09-21'
-tags: [spreadsheet, data_analysis, productivity]
+tags: [spreadsheet, data_analysis, productivity, data, sheets, formulas, excel, automation, calculations]
 ---

@@ -10,6 +10,7 @@ category: 'lead-generation'
 category_name: 'Lead Generation'
 price: 'Paid'
 featured: false
+rank: 8
 date: '2025-09-21'
-tags: [sales, marketing, business, enterprise]
+tags: [sales, marketing, business, leads, prospecting, outreach, pipeline, b2b, conversion, collaboration, enterprise, powerful]
 ---

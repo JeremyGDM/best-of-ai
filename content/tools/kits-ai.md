@@ -10,5 +10,7 @@ category: 'voice-cloning'
 category_name: 'Voice Cloning'
 price: 'Freemium'
 featured: false
+rank: 5
 date: '2025-06-15'
+tags: [voice_cloning, audio, creative, voice, synthesis, tts, custom_voice, realistic, voice_ai, voice_enabled]
 ---

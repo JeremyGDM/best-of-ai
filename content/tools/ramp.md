@@ -10,6 +10,7 @@ category: 'finance'
 category_name: 'Finance'
 price: 'Freemium'
 featured: false
+rank: 7
 date: '2025-01-01'
-tags: [finance, business, analytics]
+tags: [finance, business, analytics, accounting, investment, financial_planning, budgeting, fintech, reporting, collaboration, cloud_based, fast]
 ---

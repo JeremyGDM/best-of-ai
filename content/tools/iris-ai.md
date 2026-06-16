@@ -10,6 +10,7 @@ category: 'research-tools'
 category_name: 'Research Tools'
 price: 'Paid'
 featured: false
+rank: 8
 date: '2025-01-01'
-tags: [research, analytics, academic, enterprise]
+tags: [research, analytics, academic, studies, investigation, literature_review, citations, discovery, synthesis, collaboration, enterprise]
 ---

@@ -10,6 +10,7 @@ category: 'infographics'
 category_name: 'Infographics'
 price: 'Freemium'
 featured: false
+rank: 7
 date: '2025-09-21'
-tags: [design, data_visualization, marketing]
+tags: [design, data_visualization, marketing, visual, creative, charts, diagrams, storytelling, communication, collaboration, image_based, powerful]
 ---

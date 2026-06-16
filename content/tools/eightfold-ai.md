@@ -10,6 +10,7 @@ category: 'hr'
 category_name: 'HR'
 price: 'Paid'
 featured: false
+rank: 7
 date: '2025-01-01'
-tags: [hr, business, recruitment, enterprise]
+tags: [hr, business, recruitment, employees, human_resources, onboarding, performance, payroll, talent, enterprise, machine_learning, fast]
 ---

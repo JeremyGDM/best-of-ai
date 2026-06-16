@@ -10,6 +10,7 @@ category: 'calendar-scheduling'
 category_name: 'Calendar Scheduling'
 price: 'Freemium'
 featured: false
+rank: 8
 date: '2025-09-21'
-tags: [scheduling, productivity, calendar]
+tags: [scheduling, productivity, calendar, time_management, meetings, appointments, booking, availability, planning]
 ---

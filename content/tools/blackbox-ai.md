@@ -10,6 +10,7 @@ category: 'code-assistant'
 category_name: 'Code Assistant'
 price: 'Freemium'
 featured: false
+rank: 8
 date: '2025-09-21'
-tags: [code_generation, developer_tools, productivity, real_time]
+tags: [code_generation, developer_tools, productivity, coding, programming, autocomplete, debugging, refactoring, ide, real_time, free_tier, image_based]
 ---

@@ -10,6 +10,7 @@ category: 'translator'
 category_name: 'Translator'
 price: 'Free'
 featured: false
+rank: 9
 date: '2025-09-21'
-tags: [translation, language, multilingual, api_available, mobile_app, real_time]
+tags: [translation, language, multilingual, communication, localization, globalization, language_ai, interpretation, text, api_available, mobile_app, real_time]
 ---

@@ -485,6 +485,366 @@
   slug: 'ai-directories'
   sort_order: 71
 -
+  id: 100
+  name: 'Cybersecurity'
+  description: 'AI tools for threat detection, vulnerability scanning, and security monitoring.'
+  slug: 'cybersecurity'
+  sort_order: 0
+-
+  id: 101
+  name: 'Mental Health'
+  description: 'AI tools for mental wellness, therapy support, mood tracking, and emotional well-being.'
+  slug: 'mental-health'
+  sort_order: 0
+-
+  id: 102
+  name: 'Fitness'
+  description: 'AI personal trainers, workout generators, and fitness tracking tools.'
+  slug: 'fitness'
+  sort_order: 0
+-
+  id: 103
+  name: 'Diagramming'
+  description: 'AI tools for creating flowcharts, architecture diagrams, and visual documentation.'
+  slug: 'diagramming'
+  sort_order: 0
+-
+  id: 104
+  name: 'Data Labeling'
+  description: 'AI tools for annotating and labeling datasets used in machine learning training.'
+  slug: 'data-labeling'
+  sort_order: 0
+-
+  id: 105
+  name: 'Prompt Tools'
+  description: 'Tools for prompt engineering, prompt management, and AI output optimization.'
+  slug: 'prompt-tools'
+  sort_order: 0
+-
+  id: 106
+  name: 'Travel'
+  description: 'AI tools for itinerary planning, trip research, and travel booking assistance.'
+  slug: 'travel'
+  sort_order: 0
+-
+  id: 107
+  name: 'Contract Management'
+  description: 'AI tools for drafting, reviewing, and managing contracts and agreements.'
+  slug: 'contract-management'
+  sort_order: 0
+-
+  id: 108
+  name: 'Compliance'
+  description: 'AI tools for regulatory compliance, risk management, and policy monitoring.'
+  slug: 'compliance'
+  sort_order: 0
+-
+  id: 109
+  name: 'Computer Vision'
+  description: 'AI tools for image recognition, object detection, and visual analysis.'
+  slug: 'computer-vision'
+  sort_order: 0
+-
+  id: 110
+  name: 'Synthetic Data'
+  description: 'AI tools for generating synthetic datasets for training and testing ML models.'
+  slug: 'synthetic-data'
+  sort_order: 0
+-
+  id: 111
+  name: 'AR/VR'
+  description: 'AI tools for augmented reality and virtual reality experiences.'
+  slug: 'ar-vr'
+  sort_order: 0
+-
+  id: 112
+  name: 'Accessibility'
+  description: 'AI tools for assistive technology and making content accessible to everyone.'
+  slug: 'accessibility'
+  sort_order: 0
+-
+  id: 113
+  name: 'Construction'
+  description: 'AI tools for construction project management, planning, and site monitoring.'
+  slug: 'construction'
+  sort_order: 0
+-
+  id: 114
+  name: 'Manufacturing'
+  description: 'AI tools for industrial production, quality control, and factory automation.'
+  slug: 'manufacturing'
+  sort_order: 0
+-
+  id: 115
+  name: 'Energy'
+  description: 'AI tools for energy management, grid optimization, and sustainability tracking.'
+  slug: 'energy'
+  sort_order: 0
+-
+  id: 116
+  name: 'Drug Discovery'
+  description: 'AI tools for pharmaceutical research, molecular design, and clinical trials.'
+  slug: 'drug-discovery'
+  sort_order: 0
+-
+  id: 117
+  name: 'Tax & Accounting'
+  description: 'AI tools for tax preparation, bookkeeping, and financial record management.'
+  slug: 'tax-accounting'
+  sort_order: 0
+-
+  id: 118
+  name: 'Insurance'
+  description: 'AI tools for underwriting, claims processing, and insurance risk assessment.'
+  slug: 'insurance'
+  sort_order: 0
+-
+  id: 119
+  name: 'Events'
+  description: 'AI tools for event planning, management, and attendee engagement.'
+  slug: 'events'
+  sort_order: 0
+-
+  id: 120
+  name: 'Sports Analytics'
+  description: 'AI tools for sports performance analysis, coaching insights, and player tracking.'
+  slug: 'sports-analytics'
+  sort_order: 0
+-
+  id: 121
+  name: 'Content Moderation'
+  description: 'AI tools for trust and safety, detecting harmful content, and policy enforcement.'
+  slug: 'content-moderation'
+  sort_order: 0
+-
+  id: 122
+  name: 'Chatbot Builders'
+  description: 'Platforms and tools for building, deploying, and managing AI chatbots.'
+  slug: 'chatbot-builders'
+  sort_order: 0
+-
+  id: 123
+  name: 'Localization'
+  description: 'AI tools for localizing software, apps, and content for global markets.'
+  slug: 'localization'
+  sort_order: 0
+-
+  id: 124
+  name: 'Mind Mapping'
+  description: 'AI tools for brainstorming, idea mapping, and visual thinking.'
+  slug: 'mind-mapping'
+  sort_order: 0
+-
+  id: 125
+  name: 'Medical Imaging'
+  description: 'AI tools for radiology, pathology, and diagnostic medical image analysis.'
+  slug: 'medical-imaging'
+  sort_order: 0
+-
+  id: 126
+  name: 'Patent Tools'
+  description: 'AI tools for patent research, prior art search, and patent application drafting.'
+  slug: 'patent-tools'
+  sort_order: 0
+-
+  id: 127
+  name: 'Recruiting'
+  description: 'AI tools for talent acquisition, candidate screening, and hiring workflows.'
+  slug: 'recruiting'
+  sort_order: 0
+-
+  id: 128
+  name: 'Telemedicine'
+  description: 'AI tools for remote medical consultations, patient monitoring, and digital health.'
+  slug: 'telemedicine'
+  sort_order: 0
+-
+  id: 129
+  name: 'Fleet Management'
+  description: 'AI tools for fleet tracking, route optimization, and logistics operations.'
+  slug: 'fleet-management'
+  sort_order: 0
+-
+  id: 130
+  name: 'Privacy'
+  description: 'AI tools for data privacy, anonymization, and personal information protection.'
+  slug: 'privacy'
+  sort_order: 0
+-
+  id: 131
+  name: 'Robotics'
+  description: 'AI tools for robotics design, simulation, and autonomous systems.'
+  slug: 'robotics'
+  sort_order: 0
+-
+  id: 132
+  name: 'Web3'
+  description: 'AI tools for blockchain, DeFi, NFTs, and decentralized applications.'
+  slug: 'web3'
+  sort_order: 0
+-
+  id: 133
+  name: 'Biotech'
+  description: 'AI tools for genomics, proteomics, and life sciences research.'
+  slug: 'biotech'
+  sort_order: 0
+-
+  id: 134
+  name: 'Geospatial'
+  description: 'AI tools for GIS, satellite imagery analysis, and location intelligence.'
+  slug: 'geospatial'
+  sort_order: 0
+-
+  id: 135
+  name: 'Architecture'
+  description: 'AI tools for architectural design, building planning, and spatial visualization.'
+  slug: 'architecture'
+  sort_order: 0
+-
+  id: 136
+  name: 'Nutrition'
+  description: 'AI tools for meal planning, dietary tracking, and nutritional analysis.'
+  slug: 'nutrition'
+  sort_order: 0
+-
+  id: 137
+  name: 'Parenting'
+  description: 'AI tools for child development, parenting guidance, and family organization.'
+  slug: 'parenting'
+  sort_order: 0
+-
+  id: 138
+  name: 'Pets'
+  description: 'AI tools for pet care, health monitoring, and veterinary guidance.'
+  slug: 'pets'
+  sort_order: 0
+-
+  id: 139
+  name: 'FinTech'
+  description: 'AI tools for payments, banking, lending, and financial services innovation.'
+  slug: 'fintech'
+  sort_order: 0
+-
+  id: 140
+  name: 'CleanTech'
+  description: 'AI tools for clean energy, carbon reduction, and environmental sustainability.'
+  slug: 'cleantech'
+  sort_order: 0
+-
+  id: 141
+  name: 'Reading'
+  description: 'AI tools for book summaries, speed reading, and reading comprehension.'
+  slug: 'reading'
+  sort_order: 0
+-
+  id: 142
+  name: 'Storytelling'
+  description: 'AI tools for narrative writing, interactive fiction, and world-building.'
+  slug: 'storytelling'
+  sort_order: 0
+-
+  id: 143
+  name: 'Dubbing'
+  description: 'AI tools for video dubbing, lip-sync, and multilingual voice replacement.'
+  slug: 'dubbing'
+  sort_order: 0
+-
+  id: 144
+  name: 'Identity'
+  description: 'AI tools for identity verification, biometrics, and authentication.'
+  slug: 'identity'
+  sort_order: 0
+-
+  id: 145
+  name: 'Wellness'
+  description: 'AI tools for mindfulness, sleep tracking, meditation, and holistic well-being.'
+  slug: 'wellness'
+  sort_order: 0
+-
+  id: 146
+  name: 'Dating'
+  description: 'AI tools for dating profile optimization, matchmaking, and relationship coaching.'
+  slug: 'dating'
+  sort_order: 0
+-
+  id: 147
+  name: 'Nonprofit'
+  description: 'AI tools designed for nonprofit organizations, fundraising, and social impact.'
+  slug: 'nonprofit'
+  sort_order: 0
+-
+  id: 148
+  name: 'Debugging'
+  description: 'AI tools for identifying, diagnosing, and fixing software bugs and errors.'
+  slug: 'debugging'
+  sort_order: 0
+-
+  id: 149
+  name: 'API Tools'
+  description: 'AI tools for API design, testing, documentation, and management.'
+  slug: 'api-tools'
+  sort_order: 0
+-
+  id: 150
+  name: 'Database Tools'
+  description: 'AI tools for database design, querying, optimization, and management.'
+  slug: 'database-tools'
+  sort_order: 0
+-
+  id: 151
+  name: 'Cloud Management'
+  description: 'AI tools for cloud infrastructure optimization, cost management, and operations.'
+  slug: 'cloud-management'
+  sort_order: 0
+-
+  id: 152
+  name: 'IoT'
+  description: 'AI tools for Internet of Things device management and edge intelligence.'
+  slug: 'iot'
+  sort_order: 0
+-
+  id: 153
+  name: '3D Printing'
+  description: 'AI tools for generative design, model preparation, and additive manufacturing.'
+  slug: '3d-printing'
+  sort_order: 0
+-
+  id: 154
+  name: 'Space Tech'
+  description: 'AI tools for aerospace engineering, satellite operations, and space exploration.'
+  slug: 'space-tech'
+  sort_order: 0
+-
+  id: 155
+  name: 'Sentiment Analysis'
+  description: 'AI tools for analyzing opinions, emotions, and sentiment in text and speech.'
+  slug: 'sentiment-analysis'
+  sort_order: 0
+-
+  id: 156
+  name: 'Documentation'
+  description: 'AI tools for writing, maintaining, and generating technical documentation.'
+  slug: 'documentation'
+  sort_order: 0
+-
+  id: 157
+  name: 'Observability'
+  description: 'AI tools for logging, tracing, monitoring, and application performance insights.'
+  slug: 'observability'
+  sort_order: 0
+-
+  id: 158
+  name: 'Software Testing'
+  description: 'AI tools for automated testing, test generation, and quality assurance workflows.'
+  slug: 'software-testing'
+  sort_order: 0
+-
+  id: 159
+  name: 'Character Design'
+  description: 'AI tools for designing characters, avatars, and digital personas.'
+  slug: 'character-design'
+  sort_order: 0
+-
   id: 99
   name: 'Others'
   description: 'Additional tools and resources.'

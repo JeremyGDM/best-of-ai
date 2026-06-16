@@ -11,5 +11,5 @@ category_name: 'Others'
 price: 'Free'
 featured: false
 date: '2026-06-15'
-tags: [marketing, directory, lead_generation, social_media, market_research, business]
+tags: [other, miscellaneous, tools, utilities, general, directory, discovery, marketplace, networking, recruitment]
 ---

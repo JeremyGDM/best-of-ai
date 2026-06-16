@@ -10,6 +10,7 @@ category: 'business-tools'
 category_name: 'Business Tools'
 price: 'Paid'
 featured: false
+rank: 7
 date: '2025-09-21'
-tags: [business_tools, legal, automation]
+tags: [business, productivity, enterprise, operations, management, documents, contracts, proposals, workflow, customizable]
 ---

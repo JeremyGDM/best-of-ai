@@ -10,6 +10,7 @@ category: 'climate'
 category_name: 'Climate'
 price: 'Paid'
 featured: false
+rank: 8
 date: '2025-09-21'
-tags: [climate, environment]
+tags: [climate, environment, sustainability, emissions, green, carbon, renewable_energy, esg, net_zero, analytics]
 ---

@@ -10,6 +10,7 @@ category: 'writing-assistants'
 category_name: 'Writing Assistants'
 price: 'Paid'
 featured: false
+rank: 7
 date: '2025-01-01'
-tags: [writing, text_generation, productivity]
+tags: [writing, text_generation, productivity, content, editing, grammar, paraphrasing, ai_writing, drafting, nlp, image_based, training]
 ---

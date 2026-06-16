@@ -10,6 +10,7 @@ category: 'background-remover'
 category_name: 'Background Remover'
 price: 'Freemium'
 featured: false
+rank: 8
 date: '2025-01-01'
-tags: [image_editing, design, creative, api_available]
+tags: [image_editing, design, creative, background, image_processing, cutout, transparency, photo_editing, visual, api_available, image_based, fast]
 ---

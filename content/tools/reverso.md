@@ -10,6 +10,7 @@ category: 'translator'
 category_name: 'Translator'
 price: 'Freemium'
 featured: false
+rank: 7
 date: '2025-09-21'
-tags: [translation, language, multilingual]
+tags: [translation, language, multilingual, communication, localization, globalization, language_ai, interpretation, text, powerful]
 ---

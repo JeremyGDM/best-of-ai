@@ -9,6 +9,7 @@ category: 'business-tools'
 category_name: 'Business Tools'
 price: 'Paid'
 featured: false
+rank: 5
 date: '2026-06-15'
-tags: []
+tags: [business, productivity, enterprise, operations, management, documents, contracts, proposals, workflow]
 ---

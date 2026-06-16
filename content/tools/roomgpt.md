@@ -10,5 +10,7 @@ category: 'home-design'
 category_name: 'Home Design'
 price: 'Freemium'
 featured: false
+rank: 5
 date: '2025-06-15'
+tags: [home_design, design, creative, interior, architecture, floor_plan, furniture, renovation, decor, free_tier, image_based, powerful]
 ---

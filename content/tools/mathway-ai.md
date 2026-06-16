@@ -10,6 +10,7 @@ category: 'learning-tools'
 category_name: 'Learning Tools'
 price: 'Freemium'
 featured: false
+rank: 5
 date: '2025-09-21'
-tags: [education, mathematics, homework_help]
+tags: [education, learning, teaching, courses, training, tutoring, study, assessment, e_learning]
 ---

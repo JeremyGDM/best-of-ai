@@ -10,6 +10,7 @@ category: 'personal-assistants'
 category_name: 'Personal Assistants'
 price: 'Free'
 featured: false
+rank: 7
 date: '2025-09-21'
-tags: [ai_assistant, productivity, chatbot, mobile_app]
+tags: [ai_assistant, productivity, chatbot, support, helpful, personal, tasks, reminders, smart, mobile_app]
 ---

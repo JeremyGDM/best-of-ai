@@ -10,6 +10,7 @@ category: 'sales-tools'
 category_name: 'Sales Tools'
 price: 'Paid'
 featured: false
+rank: 5
 date: '2025-09-21'
-tags: [sales, analytics, crm]
+tags: [sales, business, crm, revenue, conversion, pipeline, prospecting, closing, forecasting, enterprise]
 ---

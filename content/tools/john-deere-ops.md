@@ -10,6 +10,7 @@ category: 'farming'
 category_name: 'Farming'
 price: 'Paid'
 featured: false
+rank: 5
 date: '2025-09-21'
-tags: [farming, agriculture]
+tags: [farming, agriculture, agritech, crops, sustainability, precision_agriculture, soil, yield, irrigation]
 ---

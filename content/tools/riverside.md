@@ -10,6 +10,7 @@ category: 'podcast'
 category_name: 'Podcast'
 price: 'Paid'
 featured: false
+rank: 9
 date: '2025-09-21'
-tags: [podcast, audio, content_creation]
+tags: [podcast, audio, content_creation, media, broadcasting, episodes, hosting, editing, distribution, voice_enabled]
 ---

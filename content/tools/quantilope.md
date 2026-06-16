@@ -10,5 +10,7 @@ category: 'market-research'
 category_name: 'Market Research'
 price: 'Paid'
 featured: false
+rank: 5
 date: '2025-06-15'
+tags: [market_research, business, analytics, consumer, insights, surveys, competitive_analysis, trends, intelligence]
 ---

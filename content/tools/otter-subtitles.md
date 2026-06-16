@@ -10,6 +10,7 @@ category: 'video-subtitling'
 category_name: 'Video Subtitling'
 price: 'Freemium'
 featured: false
+rank: 5
 date: '2025-09-21'
-tags: [video_editing, transcription, subtitle]
+tags: [video_editing, transcription, subtitle, accessibility, video, captions, multilingual, auto_subtitle, srt, collaboration]
 ---

@@ -10,6 +10,7 @@ category: 'video-subtitling'
 category_name: 'Video Subtitling'
 price: 'Paid'
 featured: false
+rank: 8
 date: '2025-09-21'
-tags: [video_editing, transcription, subtitle]
+tags: [video_editing, transcription, subtitle, accessibility, video, captions, multilingual, auto_subtitle, srt, voice_enabled, fast, affordable]
 ---

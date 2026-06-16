@@ -10,6 +10,7 @@ category: 'app-builders'
 category_name: 'App Builders'
 price: 'Freemium'
 featured: false
+rank: 7
 date: '2025-09-21'
-tags: [app_builders, no_code, developer_tools]
+tags: [no_code, app_builder, developer_tools, app_development, lowcode, rapid_prototyping, mobile_apps, web_apps, deployment, nlp, analytics, model_based]
 ---

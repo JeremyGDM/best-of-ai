@@ -10,6 +10,7 @@ category: 'fashion'
 category_name: 'Fashion'
 price: 'Free'
 featured: false
+rank: 5
 date: '2025-09-21'
-tags: [fashion, design]
+tags: [fashion, design, style, clothing, retail, styling, outfit, trend, wardrobe]
 ---

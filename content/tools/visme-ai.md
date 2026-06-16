@@ -10,6 +10,7 @@ category: 'presentation'
 category_name: 'Presentation'
 price: 'Freemium'
 featured: false
+rank: 8
 date: '2025-09-21'
-tags: [presentation, infographics, design]
+tags: [presentation, productivity, design, slides, communication, pitch_deck, storytelling, visual, templates, collaboration, image_based]
 ---

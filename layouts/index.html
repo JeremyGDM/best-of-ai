@@ -49,22 +49,43 @@
       <button onclick="document.getElementById('home-search').value='';window.baiFilter()">Clear search</button>
     </div>
 
+    {{/* Build sortable slice: [{cat, count}] sorted by count desc */}}
+    {{ $catList := slice }}
     {{ range hugo.Data.categories }}
-      {{ $cat := . }}
+      {{ $count := len (where $tools "Params.category" .slug) }}
+      {{ if gt $count 0 }}
+        {{ $catList = $catList | append (dict "cat" . "count" $count) }}
+      {{ end }}
+    {{ end }}
+    {{ $catList = sort $catList "count" "desc" }}
+
+    {{ range $catList }}
+      {{ $cat   := .cat }}
+      {{ $total := .count }}
       {{ $catTools := where $tools "Params.category" $cat.slug }}
-      {{ if $catTools }}
+        {{ $sorted  := sort $catTools "Params.rank" "desc" }}
       <section class="tool-section" id="{{ $cat.slug }}" data-cat="{{ $cat.slug }}">
-        <h2 class="tool-section__title">{{ $cat.name }}<span class="tool-section__count">{{ partial "count.html" (len $catTools) }}</span></h2>
+        <h2 class="tool-section__title">
+          <a href="{{ printf "/categories/%s/" $cat.slug | relURL }}" class="tool-section__title-link">{{ $cat.name }}</a>
+          <span class="tool-section__count">{{ partial "count.html" $total }}</span>
+          {{ if gt $total 3 }}
+          <a href="{{ printf "/categories/%s/" $cat.slug | relURL }}" class="tool-section__more-link">
+            View all {{ $total }}
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          {{ end }}
+        </h2>
         <div class="tools-grid">
-          {{ range $catTools }}
-          {{ $p := .Params }}
+          {{ range $i, $page := $sorted }}
+          {{ $p := $page.Params }}
           <a
-            href="{{ .RelPermalink }}"
+            href="{{ $page.RelPermalink }}"
             class="tool-card"
             data-name="{{ lower $p.name }}"
             data-desc="{{ lower $p.description }}"
             data-cat="{{ $p.category }}"
             data-price="{{ $p.price }}"
+            {{ if ge $i 3 }}data-extra="true" style="display:none"{{ end }}
           >
             <div class="tool-card__logo">
               {{ if $p.logo_url }}
@@ -84,8 +105,8 @@
           </a>
           {{ end }}
         </div>
+
       </section>
-      {{ end }}
     {{ end }}
   </main>
 
@@ -98,30 +119,27 @@
 (function() {
   var searchInput  = document.getElementById('home-search');
   var noResults    = document.getElementById('no-results');
-  var catLinks     = document.querySelectorAll('.cat-link');
   var priceFilters = document.querySelectorAll('.pf');
 
   var activePrice = 'all';
-  var activeCat   = 'all';
 
   function filter() {
     var q = searchInput ? searchInput.value.trim().toLowerCase() : '';
     var totalVisible = 0;
 
     document.querySelectorAll('.tool-section').forEach(function(section) {
-      var catSlug  = section.dataset.cat;
-      var showSect = (activeCat === 'all' || activeCat === catSlug);
       var sectVisible = 0;
 
       section.querySelectorAll('.tool-card').forEach(function(card) {
         var matchQ = !q || card.dataset.name.includes(q) || card.dataset.desc.includes(q);
         var matchP = activePrice === 'all' || card.dataset.price === activePrice;
-        var show   = showSect && matchQ && matchP;
+        var isExtra = card.dataset.extra === 'true';
+        var show   = matchQ && matchP && (!isExtra || q);
         card.style.display = show ? '' : 'none';
         if (show) sectVisible++;
       });
 
-      section.style.display = (showSect && sectVisible > 0) ? '' : 'none';
+      section.style.display = sectVisible > 0 ? '' : 'none';
       totalVisible += sectVisible;
     });
 
@@ -132,23 +150,6 @@
 
   if (searchInput) searchInput.addEventListener('input', filter);
 
-  catLinks.forEach(function(link) {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      activeCat = link.dataset.filter || 'all';
-      catLinks.forEach(function(l) { l.classList.remove('active'); });
-      link.classList.add('active');
-
-      if (activeCat !== 'all') {
-        var target = document.getElementById(activeCat);
-        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } else {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-      filter();
-    });
-  });
-
   priceFilters.forEach(function(btn) {
     btn.addEventListener('click', function() {
       activePrice = btn.dataset.price;
@@ -158,7 +159,8 @@
     });
   });
 
-  // Scrollspy
+  // Scrollspy — highlight the matching sidebar link as user scrolls
+  var catLinks = document.querySelectorAll('.cat-link');
   var sections = document.querySelectorAll('.tool-section[id]');
   window.addEventListener('scroll', function() {
     var scrollY = window.scrollY + 120;

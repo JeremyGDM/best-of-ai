@@ -10,6 +10,7 @@ category: 'business-tools'
 category_name: 'Business Tools'
 price: 'Freemium'
 featured: false
+rank: 7
 date: '2025-09-21'
-tags: [business_tools, automation, sales]
+tags: [business, productivity, enterprise, operations, management, documents, contracts, proposals, workflow, collaboration, templates]
 ---

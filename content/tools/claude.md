@@ -10,6 +10,7 @@ category: 'chatbots'
 category_name: 'Chatbots'
 price: 'Freemium'
 featured: false
+rank: 10
 date: '2025-09-21'
-tags: [chatbot, text_generation, ai_assistant, api_available, enterprise]
+tags: [chatbot, text_generation, ai_assistant, conversational, nlp, dialogue, llm, general_ai, question_answering, api_available, collaboration, enterprise]
 ---

@@ -10,6 +10,7 @@ category: 'productivity'
 category_name: 'Productivity'
 price: 'Freemium'
 featured: false
+rank: 5
 date: '2025-09-21'
-tags: [productivity, ai_assistant, real_time, enterprise]
+tags: [productivity, ai_assistant, efficiency, workflow, organization, tasks, focus, time_management, collaboration, real_time, enterprise]
 ---

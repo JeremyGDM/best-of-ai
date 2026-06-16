@@ -10,6 +10,7 @@ category: 'finance'
 category_name: 'Finance'
 price: 'Freemium'
 featured: false
+rank: 5
 date: '2025-09-21'
-tags: [finance, automation, productivity]
+tags: [finance, business, analytics, accounting, investment, financial_planning, budgeting, fintech, reporting, real_time, integrations, fast]
 ---

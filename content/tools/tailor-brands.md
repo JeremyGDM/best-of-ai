@@ -10,5 +10,7 @@ category: 'logo-generator'
 category_name: 'Logo Generator'
 price: 'Freemium'
 featured: false
+rank: 5
 date: '2025-06-15'
+tags: [design, image_generation, branding, logo, identity, brand_assets, visual_identity, symbols, creative, powerful]
 ---

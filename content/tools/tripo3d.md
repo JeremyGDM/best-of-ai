@@ -10,6 +10,7 @@ category: '3d'
 category_name: '3D'
 price: 'Freemium'
 featured: false
+rank: 8
 date: '2025-01-01'
-tags: [3d, design, creative, mobile_app, real_time]
+tags: [3d, design, creative, modeling, rendering, visualization, 3d_art, digital_art, sculpting, mobile_app, real_time, image_based]
 ---

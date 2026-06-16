@@ -1,8 +1,10 @@
 {{ define "main" }}
 {{ $p     := .Params }}
 {{ $slug  := $p.slug }}
-{{ $tools := where .Site.RegularPages "Section" "tools" }}
-{{ $catTools := where $tools "Params.category" $slug }}
+{{ $tools    := where .Site.RegularPages "Section" "tools" }}
+{{ $primary  := where $tools "Params.category" $slug }}
+{{ $extra    := where $tools "Params.extra_categories" "intersect" (slice $slug) }}
+{{ $catTools := union $primary $extra }}
 {{ $catTools  = sort $catTools "Params.name" "asc" }}
 
 <div class="home-layout">
@@ -82,7 +84,9 @@
         {{ range hugo.Data.categories }}
           {{ $cat := . }}
           {{ if ne $cat.slug $slug }}
-            {{ $ct := where $tools "Params.category" $cat.slug }}
+            {{ $ctP := where $tools "Params.category" $cat.slug }}
+            {{ $ctE := where $tools "Params.extra_categories" "intersect" (slice $cat.slug) }}
+            {{ $ct  := union $ctP $ctE }}
             {{ if $ct }}
             <a href="{{ printf "/categories/%s/" $cat.slug | relURL }}" class="other-cat-card">
               <span class="other-cat-card__name">{{ $cat.name }}</span>

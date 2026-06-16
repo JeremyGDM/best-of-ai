@@ -10,6 +10,7 @@ category: 'others'
 category_name: 'Others'
 price: 'Paid'
 featured: false
+rank: 5
 date: '2026-06-11'
-tags: [other]
+tags: [other, miscellaneous, tools, utilities, general, innovative, niche, experimental, unique, fast]
 ---

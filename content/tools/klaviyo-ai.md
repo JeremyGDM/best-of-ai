@@ -10,6 +10,7 @@ category: 'email-assistants'
 category_name: 'Email Assistants'
 price: 'Freemium'
 featured: false
+rank: 8
 date: '2025-09-21'
-tags: [email, marketing, e_commerce]
+tags: [email, productivity, writing, communication, inbox, email_management, drafting, scheduling, follow_up, analytics]
 ---

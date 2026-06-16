@@ -10,6 +10,7 @@ category: 'e-commerce'
 category_name: 'E-Commerce'
 price: 'Paid'
 featured: false
+rank: 10
 date: '2025-09-21'
-tags: [ecommerce, business, marketing, enterprise]
+tags: [ecommerce, business, marketing, retail, shopping, online_store, product_catalog, checkout, conversions, enterprise, customizable, integrations]
 ---

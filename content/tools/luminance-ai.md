@@ -10,6 +10,7 @@ category: 'legal-assistants'
 category_name: 'Legal Assistants'
 price: 'Paid'
 featured: false
+rank: 5
 date: '2025-09-21'
-tags: [legal, document_ai, automation]
+tags: [legal, document_ai, business, contracts, compliance, law, legal_research, due_diligence, drafting]
 ---

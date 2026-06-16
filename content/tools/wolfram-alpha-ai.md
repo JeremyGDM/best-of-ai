@@ -10,6 +10,7 @@ category: 'research-tools'
 category_name: 'Research Tools'
 price: 'Freemium'
 featured: false
+rank: 8
 date: '2025-09-21'
-tags: [research, mathematics, education]
+tags: [research, analytics, academic, studies, investigation, literature_review, citations, discovery, synthesis, integrations]
 ---

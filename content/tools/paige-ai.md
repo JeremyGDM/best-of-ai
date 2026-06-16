@@ -10,6 +10,7 @@ category: 'healthcare'
 category_name: 'Healthcare'
 price: 'Paid'
 featured: false
+rank: 7
 date: '2025-09-21'
-tags: [healthcare, cancer, pathology]
+tags: [healthcare, medical, health, wellness, clinical, diagnosis, patient, ehr, telemedicine, image_based]
 ---

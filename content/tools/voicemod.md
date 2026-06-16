@@ -10,6 +10,7 @@ category: 'audio'
 category_name: 'Audio'
 price: 'Freemium'
 featured: false
+rank: 8
 date: '2025-09-21'
-tags: [audio, gaming, creative]
+tags: [audio, creative, sound, music, recording, audio_editing, sound_design, mixing, production, real_time, customizable, secure]
 ---

@@ -10,6 +10,7 @@ category: 'meeting-assistants'
 category_name: 'Meeting Assistants'
 price: 'Paid'
 featured: false
+rank: 8
 date: '2025-09-21'
-tags: [meeting, productivity, transcription]
+tags: [meeting, productivity, transcription, collaboration, notes, summaries, action_items, video_calls, recap, training]
 ---

@@ -10,6 +10,7 @@ category: 'translator'
 category_name: 'Translator'
 price: 'Paid'
 featured: false
+rank: 7
 date: '2025-09-21'
-tags: [translation, localisation, developer_tools]
+tags: [translation, language, multilingual, communication, localization, globalization, language_ai, interpretation, text, collaboration]
 ---

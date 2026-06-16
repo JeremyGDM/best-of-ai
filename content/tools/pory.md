@@ -10,5 +10,7 @@ category: 'no-code'
 category_name: 'No-Code'
 price: 'Freemium'
 featured: false
+rank: 5
 date: '2025-06-15'
+tags: [no_code, automation, app_builder, lowcode, visual, drag_and_drop, workflow, builder, citizen_developer, customizable, image_based]
 ---

@@ -10,6 +10,7 @@ category: 'copywriting'
 category_name: 'Copywriting'
 price: 'Paid'
 featured: false
+rank: 7
 date: '2025-09-21'
-tags: [copywriting, e_commerce, marketing]
+tags: [writing, marketing, text_generation, copy, content, ad_copy, seo_writing, brand_voice, persuasion, voice_enabled]
 ---

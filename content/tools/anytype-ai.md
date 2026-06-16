@@ -10,6 +10,7 @@ category: 'knowledge-management'
 category_name: 'Knowledge Management'
 price: 'Freemium'
 featured: false
+rank: 5
 date: '2025-09-21'
-tags: [note_taking, privacy, productivity]
+tags: [knowledge_base, productivity, note_taking, organization, information, second_brain, wiki, search, retrieval, cloud_based, secure, versatile]
 ---

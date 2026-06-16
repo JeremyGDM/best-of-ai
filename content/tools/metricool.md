@@ -10,6 +10,7 @@ category: 'social-media-tools'
 category_name: 'Social Media Tools'
 price: 'Freemium'
 featured: false
+rank: 7
 date: '2025-09-21'
-tags: [social_media, analytics, marketing]
+tags: [social_media, marketing, content_creation, engagement, posting, scheduling, analytics, audience, platform, collaboration]
 ---

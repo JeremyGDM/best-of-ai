@@ -10,6 +10,7 @@ category: 'weather'
 category_name: 'Weather'
 price: 'Freemium'
 featured: false
+rank: 7
 date: '2025-09-21'
-tags: [weather, data_analysis, api_available]
+tags: [weather, data_analysis, climate, forecasting, real_time, meteorology, alerts, temperature, precipitation, api_available, machine_learning, model_based]
 ---

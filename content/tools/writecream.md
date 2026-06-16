@@ -9,6 +9,7 @@ category: 'copywriting'
 category_name: 'Copywriting'
 price: 'Freemium'
 featured: false
+rank: 5
 date: '2026-06-15'
-tags: []
+tags: [writing, marketing, text_generation, copy, content, ad_copy, seo_writing, brand_voice, persuasion, customizable]
 ---

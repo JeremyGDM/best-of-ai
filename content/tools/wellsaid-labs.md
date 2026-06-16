@@ -10,6 +10,7 @@ category: 'text-to-speech'
 category_name: 'Text to Speech'
 price: 'Paid'
 featured: false
+rank: 9
 date: '2025-09-21'
-tags: [text_to_speech, voice, enterprise]
+tags: [text_to_speech, audio, voice, narration, accessibility, tts, speech_synthesis, voiceover, reading, enterprise, customizable, voice_enabled]
 ---

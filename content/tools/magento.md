@@ -10,6 +10,7 @@ category: 'e-commerce'
 category_name: 'E-Commerce'
 price: 'Freemium'
 featured: false
+rank: 7
 date: '2025-09-21'
-tags: [ecommerce, business, marketing, open_source]
+tags: [ecommerce, business, marketing, retail, shopping, online_store, product_catalog, checkout, conversions, open_source, customizable, cloud_based]
 ---

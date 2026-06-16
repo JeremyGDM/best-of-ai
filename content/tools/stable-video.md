@@ -10,6 +10,7 @@ category: 'video-generator'
 category_name: 'Video Generator'
 price: 'Free'
 featured: false
+rank: 5
 date: '2025-09-21'
-tags: [video_generation, creative, text_to_video, open_source]
+tags: [video_generation, creative, text_to_video, animation, production, ai_video, generative, short_form, clips, open_source, image_based, model_based]
 ---

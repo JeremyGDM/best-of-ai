@@ -10,6 +10,7 @@ category: 'social-media-tools'
 category_name: 'Social Media Tools'
 price: 'Paid'
 featured: false
+rank: 5
 date: '2025-09-21'
-tags: [social_media, marketing, automation]
+tags: [social_media, marketing, content_creation, engagement, posting, scheduling, analytics, audience, platform]
 ---

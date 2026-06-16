@@ -10,6 +10,7 @@ category: 'job-tools'
 category_name: 'Job Tools'
 price: 'Free'
 featured: false
+rank: 8
 date: '2025-09-21'
-tags: [career, hr, recruitment]
+tags: [career, hr, recruitment, jobs, employment, job_search, resume, interview, hiring, customizable]
 ---

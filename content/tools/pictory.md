@@ -10,6 +10,7 @@ category: 'video-editor'
 category_name: 'Video Editor'
 price: 'Paid'
 featured: false
+rank: 8
 date: '2025-09-21'
-tags: [video_editing, creative, video]
+tags: [video_editing, creative, video, production, media, cutting, transitions, effects, export, collaboration, voice_enabled]
 ---

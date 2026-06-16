@@ -9,6 +9,7 @@ category: 'productivity'
 category_name: 'Productivity'
 price: 'Freemium'
 featured: false
+rank: 7
 date: '2026-06-15'
-tags: []
+tags: [productivity, ai_assistant, efficiency, workflow, organization, tasks, focus, time_management, collaboration]
 ---

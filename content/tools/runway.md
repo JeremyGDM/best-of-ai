@@ -10,6 +10,7 @@ category: 'video'
 category_name: 'Video'
 price: 'Freemium'
 featured: false
+rank: 10
 date: '2025-09-21'
-tags: [video, creative]
+tags: [video, creative, media, content, production, recording, streaming, publishing, video_creation, image_based, model_based, powerful]
 ---

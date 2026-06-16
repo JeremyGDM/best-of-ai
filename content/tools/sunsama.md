@@ -10,6 +10,7 @@ category: 'productivity'
 category_name: 'Productivity'
 price: 'Paid'
 featured: false
+rank: 8
 date: '2025-09-21'
-tags: [productivity, planning, calendar]
+tags: [productivity, ai_assistant, efficiency, workflow, organization, tasks, focus, time_management, collaboration, community_driven]
 ---

@@ -10,5 +10,7 @@ category: 'image-editing'
 category_name: 'Image Editing'
 price: 'Paid'
 featured: false
+rank: 5
 date: '2025-06-15'
+tags: [image_editing, design, creative, photo, visual, retouching, filters, enhancement, manipulation, image_based]
 ---

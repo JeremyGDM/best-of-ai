@@ -10,6 +10,7 @@ category: 'copywriting'
 category_name: 'Copywriting'
 price: 'Freemium'
 featured: false
+rank: 7
 date: '2025-09-21'
-tags: [writing, marketing, text_generation, real_time]
+tags: [writing, marketing, text_generation, copy, content, ad_copy, seo_writing, brand_voice, persuasion, real_time, collaboration, templates]
 ---

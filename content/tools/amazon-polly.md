@@ -10,6 +10,7 @@ category: 'text-to-speech'
 category_name: 'Text to Speech'
 price: 'Paid'
 featured: false
+rank: 9
 date: '2025-01-01'
-tags: [text_to_speech, audio, voice, api_available]
+tags: [text_to_speech, audio, voice, narration, accessibility, tts, speech_synthesis, voiceover, reading, api_available, cloud_based, machine_learning]
 ---

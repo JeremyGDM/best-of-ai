@@ -10,6 +10,7 @@ category: 'transcription'
 category_name: 'Transcription'
 price: 'Free'
 featured: false
+rank: 9
 date: '2025-01-01'
-tags: [transcription, speech_to_text, audio, open_source]
+tags: [transcription, speech_to_text, audio, text, conversion, captions, subtitles, accuracy, real_time, open_source, voice_enabled, training]
 ---

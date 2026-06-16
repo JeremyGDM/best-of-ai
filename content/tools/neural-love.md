@@ -10,6 +10,7 @@ category: 'image-editing'
 category_name: 'Image Editing'
 price: 'Freemium'
 featured: false
+rank: 8
 date: '2025-09-21'
-tags: [image_editing, image_generation, creative]
+tags: [image_editing, design, creative, photo, visual, retouching, filters, enhancement, manipulation, machine_learning, image_based]
 ---

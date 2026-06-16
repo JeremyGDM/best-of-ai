@@ -10,6 +10,7 @@ category: 'automation'
 category_name: 'Automation'
 price: 'Paid'
 featured: false
+rank: 7
 date: '2025-09-21'
-tags: [automation, workflow, productivity]
+tags: [automation, workflow, productivity, repetitive_tasks, efficiency, process_automation, triggers, scheduling, bots, collaboration, customizable, cloud_based]
 ---

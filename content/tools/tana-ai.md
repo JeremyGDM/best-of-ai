@@ -10,6 +10,7 @@ category: 'note-taking-apps'
 category_name: 'Note-Taking Apps'
 price: 'Freemium'
 featured: false
+rank: 5
 date: '2025-09-21'
-tags: [note_taking, knowledge_management, productivity]
+tags: [note_taking, productivity, knowledge_base, organization, documentation, markdown, journaling, tasks, sync, customizable]
 ---

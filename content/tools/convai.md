@@ -10,5 +10,7 @@ category: 'gaming'
 category_name: 'Gaming'
 price: 'Freemium'
 featured: false
+rank: 5
 date: '2025-06-15'
+tags: [gaming, creative, entertainment, games, interactive, game_development, procedural, npcs, immersive, nlp, model_based]
 ---

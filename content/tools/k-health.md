@@ -10,6 +10,7 @@ category: 'healthcare'
 category_name: 'Healthcare'
 price: 'Freemium'
 featured: false
+rank: 7
 date: '2025-09-21'
-tags: [healthcare, medical]
+tags: [healthcare, medical, health, wellness, clinical, diagnosis, patient, ehr, telemedicine, affordable]
 ---

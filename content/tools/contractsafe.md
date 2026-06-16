@@ -6,9 +6,11 @@ slug: 'contractsafe'
 description: 'ContractSafe is a contract management solution that uses AI-powered OCR and search to help businesses organize, find, and track their contracts. It automatically extracts key dates, parties, and terms, and sends renewal alerts to prevent missed deadlines.'
 website: 'https://contractsafe.com'
 logo_url: ''
-category: 'legal-assistants'
-category_name: 'Legal Assistants'
+category: 'contract-management'
+category_name: 'Contract Management'
 price: 'Paid'
 featured: false
+rank: 8
 date: '2025-06-15'
+tags: [ai_powered, intelligent, platform, tool, service, solution, saas, online]
 ---

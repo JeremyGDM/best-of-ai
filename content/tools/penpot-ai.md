@@ -10,6 +10,7 @@ category: 'graphic-design'
 category_name: 'Graphic Design'
 price: 'Free'
 featured: false
+rank: 5
 date: '2025-09-21'
-tags: [design, prototyping, open_source]
+tags: [design, image_editing, creative, visual, branding, typography, layouts, ui_design, illustration, open_source, collaboration, cloud_based]
 ---

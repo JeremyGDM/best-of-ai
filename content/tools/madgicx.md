@@ -10,5 +10,7 @@ category: 'ad-generator'
 category_name: 'Ad Generator'
 price: 'Freemium'
 featured: false
+rank: 5
 date: '2025-06-15'
+tags: [advertising, marketing, creative, ads, campaigns, ad_copy, digital_ads, performance, targeting, analytics]
 ---

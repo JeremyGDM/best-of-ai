@@ -10,6 +10,7 @@ category: 'transcription'
 category_name: 'Transcription'
 price: 'Paid'
 featured: false
+rank: 8
 date: '2025-09-21'
-tags: [transcription, audio, productivity]
+tags: [transcription, speech_to_text, audio, text, conversion, captions, subtitles, accuracy, real_time, voice_enabled]
 ---

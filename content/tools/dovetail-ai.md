@@ -10,6 +10,7 @@ category: 'research-tools'
 category_name: 'Research Tools'
 price: 'Paid'
 featured: false
+rank: 5
 date: '2025-09-21'
-tags: [research, ux, product_management]
+tags: [research, analytics, academic, studies, investigation, literature_review, citations, discovery, synthesis, customizable]
 ---

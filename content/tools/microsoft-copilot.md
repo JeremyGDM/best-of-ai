@@ -10,6 +10,7 @@ category: 'chatbots'
 category_name: 'Chatbots'
 price: 'Freemium'
 featured: false
+rank: 10
 date: '2025-01-01'
-tags: [chatbot, text_generation, ai_assistant, real_time]
+tags: [chatbot, text_generation, ai_assistant, conversational, nlp, dialogue, llm, general_ai, question_answering, real_time, collaboration, integrations]
 ---

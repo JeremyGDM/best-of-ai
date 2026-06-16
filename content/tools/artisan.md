@@ -10,5 +10,7 @@ category: 'ai-agents'
 category_name: 'AI Agents'
 price: 'Paid'
 featured: false
+rank: 5
 date: '2025-06-15'
+tags: [ai_agent, automation, autonomous, ai_assistants, agents, multi_agent, task_automation, orchestration, agentic, customizable]
 ---

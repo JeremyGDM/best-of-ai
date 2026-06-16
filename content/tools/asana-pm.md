@@ -10,6 +10,7 @@ category: 'project-management'
 category_name: 'Project Management'
 price: 'Freemium'
 featured: false
+rank: 5
 date: '2025-09-21'
-tags: [project_management, productivity, team]
+tags: [project_management, productivity, team, collaboration, planning, tasks, milestones, tracking, agile]
 ---

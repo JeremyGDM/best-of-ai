@@ -10,6 +10,7 @@ category: 'image-generation'
 category_name: 'Image Generation'
 price: 'Freemium'
 featured: false
+rank: 8
 date: '2025-09-21'
-tags: [image_generation, mobile, creative]
+tags: [image_generation, creative, text_to_image, visual, graphics, generative_ai, art, diffusion, prompting, mobile_app, free_tier, image_based]
 ---
