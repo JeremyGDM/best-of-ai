@@ -1,0 +1,46 @@
+{{/*
+  Renders one ad slot.
+  Context (dict):
+    ad      — the ad dict from data/ads.yaml
+    variant — "sidebar" (vertical block) | "card" (horizontal tool-card-like)
+*/}}
+{{ $ad      := .ad }}
+{{ $variant := .variant | default "sidebar" }}
+
+{{ if and $ad ($ad.enabled | default false) }}
+{{ $target := $ad.link_target | default "_blank" }}
+{{ $rel    := cond (eq $target "_blank") "noopener noreferrer sponsored" "sponsored" }}
+
+<a href="{{ $ad.link }}" target="{{ $target }}" rel="{{ $rel }}" class="ad-slot ad-slot--{{ $variant }}">
+  <span class="ad-slot__label">Sponsored</span>
+
+  {{ if eq $variant "card" }}
+    {{/* Horizontal card — mirrors tool-card layout */}}
+    <div class="ad-slot__logo">
+      {{ if $ad.image }}
+        <img src="{{ $ad.image }}" alt="{{ $ad.title }}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span class="tool-logo-fallback" style="display:none">★</span>
+      {{ else }}
+        <span class="tool-logo-fallback">★</span>
+      {{ end }}
+    </div>
+    <div class="ad-slot__body">
+      <span class="ad-slot__title">{{ $ad.title }}</span>
+      {{ with $ad.description }}<span class="ad-slot__desc">{{ . }}</span>{{ end }}
+    </div>
+    {{ with $ad.cta }}<span class="ad-slot__cta">{{ . }} →</span>{{ end }}
+
+  {{ else }}
+    {{/* Sidebar block — vertical */}}
+    {{ if $ad.image }}
+      <img src="{{ $ad.image }}" alt="{{ $ad.title }}" class="ad-slot__banner" loading="lazy">
+    {{ end }}
+    <div class="ad-slot__body">
+      <span class="ad-slot__title">{{ $ad.title }}</span>
+      {{ with $ad.description }}<span class="ad-slot__desc">{{ . }}</span>{{ end }}
+    </div>
+    {{ with $ad.cta }}<span class="ad-slot__cta">{{ . }} →</span>{{ end }}
+
+  {{ end }}
+</a>
+{{ end }}

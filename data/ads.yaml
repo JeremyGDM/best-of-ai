@@ -1,0 +1,39 @@
+# ── Ad slots ───────────────────────────────────────────────────────────────
+# Set enabled: true and fill in the fields to activate an ad.
+# link_target: '_blank' (new tab) or '_self' (same tab)
+
+left_sidebar:
+  enabled: false
+  title: 'Your Ad Here'
+  description: 'Reach thousands of AI enthusiasts daily.'
+  image: ''           # URL to logo/banner image (optional)
+  link: 'https://example.com'
+  link_target: '_blank'
+  cta: 'Learn More'
+
+right_sidebar:
+  enabled: false
+  title: 'Promote Your Tool'
+  description: 'Get in front of AI professionals and developers.'
+  image: ''
+  link: 'https://example.com'
+  link_target: '_blank'
+  cta: 'Get Listed'
+
+# List of sponsor cards shown on the homepage before the Top 100 leaderboard.
+# Add as many entries as needed; only enabled ones are rendered.
+home_leaderboard:
+  - enabled: false
+    title: 'Featured Sponsor'
+    description: 'Your AI product description goes here.'
+    image: ''
+    link: 'https://example.com'
+    link_target: '_blank'
+    cta: 'Try Free'
+  - enabled: false
+    title: 'Another Sponsor'
+    description: 'Short pitch for your tool or service.'
+    image: ''
+    link: 'https://example.com'
+    link_target: '_blank'
+    cta: 'Learn More'

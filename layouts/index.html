@@ -52,6 +52,19 @@
     <!-- Search results rendered by JS -->
     <div id="home-search-results" hidden></div>
 
+    <!-- ── Sponsored (home leaderboard) ── -->
+    {{ $homeAds := where hugo.Data.ads.home_leaderboard "enabled" true }}
+    {{ if $homeAds }}
+    <section class="ad-cards-section">
+      <div class="ad-cards-label">// sponsored</div>
+      <div class="ad-cards-grid">
+        {{ range $homeAds }}
+        {{ partial "ad-slot.html" (dict "ad" . "variant" "card") }}
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+
     <!-- ── Top 100 AI Tools ── -->
     {{ $top6 := first 6 hugo.Data.leaderboard }}
     <section class="tool-section home-top100" id="top-100" data-cat="top-100">
