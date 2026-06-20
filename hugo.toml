@@ -25,27 +25,27 @@ disableKinds = ["sitemap"]
   [outputFormats.SitemapIndex]
     mediaType = "application/xml"
     baseName  = "sitemap"
-    isPlainText = false
+    isPlainText = true
     notAlternative = true
   [outputFormats.SitemapTools1]
     mediaType = "application/xml"
     baseName  = "sitemap-tools-1"
-    isPlainText = false
+    isPlainText = true
     notAlternative = true
   [outputFormats.SitemapTools2]
     mediaType = "application/xml"
     baseName  = "sitemap-tools-2"
-    isPlainText = false
+    isPlainText = true
     notAlternative = true
   [outputFormats.SitemapTools3]
     mediaType = "application/xml"
     baseName  = "sitemap-tools-3"
-    isPlainText = false
+    isPlainText = true
     notAlternative = true
   [outputFormats.SitemapPages]
     mediaType = "application/xml"
     baseName  = "sitemap-pages"
-    isPlainText = false
+    isPlainText = true
     notAlternative = true
 
 [taxonomies]

@@ -1,21 +1,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-{{ $is404 := hasPrefix (lower .Title) "404" }}
-{{ if $is404 }}
+
+{{ $is404    := hasPrefix (lower .Title) "404" }}
+{{ $isSaved  := eq .Params.layout "saved" }}
+{{ $isTool   := and .IsPage (eq .Section "tools") }}
+{{ $name     := or .Params.name .Title }}
+{{ $siteURL  := .Site.BaseURL | strings.TrimRight "/" }}
+{{ $ogImageDefault := printf "%s/img/favicon/web-app-manifest-512x512.png" $siteURL }}
+
+{{/* ── Robots ── */}}
+{{ if or $is404 $isSaved }}
 <meta name="robots" content="noindex, nofollow">
 {{ else }}
 <meta name="robots" content="index, follow">
 {{ end }}
 
-{{ $name    := or .Params.name .Title }}
-{{ $siteURL := .Site.BaseURL | strings.TrimRight "/" }}
-{{ $ogImageDefault := printf "%s/img/favicon/web-app-manifest-512x512.png" $siteURL }}
-
 {{/* ── Page title ── */}}
 {{ $pageTitle := "" }}
 {{ if .IsHome }}
   {{ $pageTitle = "Best of AI — Handpicked AI Tools Directory" }}
-{{ else if and .IsPage (eq .Section "tools") }}
+{{ else if $isTool }}
   {{ $cat := .Params.category_name | default "" }}
   {{ $pageTitle = printf "%s — %s AI Tool | Best of AI" $name $cat }}
 {{ else if and .IsPage (eq .Section "categories") }}
@@ -45,9 +49,9 @@
 {{ $desc := "" }}
 {{ if .IsHome }}
   {{ $desc = .Site.Params.description }}
-{{ else if and .IsPage (eq .Section "tools") }}
-  {{ $price   := .Params.price | default "" }}
-  {{ $cat     := .Params.category_name | default "AI" }}
+{{ else if $isTool }}
+  {{ $price    := .Params.price | default "" }}
+  {{ $cat      := .Params.category_name | default "AI" }}
   {{ $toolDesc := .Params.description | default "" }}
   {{ $desc = printf "%s is a %s %s tool. %s" $name $price $cat $toolDesc }}
 {{ else if and .IsPage (eq .Section "categories") }}
@@ -88,7 +92,7 @@
 <link rel="canonical" href="{{ .Permalink }}">
 
 {{/* ── Keywords ── */}}
-{{ if and .IsPage (eq .Section "tools") }}
+{{ if $isTool }}
 {{ $kws := slice $name (.Params.category_name | default "") "AI" "artificial intelligence" }}
 {{ range .Params.tags }}{{ $kws = $kws | append . }}{{ end }}
 <meta name="keywords" content="{{ delimit $kws ", " }}">
@@ -102,19 +106,23 @@
 
 {{/* ── Open Graph ── */}}
 {{ $ogImage := $ogImageDefault }}
-{{ if and .IsPage (eq .Section "tools") .Params.logo_url }}
+{{ $ogUseDefaultImg := true }}
+{{ if and $isTool .Params.logo_url }}
   {{ $ogImage = .Params.logo_url }}
+  {{ $ogUseDefaultImg = false }}
 {{ end }}
-<meta property="og:title"        content="{{ $pageTitle }}">
-<meta property="og:description"  content="{{ $desc | truncate 155 }}">
-<meta property="og:url"          content="{{ .Permalink }}">
-<meta property="og:type"         content="{{ if and .IsPage (eq .Section "tools") }}article{{ else }}website{{ end }}">
-<meta property="og:site_name"    content="Best of AI">
-<meta property="og:image"        content="{{ $ogImage }}">
-<meta property="og:image:alt"    content="{{ $pageTitle }}">
+<meta property="og:title"       content="{{ $pageTitle }}">
+<meta property="og:description" content="{{ $desc | truncate 155 }}">
+<meta property="og:url"         content="{{ .Permalink }}">
+<meta property="og:type"        content="website">
+<meta property="og:site_name"   content="Best of AI">
+<meta property="og:image"       content="{{ $ogImage }}">
+<meta property="og:image:alt"   content="{{ $pageTitle }}">
+{{ if $ogUseDefaultImg }}
 <meta property="og:image:width"  content="512">
 <meta property="og:image:height" content="512">
-<meta property="og:locale"       content="en_US">
+{{ end }}
+<meta property="og:locale"      content="en_US">
 
 {{/* ── Twitter Card ── */}}
 <meta name="twitter:card"        content="summary">
@@ -131,16 +139,24 @@
 {{/* ── Structured data ── */}}
 {{ partial "seo-jsonld.html" . }}
 
+<!-- Theme -->
+<meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+
+<!-- Manifest -->
+<link rel="manifest" href="{{ "img/favicon/site.webmanifest" | relURL }}">
+
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
 <!-- Styles -->
+<link rel="preload" href="{{ "css/main.css" | relURL }}" as="style">
 <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
 
 <!-- Saved tools -->
-<script src="{{ "js/saved.js" | relURL }}"></script>
+<script defer src="{{ "js/saved.js" | relURL }}"></script>
 
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml"  href="{{ "img/favicon/favicon.svg" | relURL }}">

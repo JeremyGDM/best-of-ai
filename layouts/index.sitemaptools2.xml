@@ -6,6 +6,8 @@
   <url>
     <loc>{{ .Permalink }}</loc>
     <lastmod>{{ .Date.Format "2006-01-02" }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 {{- end }}
 </urlset>
