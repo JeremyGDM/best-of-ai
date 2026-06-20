@@ -77,6 +77,8 @@
   {{ $desc = printf "Discover the best AI tools tagged #%s — handpicked for quality and real-world impact on Best of AI." .Title }}
 {{ else if $is404 }}
   {{ $desc = "The page you're looking for doesn't exist or may have been moved." }}
+{{ else if .Params.description }}
+  {{ $desc = .Params.description }}
 {{ else }}
   {{ $desc = .Site.Params.description }}
 {{ end }}
@@ -94,6 +96,8 @@
 <meta name="keywords" content="{{ .Params.name }}, AI {{ .Params.name }}, best AI {{ .Params.name }} tools, artificial intelligence {{ lower .Params.name }}">
 {{ else if and .IsPage (eq .Section "professionals") }}
 <meta name="keywords" content="AI for {{ .Params.name }}, best AI tools for {{ .Params.name }}, artificial intelligence {{ lower .Params.name }}">
+{{ else if .Params.keywords }}
+<meta name="keywords" content="{{ delimit .Params.keywords ", " }}">
 {{ end }}
 
 {{/* ── Open Graph ── */}}

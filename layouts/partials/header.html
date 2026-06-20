@@ -132,7 +132,7 @@
         <kbd class="search-trigger__kbd">⌘K</kbd>
       </button>
 
-      <a href="{{ .Site.Params.githubRepo }}/issues/new?template=submit-tool.md&title=Submit+Tool" target="_blank" rel="noopener" class="btn btn-submit">
+      <a href="{{ "/submit/" | relURL }}" class="btn btn-submit">
         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
         Submit Tool
       </a>
@@ -191,7 +191,7 @@
 
   <!-- Submit Tool -->
   <div class="mobile-menu__section mobile-menu__section--submit">
-    <a href="{{ .Site.Params.githubRepo }}/issues/new?template=submit-tool.md&title=Submit+Tool" target="_blank" rel="noopener" class="mobile-menu__submit">
+    <a href="{{ "/submit/" | relURL }}" class="mobile-menu__submit">
       <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
       Submit a Tool
     </a>
