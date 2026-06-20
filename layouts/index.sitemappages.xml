@@ -36,6 +36,12 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>{{ "/tags/" | absURL }}</loc>
+    <lastmod>{{ now.Format "2006-01-02" }}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
 {{- range where .Site.RegularPages "Section" "categories" }}
   <url>
     <loc>{{ .Permalink }}</loc>
