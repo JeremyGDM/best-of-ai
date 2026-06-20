@@ -1,0 +1,700 @@
+<!doctype html><html lang=en><head><script>(function(){var e=localStorage.getItem("bai-theme");e||(e=window.matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"),document.documentElement.setAttribute("data-theme",e)})()</script><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="index, follow"><title>Submit an AI Tool — Best of AI</title><meta name=description content="Add an AI tool to Best of AI — a free, open source directory with 1300+ tools. Submit via GitHub issue or pull request. No fee, no sign-up, open to …"><link rel=canonical href=https://bestofai.io/submit/><meta name=keywords content="submit AI tool,add AI tool to directory,suggest AI tool,list AI tool free,AI tools directory submission,open source AI directory,contribute AI tools,free AI tool listing"><meta property="og:title" content="Submit an AI Tool — Best of AI"><meta property="og:description" content="Add an AI tool to Best of AI — a free, open source directory with 1300+ tools. Submit via GitHub issue or pull request. No fee, no sign-up, open to …"><meta property="og:url" content="https://bestofai.io/submit/"><meta property="og:type" content="website"><meta property="og:site_name" content="Best of AI"><meta property="og:image" content="https://bestofai.io/img/favicon/web-app-manifest-512x512.png"><meta property="og:image:alt" content="Submit an AI Tool — Best of AI"><meta property="og:image:width" content="512"><meta property="og:image:height" content="512"><meta property="og:locale" content="en_US"><meta name=twitter:card content="summary"><meta name=twitter:title content="Submit an AI Tool — Best of AI"><meta name=twitter:description content="Add an AI tool to Best of AI — a free, open source directory with 1300+ tools. Submit via GitHub issue or pull request. No fee, no sign-up, open to …"><meta name=twitter:image content="https://bestofai.io/img/favicon/web-app-manifest-512x512.png"><meta name=twitter:image:alt content="Submit an AI Tool — Best of AI"><script type=application/ld+json>{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"No. Best of AI is a free, open source directory. Listing a tool costs nothing and there are no paid placements or promoted spots."},"name":"Is there a fee to get listed in Best of AI?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Most submissions are reviewed within a few days. Maintainers work through the queue in batches."},"name":"How long does the review process take?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Yes. Self-submissions are accepted. Mentioning that you are the developer in the issue is appreciated but not required."},"name":"Can I submit a tool I built myself?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Open a GitHub issue to flag the correction, or submit a pull request directly to the tool's Markdown file in content/tools/."},"name":"What if the tool already has a listing with wrong information?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Pick the closest match and mention the gap in the issue. New categories get added when enough tools warrant one."},"name":"What if no category fits my tool?"},{"@type":"Question","acceptedAnswer":{"@type":"Answer","text":"Yes. The full index is available at /index.json and the raw Markdown files are in the public GitHub repository. No API key or account is needed."},"name":"Can I use the directory data in my own project?"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://bestofai.io/","name":"Home","position":1}]}</script><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel=stylesheet><link rel=stylesheet href=/css/main.css><script src=/js/saved.js></script><link rel=icon type=image/svg+xml href=/img/favicon/favicon.svg><link rel=icon type=image/png href=/img/favicon/favicon-96x96.png sizes=96x96><link rel=apple-touch-icon href=/img/favicon/apple-touch-icon.png></head><body><header class=site-header><div class=site-header__inner><a href=/ class=site-logo><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2 2 7l10 5 10-5-10-5z" fill="var(--accent)"/><path d="M2 17l10 5 10-5" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 12l10 5 10-5" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".6"/></svg>
+<span>Best of <span class=logo-accent>AI</span></span></a><nav class=site-header__nav id=site-nav><div class=nav-item id=nav-prof><button class=nav-btn aria-haspopup=true aria-expanded=false data-nav=nav-prof>
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"/></svg>
+AI for Professionals
+<svg class="nav-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button><div class="mega-menu mega-menu--prof" role=menu><div class=mega-prof-grid><a href=/professionals/developers/ class=mega-prof-item role=menuitem><span>Developers</span>
+</a><a href=/professionals/designers/ class=mega-prof-item role=menuitem><span>Designers</span>
+</a><a href=/professionals/writers/ class=mega-prof-item role=menuitem><span>Writers</span>
+</a><a href=/professionals/marketers/ class=mega-prof-item role=menuitem><span>Marketers</span>
+</a><a href=/professionals/data-scientists/ class=mega-prof-item role=menuitem><span>Data Scientists</span>
+</a><a href=/professionals/video-creators/ class=mega-prof-item role=menuitem><span>Video Creators</span>
+</a><a href=/professionals/musicians/ class=mega-prof-item role=menuitem><span>Musicians</span>
+</a><a href=/professionals/researchers/ class=mega-prof-item role=menuitem><span>Researchers & Students</span>
+</a><a href=/professionals/sales/ class=mega-prof-item role=menuitem><span>Sales Professionals</span>
+</a><a href=/professionals/business-owners/ class=mega-prof-item role=menuitem><span>Business Owners</span>
+</a><a href=/professionals/hr/ class=mega-prof-item role=menuitem><span>HR & Recruiters</span>
+</a><a href=/professionals/project-managers/ class=mega-prof-item role=menuitem><span>Project Managers</span></a></div><div class=mega-menu__footer><span class=mega-menu__footer-note>200+ professions</span>
+<a href=/professionals/ class=mega-more-link>View all 200+ →</a></div></div></div><div class=nav-item id=nav-cats><button class=nav-btn aria-haspopup=true aria-expanded=false data-nav=nav-cats>
+<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+Categories
+<svg class="nav-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button><div class="mega-menu mega-menu--cats" role=menu><div class=mega-cats-body><div class=mega-cats-col><div class=mega-col-title>// top categories</div><a href=/categories/devtools/ class=mega-cat-item role=menuitem><span>DevTools</span>
+<span class=mega-cat-count>108</span>
+</a><a href=/categories/writing-assistants/ class=mega-cat-item role=menuitem><span>Writing Assistants</span>
+<span class=mega-cat-count>43</span>
+</a><a href=/categories/code-assistant/ class=mega-cat-item role=menuitem><span>Code Assistant</span>
+<span class=mega-cat-count>38</span>
+</a><a href=/categories/video-generator/ class=mega-cat-item role=menuitem><span>Video Generator</span>
+<span class=mega-cat-count>33</span>
+</a><a href=/categories/ai-agents/ class=mega-cat-item role=menuitem><span>AI Agents</span>
+<span class=mega-cat-count>30</span>
+</a><a href=/categories/image-generation/ class=mega-cat-item role=menuitem><span>Image Generation</span>
+<span class=mega-cat-count>30</span>
+</a><a href=/categories/customer-support/ class=mega-cat-item role=menuitem><span>Customer Support</span>
+<span class=mega-cat-count>27</span>
+</a><a href=/categories/models/ class=mega-cat-item role=menuitem><span>Models</span>
+<span class=mega-cat-count>26</span>
+</a><a href=/categories/finance/ class=mega-cat-item role=menuitem><span>Finance</span>
+<span class=mega-cat-count>23</span>
+</a><a href=/categories/marketing/ class=mega-cat-item role=menuitem><span>Marketing</span>
+<span class=mega-cat-count>23</span>
+</a><a href=/categories/ class=mega-more-link style=display:block;margin-top:.6rem>All categories →</a></div><div class=mega-cats-col><div class=mega-col-title>// top tags</div><div class=mega-tag-cloud><a href=/tags/collaboration/ class="tag-chip mega-tag-chip" role=menuitem>#collaboration</a>
+<a href=/tags/productivity/ class="tag-chip mega-tag-chip" role=menuitem>#productivity</a>
+<a href=/tags/creative/ class="tag-chip mega-tag-chip" role=menuitem>#creative</a>
+<a href=/tags/business/ class="tag-chip mega-tag-chip" role=menuitem>#business</a>
+<a href=/tags/service/ class="tag-chip mega-tag-chip" role=menuitem>#service</a>
+<a href=/tags/platform/ class="tag-chip mega-tag-chip" role=menuitem>#platform</a>
+<a href=/tags/ai_powered/ class="tag-chip mega-tag-chip" role=menuitem>#ai_powered</a>
+<a href=/tags/intelligent/ class="tag-chip mega-tag-chip" role=menuitem>#intelligent</a>
+<a href=/tags/analytics/ class="tag-chip mega-tag-chip" role=menuitem>#analytics</a>
+<a href=/tags/image_based/ class="tag-chip mega-tag-chip" role=menuitem>#image_based</a></div><a href=/tags/ class=mega-more-link style=display:block;margin-top:.6rem>All tags →</a></div></div></div></div><a href=/leaderboard/ class="nav-btn nav-btn--link">Leaderboard
+</a><a href=/saved/ class="nav-btn nav-btn--link nav-btn--saved"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
+Saved
+<span class=saved-count hidden></span></a></nav><div class=site-header__actions><a href=/saved/ class="saved-link saved-link--mobile" title="Saved tools" aria-label="Saved tools"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg>
+<span class=saved-count hidden></span>
+</a><button class=search-trigger id=search-open aria-label=Search>
+<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-3.5-3.5"/></svg>
+<span class=search-trigger__label>Search</span>
+<kbd class=search-trigger__kbd>⌘K</kbd>
+</button>
+<a href=/submit/ class="btn btn-submit"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+Submit Tool
+</a><button class=theme-toggle id=theme-toggle aria-label="Toggle theme">
+<svg class="icon-sun" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+<svg class="icon-moon" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+</button>
+<button class=mobile-menu-btn id=mobile-menu-btn aria-label="Open menu" aria-expanded=false>
+<span></span><span></span><span></span></button></div></div></header><div class=mobile-menu id=mobile-menu aria-hidden=true><div class=mobile-menu__section><button class=mobile-menu__heading data-accordion=mob-profs>
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"/></svg>
+AI for Professionals
+<svg class="mobile-menu__chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button><div class=mobile-menu__accordion id=mob-profs><div class=mobile-menu__grid><a href=/professionals/developers/ class=mobile-menu__prof-item><span>⌨️</span>
+Developers
+</a><a href=/professionals/designers/ class=mobile-menu__prof-item><span>🎨</span>
+Designers
+</a><a href=/professionals/writers/ class=mobile-menu__prof-item><span>✍️</span>
+Writers
+</a><a href=/professionals/marketers/ class=mobile-menu__prof-item><span>📣</span>
+Marketers
+</a><a href=/professionals/data-scientists/ class=mobile-menu__prof-item><span>📊</span>
+Data Scientists
+</a><a href=/professionals/video-creators/ class=mobile-menu__prof-item><span>🎬</span>
+Video Creators
+</a><a href=/professionals/musicians/ class=mobile-menu__prof-item><span>🎵</span>
+Musicians
+</a><a href=/professionals/researchers/ class=mobile-menu__prof-item><span>🔬</span>
+Researchers & Students
+</a><a href=/professionals/sales/ class=mobile-menu__prof-item><span>💼</span>
+Sales Professionals
+</a><a href=/professionals/business-owners/ class=mobile-menu__prof-item><span>🚀</span>
+Business Owners
+</a><a href=/professionals/hr/ class=mobile-menu__prof-item><span>👥</span>
+HR & Recruiters
+</a><a href=/professionals/project-managers/ class=mobile-menu__prof-item><span>📋</span>
+Project Managers
+</a><a href=/professionals/legal/ class=mobile-menu__prof-item><span>⚖️</span>
+Legal Professionals
+</a><a href=/professionals/healthcare/ class=mobile-menu__prof-item><span>🏥</span>
+Healthcare Professionals
+</a><a href=/professionals/finance/ class=mobile-menu__prof-item><span>📈</span>
+Finance Professionals
+</a><a href=/professionals/teachers/ class=mobile-menu__prof-item><span>🏫</span>
+Teachers
+</a><a href=/professionals/students/ class=mobile-menu__prof-item><span>🎓</span>
+Students
+</a><a href=/professionals/photographers/ class=mobile-menu__prof-item><span>📷</span>
+Photographers
+</a><a href=/professionals/architects/ class=mobile-menu__prof-item><span>🏛️</span>
+Architects
+</a><a href=/professionals/accountants/ class=mobile-menu__prof-item><span>🧾</span>
+Accountants
+</a><a href=/professionals/financial-advisors/ class=mobile-menu__prof-item><span>💼</span>
+Financial Advisors
+</a><a href=/professionals/real-estate-agents/ class=mobile-menu__prof-item><span>🏠</span>
+Real Estate Agents
+</a><a href=/professionals/entrepreneurs/ class=mobile-menu__prof-item><span>🚀</span>
+Entrepreneurs
+</a><a href=/professionals/product-managers/ class=mobile-menu__prof-item><span>📊</span>
+Product Managers
+</a><a href=/professionals/ux-designers/ class=mobile-menu__prof-item><span>🎨</span>
+UX Designers
+</a><a href=/professionals/social-media-managers/ class=mobile-menu__prof-item><span>📱</span>
+Social Media Managers
+</a><a href=/professionals/content-creators/ class=mobile-menu__prof-item><span>✨</span>
+Content Creators
+</a><a href=/professionals/podcasters/ class=mobile-menu__prof-item><span>🎙️</span>
+Podcasters
+</a><a href=/professionals/journalists/ class=mobile-menu__prof-item><span>📰</span>
+Journalists
+</a><a href=/professionals/translators/ class=mobile-menu__prof-item><span>🌐</span>
+Translators
+</a><a href=/professionals/customer-support-agents/ class=mobile-menu__prof-item><span>🎧</span>
+Customer Support Agents
+</a><a href=/professionals/recruiters/ class=mobile-menu__prof-item><span>🔍</span>
+Recruiters
+</a><a href=/professionals/data-analysts/ class=mobile-menu__prof-item><span>📈</span>
+Data Analysts
+</a><a href=/professionals/ml-engineers/ class=mobile-menu__prof-item><span>🤖</span>
+ML Engineers
+</a><a href=/professionals/devops-engineers/ class=mobile-menu__prof-item><span>⚙️</span>
+DevOps Engineers
+</a><a href=/professionals/cybersecurity-professionals/ class=mobile-menu__prof-item><span>🔒</span>
+Cybersecurity Professionals
+</a><a href=/professionals/game-developers/ class=mobile-menu__prof-item><span>🎮</span>
+Game Developers
+</a><a href=/professionals/mobile-developers/ class=mobile-menu__prof-item><span>📱</span>
+Mobile Developers
+</a><a href=/professionals/web-developers/ class=mobile-menu__prof-item><span>💻</span>
+Web Developers
+</a><a href=/professionals/data-engineers/ class=mobile-menu__prof-item><span>🗄️</span>
+Data Engineers
+</a><a href=/professionals/graphic-designers/ class=mobile-menu__prof-item><span>🖌️</span>
+Graphic Designers
+</a><a href=/professionals/motion-designers/ class=mobile-menu__prof-item><span>🎬</span>
+Motion Designers
+</a><a href=/professionals/3d-artists/ class=mobile-menu__prof-item><span>🗿</span>
+3D Artists
+</a><a href=/professionals/illustrators/ class=mobile-menu__prof-item><span>✏️</span>
+Illustrators
+</a><a href=/professionals/fashion-designers/ class=mobile-menu__prof-item><span>👗</span>
+Fashion Designers
+</a><a href=/professionals/interior-designers/ class=mobile-menu__prof-item><span>🛋️</span>
+Interior Designers
+</a><a href=/professionals/animators/ class=mobile-menu__prof-item><span>🎭</span>
+Animators
+</a><a href=/professionals/sound-engineers/ class=mobile-menu__prof-item><span>🎚️</span>
+Sound Engineers
+</a><a href=/professionals/filmmakers/ class=mobile-menu__prof-item><span>🎥</span>
+Filmmakers
+</a><a href=/professionals/screenwriters/ class=mobile-menu__prof-item><span>📝</span>
+Screenwriters
+</a><a href=/professionals/voice-actors/ class=mobile-menu__prof-item><span>🎤</span>
+Voice Actors
+</a><a href=/professionals/therapists/ class=mobile-menu__prof-item><span>🧠</span>
+Therapists
+</a><a href=/professionals/nutritionists/ class=mobile-menu__prof-item><span>🥗</span>
+Nutritionists
+</a><a href=/professionals/personal-trainers/ class=mobile-menu__prof-item><span>💪</span>
+Personal Trainers
+</a><a href=/professionals/coaches/ class=mobile-menu__prof-item><span>🎯</span>
+Life Coaches
+</a><a href=/professionals/consultants/ class=mobile-menu__prof-item><span>📋</span>
+Consultants
+</a><a href=/professionals/executives/ class=mobile-menu__prof-item><span>👔</span>
+Executives
+</a><a href=/professionals/operations-managers/ class=mobile-menu__prof-item><span>🔧</span>
+Operations Managers
+</a><a href=/professionals/supply-chain-managers/ class=mobile-menu__prof-item><span>🚢</span>
+Supply Chain Managers
+</a><a href=/professionals/event-planners/ class=mobile-menu__prof-item><span>🎪</span>
+Event Planners
+</a><a href=/professionals/chefs/ class=mobile-menu__prof-item><span>👨‍🍳</span>
+Chefs
+</a><a href=/professionals/farmers/ class=mobile-menu__prof-item><span>🌾</span>
+Farmers
+</a><a href=/professionals/environmental-scientists/ class=mobile-menu__prof-item><span>🌿</span>
+Environmental Scientists
+</a><a href=/professionals/biologists/ class=mobile-menu__prof-item><span>🔬</span>
+Biologists
+</a><a href=/professionals/chemists/ class=mobile-menu__prof-item><span>⚗️</span>
+Chemists
+</a><a href=/professionals/physicists/ class=mobile-menu__prof-item><span>⚛️</span>
+Physicists
+</a><a href=/professionals/economists/ class=mobile-menu__prof-item><span>📉</span>
+Economists
+</a><a href=/professionals/lawyers/ class=mobile-menu__prof-item><span>⚖️</span>
+Lawyers
+</a><a href=/professionals/doctors/ class=mobile-menu__prof-item><span>👨‍⚕️</span>
+Doctors
+</a><a href=/professionals/nurses/ class=mobile-menu__prof-item><span>👩‍⚕️</span>
+Nurses
+</a><a href=/professionals/pharmacists/ class=mobile-menu__prof-item><span>💊</span>
+Pharmacists
+</a><a href=/professionals/dentists/ class=mobile-menu__prof-item><span>🦷</span>
+Dentists
+</a><a href=/professionals/veterinarians/ class=mobile-menu__prof-item><span>🐾</span>
+Veterinarians
+</a><a href=/professionals/physical-therapists/ class=mobile-menu__prof-item><span>🏃</span>
+Physical Therapists
+</a><a href=/professionals/social-workers/ class=mobile-menu__prof-item><span>🤝</span>
+Social Workers
+</a><a href=/professionals/nonprofit-workers/ class=mobile-menu__prof-item><span>💛</span>
+Nonprofit Workers
+</a><a href=/professionals/government-employees/ class=mobile-menu__prof-item><span>🏛️</span>
+Government Employees
+</a><a href=/professionals/athletes/ class=mobile-menu__prof-item><span>🏅</span>
+Athletes
+</a><a href=/professionals/sports-coaches/ class=mobile-menu__prof-item><span>🏆</span>
+Sports Coaches
+</a><a href=/professionals/librarians/ class=mobile-menu__prof-item><span>📚</span>
+Librarians
+</a><a href=/professionals/mathematicians/ class=mobile-menu__prof-item><span>∑</span>
+Mathematicians
+</a><a href=/professionals/psychologists/ class=mobile-menu__prof-item><span>🧩</span>
+Psychologists
+</a><a href=/professionals/political-scientists/ class=mobile-menu__prof-item><span>🗳️</span>
+Political Scientists
+</a><a href=/professionals/historians/ class=mobile-menu__prof-item><span>🏺</span>
+Historians
+</a><a href=/professionals/linguists/ class=mobile-menu__prof-item><span>💬</span>
+Linguists
+</a><a href=/professionals/philosophers/ class=mobile-menu__prof-item><span>🔭</span>
+Philosophers
+</a><a href=/professionals/real-estate-investors/ class=mobile-menu__prof-item><span>🏗️</span>
+Real Estate Investors
+</a><a href=/professionals/industrial-designers/ class=mobile-menu__prof-item><span>🔩</span>
+Industrial Designers
+</a><a href=/professionals/sociologists/ class=mobile-menu__prof-item><span>👥</span>
+Sociologists
+</a><a href=/professionals/travel-agents/ class=mobile-menu__prof-item><span>✈️</span>
+Travel Agents
+</a><a href=/professionals/insurance-professionals/ class=mobile-menu__prof-item><span>🛡️</span>
+Insurance Professionals
+</a><a href=/professionals/logistics-managers/ class=mobile-menu__prof-item><span>🚛</span>
+Logistics Managers
+</a><a href=/professionals/architects-software/ class=mobile-menu__prof-item><span>🏗️</span>
+Software Architects
+</a><a href=/professionals/marketing-analysts/ class=mobile-menu__prof-item><span>📊</span>
+Marketing Analysts
+</a><a href=/professionals/brand-managers/ class=mobile-menu__prof-item><span>🌟</span>
+Brand Managers
+</a><a href=/professionals/technical-writers/ class=mobile-menu__prof-item><span>📖</span>
+Technical Writers
+</a><a href=/professionals/copywriters/ class=mobile-menu__prof-item><span>✍️</span>
+Copywriters
+</a><a href=/professionals/seo-specialists/ class=mobile-menu__prof-item><span>🔎</span>
+SEO Specialists
+</a><a href=/professionals/educators/ class=mobile-menu__prof-item><span>🎓</span>
+Educators
+</a><a href=/professionals/cybersecurity-analysts/ class=mobile-menu__prof-item><span>🛡️</span>
+Cybersecurity Analysts
+</a><a href=/professionals/pr-professionals/ class=mobile-menu__prof-item><span>📢</span>
+PR & Communications Professionals
+</a><a href=/professionals/ecommerce-managers/ class=mobile-menu__prof-item><span>🛒</span>
+E-Commerce Managers
+</a><a href=/professionals/growth-marketers/ class=mobile-menu__prof-item><span>📈</span>
+Growth Marketers
+</a><a href=/professionals/community-managers/ class=mobile-menu__prof-item><span>🤝</span>
+Community Managers
+</a><a href=/professionals/qa-engineers/ class=mobile-menu__prof-item><span>🧪</span>
+QA Engineers
+</a><a href=/professionals/site-reliability-engineers/ class=mobile-menu__prof-item><span>⚙️</span>
+Site Reliability Engineers
+</a><a href=/professionals/investment-bankers/ class=mobile-menu__prof-item><span>💼</span>
+Investment Bankers
+</a><a href=/professionals/startup-founders/ class=mobile-menu__prof-item><span>🚀</span>
+Startup Founders
+</a><a href=/professionals/ux-researchers/ class=mobile-menu__prof-item><span>🔍</span>
+UX Researchers
+</a><a href=/professionals/instructional-designers/ class=mobile-menu__prof-item><span>🎓</span>
+Instructional Designers
+</a><a href=/professionals/customer-success-managers/ class=mobile-menu__prof-item><span>🌟</span>
+Customer Success Managers
+</a><a href=/professionals/media-buyers/ class=mobile-menu__prof-item><span>📺</span>
+Media Buyers
+</a><a href=/professionals/grant-writers/ class=mobile-menu__prof-item><span>📝</span>
+Grant Writers
+</a><a href=/professionals/aerospace-engineers/ class=mobile-menu__prof-item><span>🛸</span>
+Aerospace Engineers
+</a><a href=/professionals/anthropologists/ class=mobile-menu__prof-item><span>🧬</span>
+Anthropologists
+</a><a href=/professionals/art-directors/ class=mobile-menu__prof-item><span>🎨</span>
+Art Directors
+</a><a href=/professionals/audiologists/ class=mobile-menu__prof-item><span>👂</span>
+Audiologists
+</a><a href=/professionals/automotive-engineers/ class=mobile-menu__prof-item><span>🚗</span>
+Automotive Engineers
+</a><a href=/professionals/biomedical-engineers/ class=mobile-menu__prof-item><span>🧬</span>
+Biomedical Engineers
+</a><a href=/professionals/blockchain-developers/ class=mobile-menu__prof-item><span>⛓️</span>
+Blockchain Developers
+</a><a href=/professionals/budget-analysts/ class=mobile-menu__prof-item><span>💰</span>
+Budget Analysts
+</a><a href=/professionals/civil-engineers/ class=mobile-menu__prof-item><span>🏗️</span>
+Civil Engineers
+</a><a href=/professionals/clinical-researchers/ class=mobile-menu__prof-item><span>🔬</span>
+Clinical Researchers
+</a><a href=/professionals/cloud-architects/ class=mobile-menu__prof-item><span>☁️</span>
+Cloud Architects
+</a><a href=/professionals/compliance-officers/ class=mobile-menu__prof-item><span>⚖️</span>
+Compliance Officers
+</a><a href=/professionals/construction-managers/ class=mobile-menu__prof-item><span>🏗️</span>
+Construction Managers
+</a><a href=/professionals/content-strategists/ class=mobile-menu__prof-item><span>📋</span>
+Content Strategists
+</a><a href=/professionals/corporate-trainers/ class=mobile-menu__prof-item><span>📚</span>
+Corporate Trainers
+</a><a href=/professionals/creative-directors/ class=mobile-menu__prof-item><span>🎭</span>
+Creative Directors
+</a><a href=/professionals/crisis-managers/ class=mobile-menu__prof-item><span>🚨</span>
+Crisis Managers
+</a><a href=/professionals/customer-experience-managers/ class=mobile-menu__prof-item><span>⭐</span>
+Customer Experience Managers
+</a><a href=/professionals/data-visualization-specialists/ class=mobile-menu__prof-item><span>📊</span>
+Data Visualization Specialists
+</a><a href=/professionals/elearning-developers/ class=mobile-menu__prof-item><span>💻</span>
+eLearning Developers
+</a><a href=/professionals/electrical-engineers/ class=mobile-menu__prof-item><span>⚡</span>
+Electrical Engineers
+</a><a href=/professionals/emergency-responders/ class=mobile-menu__prof-item><span>🚑</span>
+Emergency Responders
+</a><a href=/professionals/energy-consultants/ class=mobile-menu__prof-item><span>⚡</span>
+Energy Consultants
+</a><a href=/professionals/environmental-engineers/ class=mobile-menu__prof-item><span>🌱</span>
+Environmental Engineers
+</a><a href=/professionals/estate-planners/ class=mobile-menu__prof-item><span>🏛️</span>
+Estate Planners
+</a><a href=/professionals/executive-assistants/ class=mobile-menu__prof-item><span>📅</span>
+Executive Assistants
+</a><a href=/professionals/fleet-managers/ class=mobile-menu__prof-item><span>🚛</span>
+Fleet Managers
+</a><a href=/professionals/food-scientists/ class=mobile-menu__prof-item><span>🧪</span>
+Food Scientists
+</a><a href=/professionals/forensic-scientists/ class=mobile-menu__prof-item><span>🔍</span>
+Forensic Scientists
+</a><a href=/professionals/freelancers/ class=mobile-menu__prof-item><span>💼</span>
+Freelancers
+</a><a href=/professionals/fundraisers/ class=mobile-menu__prof-item><span>🎗️</span>
+Fundraisers
+</a><a href=/professionals/genealogists/ class=mobile-menu__prof-item><span>🌳</span>
+Genealogists
+</a><a href=/professionals/geologists/ class=mobile-menu__prof-item><span>🪨</span>
+Geologists
+</a><a href=/professionals/geospatial-analysts/ class=mobile-menu__prof-item><span>🗺️</span>
+Geospatial Analysts
+</a><a href=/professionals/healthcare-administrators/ class=mobile-menu__prof-item><span>🏥</span>
+Healthcare Administrators
+</a><a href=/professionals/hospitality-managers/ class=mobile-menu__prof-item><span>🏨</span>
+Hospitality Managers
+</a><a href=/professionals/hr-business-partners/ class=mobile-menu__prof-item><span>👥</span>
+HR Business Partners
+</a><a href=/professionals/immigration-consultants/ class=mobile-menu__prof-item><span>✈️</span>
+Immigration Consultants
+</a><a href=/professionals/industrial-engineers/ class=mobile-menu__prof-item><span>🏭</span>
+Industrial Engineers
+</a><a href=/professionals/iot-engineers/ class=mobile-menu__prof-item><span>📡</span>
+IoT Engineers
+</a><a href=/professionals/it-managers/ class=mobile-menu__prof-item><span>💻</span>
+IT Managers
+</a><a href=/professionals/landscape-architects/ class=mobile-menu__prof-item><span>🌿</span>
+Landscape Architects
+</a><a href=/professionals/language-teachers/ class=mobile-menu__prof-item><span>🗣️</span>
+Language Teachers
+</a><a href=/professionals/manufacturing-engineers/ class=mobile-menu__prof-item><span>🏭</span>
+Manufacturing Engineers
+</a><a href=/professionals/marine-scientists/ class=mobile-menu__prof-item><span>🌊</span>
+Marine Scientists
+</a><a href=/professionals/mechanical-engineers/ class=mobile-menu__prof-item><span>⚙️</span>
+Mechanical Engineers
+</a><a href=/professionals/media-producers/ class=mobile-menu__prof-item><span>🎬</span>
+Media Producers
+</a><a href=/professionals/medical-writers/ class=mobile-menu__prof-item><span>📝</span>
+Medical Writers
+</a><a href=/professionals/mental-health-counselors/ class=mobile-menu__prof-item><span>🧠</span>
+Mental Health Counselors
+</a><a href=/professionals/meteorologists/ class=mobile-menu__prof-item><span>🌤️</span>
+Meteorologists
+</a><a href=/professionals/midwives/ class=mobile-menu__prof-item><span>👶</span>
+Midwives
+</a><a href=/professionals/military-analysts/ class=mobile-menu__prof-item><span>🎖️</span>
+Military Analysts
+</a><a href=/professionals/music-producers/ class=mobile-menu__prof-item><span>🎵</span>
+Music Producers
+</a><a href=/professionals/network-engineers/ class=mobile-menu__prof-item><span>🌐</span>
+Network Engineers
+</a><a href=/professionals/occupational-therapists/ class=mobile-menu__prof-item><span>🏥</span>
+Occupational Therapists
+</a><a href=/professionals/oceanographers/ class=mobile-menu__prof-item><span>🌊</span>
+Oceanographers
+</a><a href=/professionals/oil-gas-professionals/ class=mobile-menu__prof-item><span>⛽</span>
+Oil & Gas Professionals
+</a><a href=/professionals/optometrists/ class=mobile-menu__prof-item><span>👁️</span>
+Optometrists
+</a><a href=/professionals/paralegals/ class=mobile-menu__prof-item><span>⚖️</span>
+Paralegals
+</a><a href=/professionals/patent-attorneys/ class=mobile-menu__prof-item><span>📄</span>
+Patent Attorneys
+</a><a href=/professionals/policy-analysts/ class=mobile-menu__prof-item><span>📊</span>
+Policy Analysts
+</a><a href=/professionals/portfolio-managers/ class=mobile-menu__prof-item><span>📈</span>
+Portfolio Managers
+</a><a href=/professionals/procurement-managers/ class=mobile-menu__prof-item><span>🛒</span>
+Procurement Managers
+</a><a href=/professionals/program-managers/ class=mobile-menu__prof-item><span>📋</span>
+Program Managers
+</a><a href=/professionals/property-managers/ class=mobile-menu__prof-item><span>🏠</span>
+Property Managers
+</a><a href=/professionals/public-health-officials/ class=mobile-menu__prof-item><span>🏥</span>
+Public Health Officials
+</a><a href=/professionals/quality-managers/ class=mobile-menu__prof-item><span>✅</span>
+Quality Managers
+</a><a href=/professionals/radiologists/ class=mobile-menu__prof-item><span>🩻</span>
+Radiologists
+</a><a href=/professionals/regulatory-specialists/ class=mobile-menu__prof-item><span>📋</span>
+Regulatory Affairs Specialists
+</a><a href=/professionals/risk-managers/ class=mobile-menu__prof-item><span>⚠️</span>
+Risk Managers
+</a><a href=/professionals/robotics-engineers/ class=mobile-menu__prof-item><span>🤖</span>
+Robotics Engineers
+</a><a href=/professionals/school-counselors/ class=mobile-menu__prof-item><span>🏫</span>
+School Counselors
+</a><a href=/professionals/software-architects/ class=mobile-menu__prof-item><span>🏗️</span>
+Software Architects
+</a><a href=/professionals/space-scientists/ class=mobile-menu__prof-item><span>🚀</span>
+Space Scientists
+</a><a href=/professionals/sports-analysts/ class=mobile-menu__prof-item><span>🏅</span>
+Sports Analysts
+</a><a href=/professionals/sustainability-managers/ class=mobile-menu__prof-item><span>🌿</span>
+Sustainability Managers
+</a><a href=/professionals/sysadmins/ class=mobile-menu__prof-item><span>🖥️</span>
+System Administrators
+</a><a href=/professionals/tax-professionals/ class=mobile-menu__prof-item><span>💸</span>
+Tax Professionals
+</a><a href=/professionals/telecommunications-engineers/ class=mobile-menu__prof-item><span>📡</span>
+Telecommunications Engineers
+</a><a href=/professionals/tour-guides/ class=mobile-menu__prof-item><span>🗺️</span>
+Tour Guides
+</a><a href=/professionals/ui-designers/ class=mobile-menu__prof-item><span>🎨</span>
+UI Designers
+</a><a href=/professionals/ux-writers/ class=mobile-menu__prof-item><span>✍️</span>
+UX Writers
+</a><a href=/professionals/urban-planners/ class=mobile-menu__prof-item><span>🏙️</span>
+Urban Planners
+</a><a href=/professionals/video-game-designers/ class=mobile-menu__prof-item><span>🎮</span>
+Video Game Designers
+</a><a href=/professionals/wedding-planners/ class=mobile-menu__prof-item><span>💍</span>
+Wedding Planners
+</a><a href=/professionals/warehouse-managers/ class=mobile-menu__prof-item><span>📦</span>
+Warehouse Managers
+</a><a href=/professionals/chiropractors/ class=mobile-menu__prof-item><span>💆</span>
+Chiropractors
+</a><a href=/professionals/clinical-psychologists/ class=mobile-menu__prof-item><span>🧠</span>
+Clinical Psychologists
+</a><a href=/professionals/costume-designers/ class=mobile-menu__prof-item><span>👗</span>
+Costume Designers
+</a><a href=/professionals/museum-curators/ class=mobile-menu__prof-item><span>🏛️</span>
+Museum Curators
+</a><a href=/professionals/drug-discovery-scientists/ class=mobile-menu__prof-item><span>💊</span>
+Drug Discovery Scientists
+</a><a href=/professionals/fashion-stylists/ class=mobile-menu__prof-item><span>👗</span>
+Fashion Stylists
+</a><a href=/professionals/fintech-developers/ class=mobile-menu__prof-item><span>💳</span>
+Fintech Developers
+</a><a href=/professionals/digital-nomads/ class=mobile-menu__prof-item><span>🌍</span>
+Digital Nomads
+</a><a href=/professionals/export-managers/ class=mobile-menu__prof-item><span>🌐</span>
+Export Managers
+</a><a href=/professionals/epidemiologists/ class=mobile-menu__prof-item><span>🔬</span>
+Epidemiologists
+</a><a href=/professionals/forensic-accountants/ class=mobile-menu__prof-item><span>🔍</span>
+Forensic Accountants
+</a><a href=/professionals/it-support-specialists/ class=mobile-menu__prof-item><span>🛠️</span>
+IT Support Specialists
+</a><a href=/professionals/social-entrepreneurs/ class=mobile-menu__prof-item><span>🌱</span>
+Social Entrepreneurs
+</a><a href=/professionals/wildlife-biologists/ class=mobile-menu__prof-item><span>🦁</span>
+Wildlife Biologists</a></div><a href=/professionals/ class=mobile-menu__all-link>View all 200+ professions →</a></div></div><div class=mobile-menu__section><button class=mobile-menu__heading data-accordion=mob-cats>
+<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+Categories
+<svg class="mobile-menu__chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></button><div class=mobile-menu__accordion id=mob-cats><a href=/categories/devtools/ class=mobile-menu__cat-item><span>DevTools</span>
+<span class=mobile-menu__count>108</span>
+</a><a href=/categories/writing-assistants/ class=mobile-menu__cat-item><span>Writing Assistants</span>
+<span class=mobile-menu__count>43</span>
+</a><a href=/categories/code-assistant/ class=mobile-menu__cat-item><span>Code Assistant</span>
+<span class=mobile-menu__count>38</span>
+</a><a href=/categories/video-generator/ class=mobile-menu__cat-item><span>Video Generator</span>
+<span class=mobile-menu__count>33</span>
+</a><a href=/categories/ai-agents/ class=mobile-menu__cat-item><span>AI Agents</span>
+<span class=mobile-menu__count>30</span>
+</a><a href=/categories/image-generation/ class=mobile-menu__cat-item><span>Image Generation</span>
+<span class=mobile-menu__count>30</span>
+</a><a href=/categories/customer-support/ class=mobile-menu__cat-item><span>Customer Support</span>
+<span class=mobile-menu__count>27</span>
+</a><a href=/categories/models/ class=mobile-menu__cat-item><span>Models</span>
+<span class=mobile-menu__count>26</span>
+</a><a href=/categories/finance/ class=mobile-menu__cat-item><span>Finance</span>
+<span class=mobile-menu__count>23</span>
+</a><a href=/categories/marketing/ class=mobile-menu__cat-item><span>Marketing</span>
+<span class=mobile-menu__count>23</span>
+</a><a href=/categories/ class=mobile-menu__all-link>All categories →</a></div></div><div class="mobile-menu__section mobile-menu__section--submit"><a href=/submit/ class=mobile-menu__submit><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+Submit a Tool</a></div></div><script>(function(){document.getElementById("theme-toggle")?.addEventListener("click",function(){var t=document.documentElement.getAttribute("data-theme")||"dark",e=t==="dark"?"light":"dark";document.documentElement.setAttribute("data-theme",e),localStorage.setItem("bai-theme",e)});var e,t,s=document.querySelectorAll(".nav-item");function n(e){s.forEach(function(t){if(t!==e){t.classList.remove("is-open");var n=t.querySelector(".nav-btn");n&&n.setAttribute("aria-expanded","false")}})}s.forEach(function(e){var t=e.querySelector(".nav-btn");if(!t)return;t.addEventListener("click",function(s){s.stopPropagation();var o=e.classList.contains("is-open");n(o?null:e),e.classList.toggle("is-open",!o),t.setAttribute("aria-expanded",String(!o))})}),document.addEventListener("click",function(){n(null)}),document.addEventListener("keydown",function(e){e.key==="Escape"&&(n(null),o())}),document.querySelectorAll(".mega-menu").forEach(function(e){e.addEventListener("click",function(e){e.stopPropagation()})}),e=document.getElementById("mobile-menu-btn"),t=document.getElementById("mobile-menu");function o(){if(!t)return;t.classList.remove("is-open"),e&&e.classList.remove("is-open"),e&&e.setAttribute("aria-expanded","false"),document.body.classList.remove("mobile-menu-open")}e&&e.addEventListener("click",function(n){n.stopPropagation();var s=t.classList.toggle("is-open");e.classList.toggle("is-open",s),e.setAttribute("aria-expanded",String(s)),document.body.classList.toggle("mobile-menu-open",s)}),document.addEventListener("click",function(n){t&&!t.contains(n.target)&&n.target!==e&&o()}),document.querySelectorAll(".mobile-menu__heading").forEach(function(e){e.addEventListener("click",function(t){t.stopPropagation();var s,o=e.getAttribute("data-accordion"),n=document.getElementById(o);if(!n)return;s=n.classList.toggle("is-open"),e.classList.toggle("is-open",s)})})})()</script><main><div class="submit-page container"><div class=submit-hero><h1 class=submit-hero__title>Submit an AI tool</h1><p class=submit-hero__sub>Best of AI is a free, open source directory maintained on GitHub. If a useful AI tool is missing from the list, you can add it. Anyone can contribute — no special access required.</p></div><div class=submit-why><div class=submit-section-label>// why get listed</div><div class=submit-why__body><p>Best of AI is indexed by search engines and browsed by people looking for specific types of AI tools. The directory currently covers <strong>1000+ tools</strong> across <strong>100+ categories</strong>, and the full dataset is available as open data at <a href=/index.json>/index.json</a>, so other projects and directories pull from it too.</p><p>Getting listed puts a tool in front of users who are already searching by category, use case, or pricing model. Listings are free, permanent, and not ranked by payment — only by community-assessed quality.</p></div></div><div class=submit-section-label>// how to submit</div><div class=submit-paths><div class="submit-path submit-path--primary"><div class=submit-path__head><span class=submit-path__badge>easiest</span><div class=submit-path__label>// via github issue</div></div><p class=submit-path__desc>Open the submission form on GitHub, fill in the fields below, and post the issue. Maintainers review it and add the tool to the repository. You only need a GitHub account.</p><div class=submit-path__fields><div class=submit-path__fields-title>required fields</div><div class=submit-field><span class=submit-field__name>name</span>
+<span class=submit-field__eg>e.g. Midjourney</span></div><div class=submit-field><span class=submit-field__name>website</span>
+<span class=submit-field__eg>e.g. https://midjourney.com</span></div><div class=submit-field><span class=submit-field__name>category</span>
+<span class=submit-field__eg>pick from the list below</span></div><div class=submit-field><span class=submit-field__name>pricing</span>
+<span class=submit-field__eg>Free / Freemium / Paid</span></div><div class=submit-field><span class=submit-field__name>description</span>
+<span class=submit-field__eg>one sentence, under 100 chars</span></div><div class=submit-field><span class=submit-field__name>why include</span>
+<span class=submit-field__eg>what makes it genuinely useful</span></div></div><a href="https://github.com/best-of-ai/best-of-ai/issues/new?template=submit-tool.md&title=Submit+Tool" target=_blank rel=noopener class="submit-path__btn submit-path__btn--primary"><svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37.0.0 5.37.0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93.0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18.0.0 1.01-.32 3.3 1.23a11.5 11.5.0 013-.4c1.02.0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22.0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+Open submission form</a></div><div class=submit-path><div class=submit-path__head><span class="submit-path__badge submit-path__badge--alt">for developers</span><div class=submit-path__label>// via pull request</div></div><p class=submit-path__desc>Fork the repo, add a Markdown file to <code>content/tools/</code>, and open a PR. This path lets you set every field precisely and usually gets reviewed faster since the data is already formatted.</p><div class=submit-path__code><div class=submit-path__code-title>content/tools/toolname.md</div><pre><code>---
+name: Tool Name
+slug: tool-name
+website: https://example.com
+category: image-generation
+price: Freemium
+description: One-sentence description of what it does.
+tags:
+  - image-generation
+  - creative
+  - ai-art
+rank: 5
+---</code></pre></div><div class=submit-path__field-notes><div class=submit-path__fields-title>field notes</div><div class=submit-field><span class=submit-field__name>category</span><span class=submit-field__eg>must match a slug from data/categories.yaml</span></div><div class=submit-field><span class=submit-field__name>price</span><span class=submit-field__eg>Free, Freemium, or Paid</span></div><div class=submit-field><span class=submit-field__name>rank</span><span class=submit-field__eg>1–10, default 5 if unsure</span></div><div class=submit-field><span class=submit-field__name>tags</span><span class=submit-field__eg>3–8 tags, lowercase, hyphenated</span></div></div><a href=https://github.com/best-of-ai/best-of-ai target=_blank rel=noopener class=submit-path__btn><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+View the repository</a></div></div><div class=submit-review><div class=submit-section-label>// what happens after you submit</div><div class=submit-review__body><div class=submit-review__steps><div class=submit-review__step><span class=submit-review__step-num>01</span><div><strong>Your issue is posted</strong><p>The issue goes into the submissions queue on GitHub. You can track it there and answer any follow-up questions from maintainers.</p></div></div><div class=submit-review__step><span class=submit-review__step-num>02</span><div><strong>Maintainers review</strong><p>Submissions are checked in batches, usually within a few days. Maintainers verify the tool is live, the category fits, and the description is accurate.</p></div></div><div class=submit-review__step><span class=submit-review__step-num>03</span><div><strong>Tool is added to the directory</strong><p>Accepted tools get a Markdown file in <code>content/tools/</code> and appear on the site after the next deploy. The issue is closed with a link to the new listing.</p></div></div></div></div></div><div class=submit-guidelines><div class=submit-section-label>// what gets accepted</div><div class=submit-guidelines__body><p>There's no strict bar to clear, but a few things affect how quickly a submission gets merged. The tool should be publicly accessible — not invite-only or vaporware. The website should load. The description should say what the tool actually does rather than repeating marketing copy.</p><p>Duplicate entries, tools that appear to be AI-generated landing pages with no real product behind them, and submissions without enough information to verify the tool are the most common reasons for rejection. When in doubt, submit anyway — the issue will get a note if something's missing.</p><p>You can submit a tool you built yourself. Disclosing that in the issue is good practice and doesn't hurt the submission.</p></div></div><div class=submit-faq><div class=submit-section-label>// common questions</div><div class=submit-faq__list><details class=submit-faq__item><summary class=submit-faq__q>Is there a fee to get listed?</summary><p class=submit-faq__a>No. Best of AI is a free, open source directory. Listing a tool costs nothing and there are no paid placements or promoted spots.</p></details><details class=submit-faq__item><summary class=submit-faq__q>How long does review take?</summary><p class=submit-faq__a>Most submissions get reviewed within a few days. Maintainers work through the queue in batches. If yours has been open for more than a week without a response, add a comment to bump it.</p></details><details class=submit-faq__item><summary class=submit-faq__q>Can I submit a tool I built myself?</summary><p class=submit-faq__a>Yes. Self-submissions are fine. Mentioning that you're the developer in the issue is appreciated but not required.</p></details><details class=submit-faq__item><summary class=submit-faq__q>What if the tool already has a listing with wrong information?</summary><p class=submit-faq__a>Open an issue to flag the correction, or submit a PR directly to the tool's Markdown file in <code>content/tools/</code>. The filename matches the tool's slug.</p></details><details class=submit-faq__item><summary class=submit-faq__q>What if no category fits my tool?</summary><p class=submit-faq__a>Pick the closest match and mention the gap in the issue. New categories get added when enough tools warrant one. If you're unsure, the maintainers will suggest the right fit.</p></details><details class=submit-faq__item><summary class=submit-faq__q>Can I use the directory data in my own project?</summary><p class=submit-faq__a>Yes. The full index is available at <a href=/index.json>/index.json</a> and the raw Markdown files are in the public GitHub repository. No API key or account needed. The project is open source.</p></details></div></div><div class=submit-cats><div class=submit-section-label>// available categories</div><p class=submit-cats__note>Pick the closest match for the category field. Each chip links to that category's page so you can see what's already listed there.</p><div class=submit-cats__cloud><a href=/categories/3d/ class=submit-cat-chip>3D</a>
+<a href=/categories/ai-agents/ class=submit-cat-chip>AI Agents</a>
+<a href=/categories/ai-companion/ class=submit-cat-chip>AI Companion</a>
+<a href=/categories/ad-generator/ class=submit-cat-chip>Ad Generator</a>
+<a href=/categories/animation/ class=submit-cat-chip>Animation</a>
+<a href=/categories/app-builders/ class=submit-cat-chip>App Builders</a>
+<a href=/categories/background-remover/ class=submit-cat-chip>Background Remover</a>
+<a href=/categories/business-tools/ class=submit-cat-chip>Business Tools</a>
+<a href=/categories/crm/ class=submit-cat-chip>CRM</a>
+<a href=/categories/calendar-scheduling/ class=submit-cat-chip>Calendar Scheduling</a>
+<a href=/categories/climate/ class=submit-cat-chip>Climate</a>
+<a href=/categories/code-assistant/ class=submit-cat-chip>Code Assistant</a>
+<a href=/categories/copywriting/ class=submit-cat-chip>Copywriting</a>
+<a href=/categories/devtools/ class=submit-cat-chip>DevTools</a>
+<a href=/categories/document-ai/ class=submit-cat-chip>Document AI</a>
+<a href=/categories/e-commerce/ class=submit-cat-chip>E-Commerce</a>
+<a href=/categories/email-assistants/ class=submit-cat-chip>Email Assistants</a>
+<a href=/categories/farming/ class=submit-cat-chip>Farming</a>
+<a href=/categories/fashion/ class=submit-cat-chip>Fashion</a>
+<a href=/categories/finance/ class=submit-cat-chip>Finance</a>
+<a href=/categories/government/ class=submit-cat-chip>Government</a>
+<a href=/categories/hr/ class=submit-cat-chip>HR</a>
+<a href=/categories/home-design/ class=submit-cat-chip>Home Design</a>
+<a href=/categories/image-editing/ class=submit-cat-chip>Image Editing</a>
+<a href=/categories/image-generation/ class=submit-cat-chip>Image Generation</a>
+<a href=/categories/infographics/ class=submit-cat-chip>Infographics</a>
+<a href=/categories/job-tools/ class=submit-cat-chip>Job Tools</a>
+<a href=/categories/knowledge-management/ class=submit-cat-chip>Knowledge Management</a>
+<a href=/categories/language-learning/ class=submit-cat-chip>Language Learning</a>
+<a href=/categories/lead-generation/ class=submit-cat-chip>Lead Generation</a>
+<a href=/categories/learning-tools/ class=submit-cat-chip>Learning Tools</a>
+<a href=/categories/logo-generator/ class=submit-cat-chip>Logo Generator</a>
+<a href=/categories/market-research/ class=submit-cat-chip>Market Research</a>
+<a href=/categories/meme-generator/ class=submit-cat-chip>Meme Generator</a>
+<a href=/categories/music-generation/ class=submit-cat-chip>Music Generation</a>
+<a href=/categories/no-code/ class=submit-cat-chip>No-Code</a>
+<a href=/categories/note-taking-apps/ class=submit-cat-chip>Note-Taking Apps</a>
+<a href=/categories/podcast/ class=submit-cat-chip>Podcast</a>
+<a href=/categories/presentation/ class=submit-cat-chip>Presentation</a>
+<a href=/categories/project-management/ class=submit-cat-chip>Project Management</a>
+<a href=/categories/real-estate/ class=submit-cat-chip>Real Estate</a>
+<a href=/categories/resume-tools/ class=submit-cat-chip>Resume Tools</a>
+<a href=/categories/sales-tools/ class=submit-cat-chip>Sales Tools</a>
+<a href=/categories/social-media-tools/ class=submit-cat-chip>Social Media Tools</a>
+<a href=/categories/supply-chain/ class=submit-cat-chip>Supply Chain</a>
+<a href=/categories/talking-avatar-generator/ class=submit-cat-chip>Talking Avatar Generator</a>
+<a href=/categories/text-to-speech/ class=submit-cat-chip>Text to Speech</a>
+<a href=/categories/transcription/ class=submit-cat-chip>Transcription</a>
+<a href=/categories/translator/ class=submit-cat-chip>Translator</a>
+<a href=/categories/video-editor/ class=submit-cat-chip>Video Editor</a>
+<a href=/categories/video-enhancer/ class=submit-cat-chip>Video Enhancer</a>
+<a href=/categories/video-generator/ class=submit-cat-chip>Video Generator</a>
+<a href=/categories/video-subtitling/ class=submit-cat-chip>Video Subtitling</a>
+<a href=/categories/voice-cloning/ class=submit-cat-chip>Voice Cloning</a>
+<a href=/categories/website-builders/ class=submit-cat-chip>Website Builders</a>
+<a href=/categories/workflow-automation/ class=submit-cat-chip>Workflow Automation</a>
+<a href=/categories/productivity/ class=submit-cat-chip>Productivity</a>
+<a href=/categories/chatbots/ class=submit-cat-chip>Chatbots</a>
+<a href=/categories/academia/ class=submit-cat-chip>Academia</a>
+<a href=/categories/audio/ class=submit-cat-chip>Audio</a>
+<a href=/categories/automation/ class=submit-cat-chip>Automation</a>
+<a href=/categories/customer-support/ class=submit-cat-chip>Customer Support</a>
+<a href=/categories/data/ class=submit-cat-chip>Data</a>
+<a href=/categories/food/ class=submit-cat-chip>Food</a>
+<a href=/categories/gaming/ class=submit-cat-chip>Gaming</a>
+<a href=/categories/graphic-design/ class=submit-cat-chip>Graphic Design</a>
+<a href=/categories/healthcare/ class=submit-cat-chip>Healthcare</a>
+<a href=/categories/legal-assistants/ class=submit-cat-chip>Legal Assistants</a>
+<a href=/categories/local-search-engines/ class=submit-cat-chip>Local Search Engines</a>
+<a href=/categories/marketing/ class=submit-cat-chip>Marketing</a>
+<a href=/categories/meeting-assistants/ class=submit-cat-chip>Meeting Assistants</a>
+<a href=/categories/personal-assistants/ class=submit-cat-chip>Personal Assistants</a>
+<a href=/categories/research-tools/ class=submit-cat-chip>Research Tools</a>
+<a href=/categories/seo/ class=submit-cat-chip>SEO</a>
+<a href=/categories/search-engines/ class=submit-cat-chip>Search Engines</a>
+<a href=/categories/spreadsheets/ class=submit-cat-chip>Spreadsheets</a>
+<a href=/categories/video/ class=submit-cat-chip>Video</a>
+<a href=/categories/weather/ class=submit-cat-chip>Weather</a>
+<a href=/categories/writing-assistants/ class=submit-cat-chip>Writing Assistants</a>
+<a href=/categories/models/ class=submit-cat-chip>Models</a>
+<a href=/categories/ai-directories/ class=submit-cat-chip>AI Directories</a>
+<a href=/categories/cybersecurity/ class=submit-cat-chip>Cybersecurity</a>
+<a href=/categories/mental-health/ class=submit-cat-chip>Mental Health</a>
+<a href=/categories/fitness/ class=submit-cat-chip>Fitness</a>
+<a href=/categories/diagramming/ class=submit-cat-chip>Diagramming</a>
+<a href=/categories/data-labeling/ class=submit-cat-chip>Data Labeling</a>
+<a href=/categories/prompt-tools/ class=submit-cat-chip>Prompt Tools</a>
+<a href=/categories/travel/ class=submit-cat-chip>Travel</a>
+<a href=/categories/contract-management/ class=submit-cat-chip>Contract Management</a>
+<a href=/categories/compliance/ class=submit-cat-chip>Compliance</a>
+<a href=/categories/computer-vision/ class=submit-cat-chip>Computer Vision</a>
+<a href=/categories/synthetic-data/ class=submit-cat-chip>Synthetic Data</a>
+<a href=/categories/ar-vr/ class=submit-cat-chip>AR/VR</a>
+<a href=/categories/accessibility/ class=submit-cat-chip>Accessibility</a>
+<a href=/categories/construction/ class=submit-cat-chip>Construction</a>
+<a href=/categories/manufacturing/ class=submit-cat-chip>Manufacturing</a>
+<a href=/categories/energy/ class=submit-cat-chip>Energy</a>
+<a href=/categories/drug-discovery/ class=submit-cat-chip>Drug Discovery</a>
+<a href=/categories/tax-accounting/ class=submit-cat-chip>Tax & Accounting</a>
+<a href=/categories/insurance/ class=submit-cat-chip>Insurance</a>
+<a href=/categories/events/ class=submit-cat-chip>Events</a>
+<a href=/categories/sports-analytics/ class=submit-cat-chip>Sports Analytics</a>
+<a href=/categories/content-moderation/ class=submit-cat-chip>Content Moderation</a>
+<a href=/categories/chatbot-builders/ class=submit-cat-chip>Chatbot Builders</a>
+<a href=/categories/localization/ class=submit-cat-chip>Localization</a>
+<a href=/categories/mind-mapping/ class=submit-cat-chip>Mind Mapping</a>
+<a href=/categories/medical-imaging/ class=submit-cat-chip>Medical Imaging</a>
+<a href=/categories/patent-tools/ class=submit-cat-chip>Patent Tools</a>
+<a href=/categories/recruiting/ class=submit-cat-chip>Recruiting</a>
+<a href=/categories/telemedicine/ class=submit-cat-chip>Telemedicine</a>
+<a href=/categories/fleet-management/ class=submit-cat-chip>Fleet Management</a>
+<a href=/categories/privacy/ class=submit-cat-chip>Privacy</a>
+<a href=/categories/robotics/ class=submit-cat-chip>Robotics</a>
+<a href=/categories/web3/ class=submit-cat-chip>Web3</a>
+<a href=/categories/biotech/ class=submit-cat-chip>Biotech</a>
+<a href=/categories/geospatial/ class=submit-cat-chip>Geospatial</a>
+<a href=/categories/architecture/ class=submit-cat-chip>Architecture</a>
+<a href=/categories/nutrition/ class=submit-cat-chip>Nutrition</a>
+<a href=/categories/parenting/ class=submit-cat-chip>Parenting</a>
+<a href=/categories/pets/ class=submit-cat-chip>Pets</a>
+<a href=/categories/fintech/ class=submit-cat-chip>FinTech</a>
+<a href=/categories/cleantech/ class=submit-cat-chip>CleanTech</a>
+<a href=/categories/reading/ class=submit-cat-chip>Reading</a>
+<a href=/categories/storytelling/ class=submit-cat-chip>Storytelling</a>
+<a href=/categories/dubbing/ class=submit-cat-chip>Dubbing</a>
+<a href=/categories/identity/ class=submit-cat-chip>Identity</a>
+<a href=/categories/wellness/ class=submit-cat-chip>Wellness</a>
+<a href=/categories/dating/ class=submit-cat-chip>Dating</a>
+<a href=/categories/nonprofit/ class=submit-cat-chip>Nonprofit</a>
+<a href=/categories/debugging/ class=submit-cat-chip>Debugging</a>
+<a href=/categories/api-tools/ class=submit-cat-chip>API Tools</a>
+<a href=/categories/database-tools/ class=submit-cat-chip>Database Tools</a>
+<a href=/categories/cloud-management/ class=submit-cat-chip>Cloud Management</a>
+<a href=/categories/iot/ class=submit-cat-chip>IoT</a>
+<a href=/categories/3d-printing/ class=submit-cat-chip>3D Printing</a>
+<a href=/categories/space-tech/ class=submit-cat-chip>Space Tech</a>
+<a href=/categories/sentiment-analysis/ class=submit-cat-chip>Sentiment Analysis</a>
+<a href=/categories/documentation/ class=submit-cat-chip>Documentation</a>
+<a href=/categories/observability/ class=submit-cat-chip>Observability</a>
+<a href=/categories/software-testing/ class=submit-cat-chip>Software Testing</a>
+<a href=/categories/character-design/ class=submit-cat-chip>Character Design</a>
+<a href=/categories/others/ class=submit-cat-chip>Others</a></div></div></div></main><footer class=site-footer><div class="footer-body container"><div class=footer-brand><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2 2 7l10 5 10-5-10-5z" fill="var(--accent)"/><path d="M2 17l10 5 10-5" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 12l10 5 10-5" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".6"/></svg>
+<span>Best of <span style=color:var(--accent)>AI</span></span></div><p class=footer-desc>Handpicked AI tools — no fluff, no mediocre apps. Every tool carefully selected for quality, innovation, and real-world impact.</p><div class=footer-links><div class=footer-col><div class=footer-col__title>// directory</div><a href=/ class=footer-cmd><span>›</span> Browse all tools</a>
+<a href=/categories/ class=footer-cmd><span>›</span> Categories</a>
+<a href=/professionals/ class=footer-cmd><span>›</span> AI by Profession</a>
+<a href=/tags/ class=footer-cmd><span>›</span> Browse by Tag</a>
+<a href=/submit/ class=footer-cmd><span>›</span> Submit a tool</a>
+<a href=/index.json class=footer-cmd><span>›</span> index.json</a></div><div class=footer-col><div class=footer-col__title>// project</div><a href=/about/ class=footer-cmd><span>›</span> about</a>
+<a href=https://github.com/best-of-ai/best-of-ai target=_blank rel=noopener class=footer-cmd><span>›</span> ★ star on GitHub</a>
+<a href=https://github.com/best-of-ai/best-of-ai/issues/new target=_blank rel=noopener class=footer-cmd><span>›</span> report an issue</a>
+<a href=/sitemap.xml class=footer-cmd><span>›</span> sitemap.xml</a></div></div></div><div class=footer-statusbar><span>Best of AI</span>
+<span class=footer-sep>·</span>
+<span><strong>1000+</strong> tools</span>
+<span class=footer-sep>·</span>
+<span>hugo</span>
+<span class=footer-sep>·</span>
+<span>github pages</span>
+<span class="footer-sep footer-right-sep">|</span>
+<span>© 2026 · open source</span></div></footer><div id=search-modal class=search-modal hidden><div class=search-modal__backdrop id=search-backdrop></div><div class=search-modal__box><div class=search-modal__header><span class=search-modal__title>Best of <span style=color:var(--accent)>AI</span></span>
+<button class=search-modal__close id=search-close aria-label="Close search"><kbd>esc</kbd></button></div><div class=search-modal__input-wrap><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="color:var(--fg-muted);flex-shrink:0"><circle cx="11" cy="11" r="8"/><path d="m21 21-3.5-3.5"/></svg>
+<input type=text id=search-input class=search-modal__input placeholder="Search tools and professions..." autocomplete=off spellcheck=false></div><div id=search-results class=search-results role=listbox></div><div class=search-modal__footer><span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+<span><kbd>↵</kbd> open</span>
+<span><kbd>esc</kbd> close</span></div></div></div><script>(function(){var t=null,e=-1,a=document.getElementById("search-modal"),o=document.getElementById("search-input"),n=document.getElementById("search-results"),g=document.getElementById("search-open"),f=document.getElementById("search-close"),h=document.getElementById("search-backdrop");function c(){a.removeAttribute("hidden"),document.body.classList.add("search-open"),o.focus(),t||m()}function i(){a.setAttribute("hidden",""),document.body.classList.remove("search-open"),o.value="",n.innerHTML="",e=-1}function m(){fetch("/index.json").then(function(e){return e.json()}).then(function(e){t=e}).catch(function(){t=[]})}function s(e){return e.replace(/[&<>"']/g,function(e){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[e]})}function l(e,t){if(!t)return s(e);var n=new RegExp("("+t.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+")","gi");return s(e).replace(n,"<mark>$1</mark>")}function p(e,t){var n=(e.name||"").toLowerCase(),s=(e.title||"").toLowerCase(),o=(e.description||"").toLowerCase(),i=(e.category||"").toLowerCase();return n===t||s===t?4:n.startsWith(t)||s.startsWith(t)?3:n.includes(t)||s.includes(t)?2:o.includes(t)?1:i.includes(t)?1:0}function r(e,t){var n=e.description?e.description.slice(0,80):"";return'<a href="'+s(e.url)+'" class="search-result" role="option" tabindex="-1"><span class="sr-cat">'+s(e.category||"")+'</span><span class="sr-body"><span class="sr-name">'+l(e.name||e.slug,t)+"</span>"+(n?'<span class="sr-desc">'+l(n,t)+"</span>":"")+"</span>"+(e.price&&e.price!=="Free"?'<span class="badge badge-'+e.price.toLowerCase()+'">'+s(e.price)+"</span>":"")+"</a>"}function v(o){if(e=-1,!o||o.length<2||!t){n.innerHTML="";return}for(var i,c,l,d,u,m,f,g,v=o.toLowerCase(),a={profession:[],category:[],tag:[],tool:[]},h=0;h<t.length;h++)l=t[h],f=l.type||"tool",m=p(l,v),m>0&&a[f].push({it:l,score:m});if(Object.keys(a).forEach(function(e){a[e].sort(function(e,t){return t.score-e.score})}),d=a.profession.slice(0,3),c=a.category.slice(0,3).concat(a.tag.slice(0,3)),c.sort(function(e,t){return t.score-e.score}),c=c.slice(0,4),u=a.tool.slice(0,8),g=d.length+c.length+u.length,!g){n.innerHTML='<div class="search-empty">No results for <strong>'+s(o)+"</strong></div>";return}i="",d.length&&(i+='<div class="sr-group-label">Professions</div>',d.forEach(function(e){i+=r(e.it,o)})),c.length&&(i+='<div class="sr-group-label">Categories &amp; Tags</div>',c.forEach(function(e){i+=r(e.it,o)})),u.length&&(i+='<div class="sr-group-label">Tools</div>',u.forEach(function(e){i+=r(e.it,o)})),n.innerHTML=i}function d(){return n.querySelectorAll(".search-result")}function u(t){var n=d();if(!n.length)return;e>=0&&e<n.length&&n[e].classList.remove("is-selected"),e=Math.max(0,Math.min(t,n.length-1)),n[e].classList.add("is-selected"),n[e].scrollIntoView({block:"nearest"})}o.addEventListener("input",function(){v(o.value.trim())}),o.addEventListener("keydown",function(t){t.key==="ArrowDown"&&(t.preventDefault(),u(e+1)),t.key==="ArrowUp"&&(t.preventDefault(),u(e-1)),t.key==="Enter"&&e>=0&&(t.preventDefault(),d()[e]?.click())}),n.addEventListener("click",function(e){e.target.closest(".search-result")&&i()}),g.addEventListener("click",c),f.addEventListener("click",i),h.addEventListener("click",i),document.addEventListener("keydown",function(e){(e.metaKey||e.ctrlKey)&&e.key==="k"&&(e.preventDefault(),a.hasAttribute("hidden")?c():i()),e.key==="Escape"&&!a.hasAttribute("hidden")&&i()})})()</script></body></html>
