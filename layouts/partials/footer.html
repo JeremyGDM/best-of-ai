@@ -3,11 +3,7 @@
 <footer class="site-footer">
   <div class="footer-body container">
     <div class="footer-brand">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-        <path d="M12 2L2 7l10 5 10-5-10-5z" fill="var(--accent)"/>
-        <path d="M2 17l10 5 10-5" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M2 12l10 5 10-5" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
-      </svg>
+      <img src="{{ "favicon/favicon.svg" | relURL }}" width="20" height="20" alt="Best of AI" aria-hidden="true">
       <span>Best of <span style="color:var(--accent)">AI</span></span>
     </div>
     <p class="footer-desc">{{ .Site.Params.description }}</p>

@@ -6,7 +6,7 @@
 {{ $isTool   := and .IsPage (eq .Section "tools") }}
 {{ $name     := or .Params.name .Title }}
 {{ $siteURL  := .Site.BaseURL | strings.TrimRight "/" }}
-{{ $ogImageDefault := printf "%s/img/favicon/web-app-manifest-512x512.png" $siteURL }}
+{{ $ogImageDefault := printf "%s/favicon/web-app-manifest-512x512.png" $siteURL }}
 
 {{/* ── Robots ── */}}
 {{ if or $is404 $isSaved }}
@@ -143,9 +143,6 @@
 <meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 
-<!-- Manifest -->
-<link rel="manifest" href="{{ "img/favicon/site.webmanifest" | relURL }}">
-
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -159,6 +156,9 @@
 <script defer src="{{ "js/saved.js" | relURL }}"></script>
 
 <!-- Favicon -->
-<link rel="icon" type="image/svg+xml"  href="{{ "img/favicon/favicon.svg" | relURL }}">
-<link rel="icon" type="image/png"      href="{{ "img/favicon/favicon-96x96.png" | relURL }}" sizes="96x96">
-<link rel="apple-touch-icon"           href="{{ "img/favicon/apple-touch-icon.png" | relURL }}">
+<link rel="icon" type="image/png" href="{{ "favicon/favicon-96x96.png" | relURL }}" sizes="96x96">
+<link rel="icon" type="image/svg+xml" href="{{ "favicon/favicon.svg" | relURL }}">
+<link rel="shortcut icon" href="{{ "favicon/favicon.ico" | relURL }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ "favicon/apple-touch-icon.png" | relURL }}">
+<meta name="apple-mobile-web-app-title" content="Best of AI">
+<link rel="manifest" href="{{ "favicon/site.webmanifest" | relURL }}">
