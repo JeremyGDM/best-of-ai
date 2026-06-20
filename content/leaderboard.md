@@ -1,5 +1,5 @@
 ---
 title: 'AI Tools Leaderboard'
-description: 'The top-ranked AI tools — handpicked by quality, innovation, and real-world impact.'
+description: 'The best AI tools, ranked by real-world usefulness and impact.'
 layout: 'leaderboard'
 ---

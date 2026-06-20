@@ -155,6 +155,22 @@ lines += [
     '',
     '---',
     '',
+    '## What is this?',
+    '',
+    f'**Best of AI** is a curated, community-driven directory of the best AI tools across {len(active_cats)} categories. We track {total_tools}+ tools and hand-pick the ones worth your time — filtering out the noise so you can find tools that actually deliver.',
+    '',
+    'What makes this list different:',
+    '',
+    '- **Quality over quantity** — every tool is reviewed and ranked, not just scraped from a list',
+    '- **Practical focus** — tools are selected for real-world usefulness, not hype',
+    f'- **Broad coverage** — {len(active_cats)} categories from [Code Assistants]({SITE_URL}/categories/code-assistant/) to [Video]({SITE_URL}/categories/video/) to [Healthcare]({SITE_URL}/categories/healthcare/)',
+    '- **Always updated** — new tools added regularly as the AI landscape evolves',
+    f'- **Browse by profession** — curated tool stacks for [designers, developers, marketers, and more]({SITE_URL}/professionals/)',
+    '',
+    f'Visit **[bestofai.io]({SITE_URL})** for the full interactive directory with search, filters, and detailed reviews.',
+    '',
+    '---',
+    '',
 ]
 
 # Table of Contents
@@ -209,7 +225,7 @@ for cat in active_cats:
     cat_url = f'{SITE_URL}/categories/{slug}/'
 
     all_tools = tools_by_cat[slug]
-    top_tools = sorted(all_tools, key=lambda t: t.get('rank', 0), reverse=True)[:6]
+    top_tools = sorted(all_tools, key=lambda t: t.get('rank', 0), reverse=True)[:4]
 
     lines.append(f'## [{name}]({cat_url})')
     lines.append('')
@@ -244,8 +260,8 @@ for cat in active_cats:
 
         lines.append(entry)
 
-    if count > 6:
-        lines.append(f'- *[+{count - 6} more →]({cat_url})*')
+    if count > 4:
+        lines.append(f'- *[View all {count} {name} tools on bestofai.io →]({cat_url})*')
 
     lines += ['', '---', '']
 
