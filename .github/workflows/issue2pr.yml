@@ -12,12 +12,6 @@ permissions:
 jobs:
   review:
     runs-on: ubuntu-latest
-    # Only run on tool submission issues
-    if: |
-      contains(github.event.issue.title, 'Submit Tool') ||
-      contains(github.event.issue.title, 'submit tool') ||
-      contains(github.event.issue.title, 'Add Tool') ||
-      contains(github.event.issue.title, 'add tool')
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4

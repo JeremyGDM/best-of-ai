@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
 Rule-based tool submission reviewer.
-- Parses issue body for required fields
-- Validates each field
-- If valid: creates the .md file and opens a PR, closes issue
-- If invalid: posts a comment listing problems and closes issue
+- If the issue is not a tool submission → exit silently
+- If it is a submission but not using the template format → comment "not in style" and close
+- If it uses the template and all fields are valid → create a branch + PR, close issue
+- If it uses the template but has invalid fields → comment with specific errors and close
 """
 
 import os
@@ -25,6 +25,19 @@ ISSUE_AUTHOR  = os.environ.get("ISSUE_AUTHOR", "ghost")
 
 VALID_PRICES   = {"free", "freemium", "paid"}
 CATEGORIES_FILE = "data/categories.yaml"
+
+# Keywords in the title that signal a tool submission attempt
+SUBMISSION_TITLE_KEYWORDS = ["submit tool", "add tool", "suggest tool", "new tool"]
+
+# The four bold field markers that the template always includes
+TEMPLATE_MARKERS = [
+    r"\*\*Name",
+    r"\*\*Website URL",
+    r"\*\*Category",
+    r"\*\*Pricing",
+]
+
+TEMPLATE_URL = f"https://github.com/{REPO}/issues/new?template=submit-tool.md"
 
 # ── GitHub API helpers ────────────────────────────────────────────────────────
 
@@ -88,6 +101,21 @@ def open_pr(title, body, head, base="main"):
         "head": head,
         "base": base,
     })
+
+
+# ── detection ─────────────────────────────────────────────────────────────────
+
+def is_submission_attempt(title, body):
+    """True if this issue appears to be a tool submission."""
+    if any(kw in title.lower() for kw in SUBMISSION_TITLE_KEYWORDS):
+        return True
+    # Body has at least 2 of the template markers even without the right title
+    return sum(1 for m in TEMPLATE_MARKERS if re.search(m, body, re.IGNORECASE)) >= 2
+
+
+def is_template_format(body):
+    """True if the body contains all four required field markers from the template."""
+    return all(re.search(m, body, re.IGNORECASE) for m in TEMPLATE_MARKERS)
 
 
 # ── field parsing ─────────────────────────────────────────────────────────────
@@ -185,7 +213,6 @@ def validate(fields, valid_categories):
     if not category_raw:
         errors.append("❌ **Category** is missing.")
     else:
-        # Try to match against known slugs (the submitter may write a human name)
         cat_slug = slugify(category_raw.split("(")[0].strip())
         if valid_categories and cat_slug not in valid_categories:
             cat_list = ", ".join(f"`{c}`" for c in sorted(valid_categories))
@@ -205,7 +232,6 @@ def build_md(fields):
     website = fields["website"].rstrip("/")
     price_raw = fields["price"]
     price   = re.sub(r"\s*\(.*?\)", "", price_raw).strip().capitalize()
-    # Normalize to title-case recognised values
     price_map = {"Free": "Free", "Freemium": "Freemium", "Paid": "Paid"}
     price = price_map.get(price, price)
 
@@ -240,6 +266,30 @@ date: '{today}'
 def main():
     print(f"Processing issue #{ISSUE_NUMBER}: {ISSUE_TITLE}")
 
+    # Step 1: is this a tool submission at all?
+    if not is_submission_attempt(ISSUE_TITLE, ISSUE_BODY):
+        print("Not a tool submission — skipping.")
+        return
+
+    # Step 2: does it use the submission template format?
+    if not is_template_format(ISSUE_BODY):
+        comment = f"""## ❌ This issue is not in the correct submission format
+
+Hi @{ISSUE_AUTHOR}, it looks like you're trying to submit a tool, but your issue doesn't follow the required template.
+
+Please open a **new issue** using the official submission template, which includes all the required fields (Name, Website URL, Category, Pricing, Short description):
+
+👉 [Open the submission template]({TEMPLATE_URL})
+
+> 🤖 *This check was performed automatically.*"""
+
+        post_comment(comment)
+        add_label("invalid")
+        close_issue()
+        print("Issue closed — not in template format.")
+        return
+
+    # Step 3: template format is correct — validate the field values
     fields = parse_issue(ISSUE_BODY)
     print("Parsed fields:", fields)
 
@@ -247,7 +297,7 @@ def main():
     errors = validate(fields, valid_categories)
 
     if errors:
-        # ── FAILED: comment + close ──────────────────────────────────────────
+        # ── FAILED: comment with specific field errors + close ────────────────
         error_list = "\n".join(errors)
         comment = f"""## ❌ Tool submission needs corrections
 
@@ -257,7 +307,7 @@ Hi @{ISSUE_AUTHOR}, thanks for submitting! Your submission has **{len(errors)} i
 
 ---
 
-Please open a **new issue** with the corrected information using the [submit tool template]({f"https://github.com/{REPO}/issues/new?template=submit-tool.md"}).
+Please open a **new issue** with the corrected information using the [submit tool template]({TEMPLATE_URL}).
 
 > 🤖 *This review was performed automatically.*"""
 
@@ -267,18 +317,16 @@ Please open a **new issue** with the corrected information using the [submit too
         print("Issue closed with validation errors.")
 
     else:
-        # ── PASSED: create PR ────────────────────────────────────────────────
+        # ── PASSED: create branch + PR ────────────────────────────────────────
         slug, md_content = build_md(fields)
         tool_name = fields["name"]
         branch_name = f"add-tool-{slug}-issue-{ISSUE_NUMBER}"
         file_path   = f"content/tools/{slug}.md"
 
-        # Create branch
         sha = get_main_sha()
         create_branch(branch_name, sha)
         print(f"Created branch: {branch_name}")
 
-        # Commit the file
         create_file_on_branch(
             branch=branch_name,
             path=file_path,
@@ -287,7 +335,6 @@ Please open a **new issue** with the corrected information using the [submit too
         )
         print(f"Committed: {file_path}")
 
-        # Open PR
         pr_body = f"""## Add tool: {tool_name}
 
 Automatically generated from issue #{ISSUE_NUMBER} submitted by @{ISSUE_AUTHOR}.
@@ -314,7 +361,6 @@ Closes #{ISSUE_NUMBER}"""
         pr_url = pr.get("html_url", "")
         print(f"PR opened: {pr_url}")
 
-        # Comment on issue
         comment = f"""## ✅ Submission validated — PR created!
 
 Hi @{ISSUE_AUTHOR}, your submission passed all checks. A pull request has been opened automatically:
