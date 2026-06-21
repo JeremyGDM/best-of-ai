@@ -23,44 +23,147 @@
   <div class="submit-section-label">// how to submit</div>
   <div class="submit-paths">
 
-    <!-- Path 1: GitHub issue -->
+    <!-- Path 1: Form → GitHub issue -->
     <div class="submit-path submit-path--primary">
       <div class="submit-path__head">
         <span class="submit-path__badge">easiest</span>
         <div class="submit-path__label">// via github issue</div>
       </div>
-      <p class="submit-path__desc">Open the submission form on GitHub, fill in the fields below, and post the issue. Maintainers review it and add the tool to the repository. You only need a GitHub account.</p>
-      <div class="submit-path__fields">
-        <div class="submit-path__fields-title">required fields</div>
-        <div class="submit-field">
-          <span class="submit-field__name">name</span>
-          <span class="submit-field__eg">e.g. Midjourney</span>
+      <p class="submit-path__desc">Fill in the form — clicking submit opens a pre-filled GitHub issue in a new tab. You only need a GitHub account to post it.</p>
+
+      <form class="sf-form" id="sf-form" novalidate>
+
+        <div class="sf-field" id="sf-field-name">
+          <label class="sf-label" for="sf-name">Tool name <span class="sf-required">*</span></label>
+          <input class="sf-input" id="sf-name" type="text" placeholder="e.g. Midjourney" autocomplete="off">
+          <span class="sf-error-msg">Name is required.</span>
         </div>
-        <div class="submit-field">
-          <span class="submit-field__name">website</span>
-          <span class="submit-field__eg">e.g. https://midjourney.com</span>
+
+        <div class="sf-field" id="sf-field-url">
+          <label class="sf-label" for="sf-url">Website URL <span class="sf-required">*</span></label>
+          <input class="sf-input" id="sf-url" type="url" placeholder="https://example.com">
+          <span class="sf-error-msg">A valid https:// URL is required.</span>
         </div>
-        <div class="submit-field">
-          <span class="submit-field__name">category</span>
-          <span class="submit-field__eg">pick from the list below</span>
+
+        <div class="sf-field" id="sf-field-cat">
+          <label class="sf-label" for="sf-cat">Category <span class="sf-required">*</span></label>
+          <select class="sf-select" id="sf-cat">
+            <option value="">— pick a category —</option>
+            {{ range $cats }}
+            <option value="{{ .slug }}">{{ .name }}</option>
+            {{ end }}
+          </select>
+          <span class="sf-error-msg">Please pick a category.</span>
         </div>
-        <div class="submit-field">
-          <span class="submit-field__name">pricing</span>
-          <span class="submit-field__eg">Free / Freemium / Paid</span>
+
+        <div class="sf-field" id="sf-field-price">
+          <label class="sf-label">Pricing <span class="sf-required">*</span></label>
+          <div class="sf-radio-group" id="sf-price-group">
+            <label class="sf-radio"><input type="radio" name="sf-price" value="Free">Free</label>
+            <label class="sf-radio"><input type="radio" name="sf-price" value="Freemium">Freemium</label>
+            <label class="sf-radio"><input type="radio" name="sf-price" value="Paid">Paid</label>
+          </div>
+          <span class="sf-error-msg">Please select a pricing model.</span>
         </div>
-        <div class="submit-field">
-          <span class="submit-field__name">description</span>
-          <span class="submit-field__eg">one sentence, under 100 chars</span>
+
+        <div class="sf-field" id="sf-field-desc">
+          <label class="sf-label" for="sf-desc">Short description <span class="sf-required">*</span></label>
+          <span class="sf-hint">One sentence, what it does. Factual, under 300 characters.</span>
+          <textarea class="sf-textarea" id="sf-desc" rows="2" maxlength="300" placeholder="AI pair programmer for code completion and generation"></textarea>
+          <div class="sf-char-count"><span id="sf-desc-count">0</span> / 300</div>
+          <span class="sf-error-msg">Description must be 20–300 characters.</span>
         </div>
-        <div class="submit-field">
-          <span class="submit-field__name">why include</span>
-          <span class="submit-field__eg">what makes it genuinely useful</span>
+
+        <div class="sf-field" id="sf-field-why">
+          <label class="sf-label" for="sf-why">Why should it be included? <span class="sf-required">*</span></label>
+          <span class="sf-hint">What makes it genuinely useful or notable?</span>
+          <textarea class="sf-textarea" id="sf-why" rows="3" placeholder="Widely used, innovative, or uniquely valuable in its category..."></textarea>
+          <span class="sf-error-msg">Please explain why this tool should be included.</span>
         </div>
-      </div>
-      <a href="{{ .Site.Params.githubRepo }}/issues/new?template=submit-tool.md&title=Submit+Tool" target="_blank" rel="noopener" class="submit-path__btn submit-path__btn--primary">
-        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-        Open submission form
-      </a>
+
+        <button type="submit" class="submit-path__btn submit-path__btn--primary sf-submit">
+          <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          Open GitHub issue
+        </button>
+
+      </form>
+
+      <script>
+      (function () {
+        var REPO = '{{ .Site.Params.githubRepo }}';
+
+        var form   = document.getElementById('sf-form');
+        var fName  = document.getElementById('sf-name');
+        var fUrl   = document.getElementById('sf-url');
+        var fCat   = document.getElementById('sf-cat');
+        var fDesc  = document.getElementById('sf-desc');
+        var fWhy   = document.getElementById('sf-why');
+        var descCount = document.getElementById('sf-desc-count');
+
+        fDesc.addEventListener('input', function () {
+          var n = fDesc.value.length;
+          descCount.textContent = n;
+          descCount.parentElement.classList.toggle('is-warn', n > 250);
+        });
+
+        function setError(fieldId, hasError) {
+          var el = document.getElementById('sf-field-' + fieldId);
+          if (!el) return;
+          el.classList.toggle('has-error', hasError);
+          var inp = el.querySelector('.sf-input, .sf-select, .sf-textarea');
+          if (inp) inp.classList.toggle('is-error', hasError);
+          var grp = el.querySelector('.sf-radio-group');
+          if (grp) grp.classList.toggle('is-error', hasError);
+        }
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          var name  = fName.value.trim();
+          var url   = fUrl.value.trim();
+          var cat   = fCat.value;
+          var price = (form.querySelector('input[name="sf-price"]:checked') || {}).value || '';
+          var desc  = fDesc.value.trim();
+          var why   = fWhy.value.trim();
+
+          var urlOk = url && /^https?:\/\//.test(url);
+          var descOk = desc.length >= 20 && desc.length <= 300;
+
+          setError('name',  !name);
+          setError('url',   !urlOk);
+          setError('cat',   !cat);
+          setError('price', !price);
+          setError('desc',  !descOk);
+          setError('why',   !why);
+
+          if (!name || !urlOk || !cat || !price || !descOk || !why) return;
+
+          var title = 'Submit Tool: ' + name;
+          var body = [
+            '## Tool Details',
+            '',
+            '**Name:** ' + name,
+            '',
+            '**Website URL:** ' + url,
+            '',
+            '**Category:** ' + cat,
+            '',
+            '**Pricing:** ' + price,
+            '',
+            '**Short description (1 sentence):** ' + desc,
+            '',
+            '**Why should it be included?**',
+            why,
+          ].join('\n');
+
+          var issueUrl = REPO + '/issues/new?title=' + encodeURIComponent(title) +
+            '&body=' + encodeURIComponent(body) +
+            '&labels=submission';
+
+          window.open(issueUrl, '_blank', 'noopener');
+        });
+      })();
+      </script>
     </div>
 
     <!-- Path 2: Pull request -->
