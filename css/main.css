@@ -1895,6 +1895,34 @@ body.search-open { overflow: hidden; }
 @media (max-width: 640px) {
   .submit-paths { grid-template-columns: 1fr; }
 }
+.submit-form-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+.submit-path--full {
+  max-width: 680px;
+  padding: 2rem;
+}
+.submit-pr-guide {
+  max-width: 680px;
+  font-size: 0.85rem;
+  color: var(--fg-muted);
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.submit-pr-guide__label {
+  font-weight: 600;
+  color: var(--fg);
+  white-space: nowrap;
+}
 .submit-path {
   background: var(--surface);
   border: 1px solid var(--border);
