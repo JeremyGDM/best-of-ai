@@ -19,16 +19,11 @@
     </div>
   </div>
 
-  <!-- Two paths -->
-  <div class="submit-section-label">// how to submit</div>
-  <div class="submit-paths">
+  <!-- Submit form -->
+  <div class="submit-section-label">// submit a tool</div>
+  <div class="submit-form-wrap">
 
-    <!-- Path 1: Form → GitHub issue -->
-    <div class="submit-path submit-path--primary">
-      <div class="submit-path__head">
-        <span class="submit-path__badge">easiest</span>
-        <div class="submit-path__label">// via github issue</div>
-      </div>
+    <div class="submit-path submit-path--primary submit-path--full">
       <p class="submit-path__desc">Fill in the form — clicking submit opens a pre-filled GitHub issue in a new tab. You only need a GitHub account to post it.</p>
 
       <form class="sf-form" id="sf-form" novalidate>
@@ -166,40 +161,11 @@
       </script>
     </div>
 
-    <!-- Path 2: Pull request -->
-    <div class="submit-path">
-      <div class="submit-path__head">
-        <span class="submit-path__badge submit-path__badge--alt">for developers</span>
-        <div class="submit-path__label">// via pull request</div>
-      </div>
-      <p class="submit-path__desc">Fork the repo, add a Markdown file to <code>content/tools/</code>, and open a PR. This path lets you set every field precisely and usually gets reviewed faster since the data is already formatted.</p>
-      <div class="submit-path__code">
-        <div class="submit-path__code-title">content/tools/toolname.md</div>
-        <pre><code>---
-name: Tool Name
-slug: tool-name
-website: https://example.com
-category: image-generation
-price: Freemium
-description: One-sentence description of what it does.
-tags:
-  - image-generation
-  - creative
-  - ai-art
-rank: 5
----</code></pre>
-      </div>
-      <div class="submit-path__field-notes">
-        <div class="submit-path__fields-title">field notes</div>
-        <div class="submit-field"><span class="submit-field__name">category</span><span class="submit-field__eg">must match a slug from data/categories.yaml</span></div>
-        <div class="submit-field"><span class="submit-field__name">price</span><span class="submit-field__eg">Free, Freemium, or Paid</span></div>
-        <div class="submit-field"><span class="submit-field__name">rank</span><span class="submit-field__eg">1–10, default 5 if unsure</span></div>
-        <div class="submit-field"><span class="submit-field__name">tags</span><span class="submit-field__eg">3–8 tags, lowercase, hyphenated</span></div>
-      </div>
-      <a href="{{ .Site.Params.githubRepo }}" target="_blank" rel="noopener" class="submit-path__btn">
-        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        View the repository
-      </a>
+    <!-- PR guide -->
+    <div class="submit-pr-guide">
+      <span class="submit-pr-guide__label">Prefer a pull request?</span>
+      Fork the repo, add <code>content/tools/yourslug.md</code> with the fields <code>name</code>, <code>slug</code>, <code>website</code>, <code>category</code>, <code>price</code>, <code>description</code>, and open a PR.
+      <a href="{{ .Site.Params.githubRepo }}" target="_blank" rel="noopener">View the repository →</a>
     </div>
 
   </div>
